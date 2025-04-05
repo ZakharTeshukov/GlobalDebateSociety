@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us - Global Debate Society</title>
+    <link rel="stylesheet" href="../src/css/main.css">
+    <link rel="stylesheet" href="../src/css/join.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <h1>Global Debate Society</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="join.html" class="active">Join Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Join the Global Debate Society</h1>
+                <p>Become part of our vibrant community of debaters and critical thinkers</p>
+            </div>
+        </section>
+
+        <section class="membership-options">
+            <div class="container">
+                <h2 class="text-center mb-3">Membership Options</h2>
+                <div class="grid grid-3">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Student</h3>
+                            <div class="price">
+                                <span class="amount">$15</span>
+                                <span class="period">/year</span>
+                            </div>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Access to local debate events</li>
+                                <li><i class="fas fa-check"></i> Basic training materials</li>
+                                <li><i class="fas fa-check"></i> Community forum access</li>
+                                <li><i class="fas fa-check"></i> Student-only workshops</li>
+                                <li class="not-included"><i class="fas fa-times"></i> Advanced training resources</li>
+                                <li class="not-included"><i class="fas fa-times"></i> International competition eligibility</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-footer">
+                            <a href="#registration-form" class="btn btn-primary">Select Plan</a>
+                        </div>
+                    </div>
+                    
+                    <div class="pricing-card featured">
+                        <div class="ribbon">Most Popular</div>
+                        <div class="pricing-header">
+                            <h3>Standard</h3>
+                            <div class="price">
+                                <span class="amount">$40</span>
+                                <span class="period">/year</span>
+                            </div>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Access to all local and national events</li>
+                                <li><i class="fas fa-check"></i> Complete training materials</li>
+                                <li><i class="fas fa-check"></i> Community forum access</li>
+                                <li><i class="fas fa-check"></i> Monthly workshops</li>
+                                <li><i class="fas fa-check"></i> Advanced training resources</li>
+                                <li class="not-included"><i class="fas fa-times"></i> International competition eligibility</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-footer">
+                            <a href="#registration-form" class="btn btn-primary">Select Plan</a>
+                        </div>
+                    </div>
+                    
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Premium</h3>
+                            <div class="price">
+                                <span class="amount">$75</span>
+                                <span class="period">/year</span>
+                            </div>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Access to all events (local, national & international)</li>
+                                <li><i class="fas fa-check"></i> Complete training materials</li>
+                                <li><i class="fas fa-check"></i> Priority forum access</li>
+                                <li><i class="fas fa-check"></i> Weekly workshops</li>
+                                <li><i class="fas fa-check"></i> Advanced training resources</li>
+                                <li><i class="fas fa-check"></i> International competition eligibility</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-footer">
+                            <a href="#registration-form" class="btn btn-primary">Select Plan</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="registration-form" class="registration">
+            <div class="container">
+                <h2 class="text-center mb-3">Registration Form</h2>
+                <form class="membership-form">
+                    <div class="form-section">
+                        <h3>Personal Information</h3>
+                        <div class="grid grid-2">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" id="dob" name="dob" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Membership Details</h3>
+                        <div class="form-group">
+                            <label for="membershipType">Membership Type</label>
+                            <select id="membershipType" name="membershipType" class="form-control" required>
+                                <option value="">-- Select Membership Type --</option>
+                                <option value="student">Student ($15/year)</option>
+                                <option value="standard">Standard ($40/year)</option>
+                                <option value="premium">Premium ($75/year)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="experience">Debate Experience</label>
+                            <select id="experience" name="experience" class="form-control" required>
+                                <option value="">-- Select Experience Level --</option>
+                                <option value="beginner">Beginner (0-1 years)</option>
+                                <option value="intermediate">Intermediate (1-3 years)</option>
+                                <option value="advanced">Advanced (3+ years)</option>
+                                <option value="professional">Professional/Coach</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="interests">Areas of Interest</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="interests" value="policy">
+                                    <span class="checkmark"></span>
+                                    Policy Debate
+                                </label>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="interests" value="parliamentary">
+                                    <span class="checkmark"></span>
+                                    Parliamentary Debate
+                                </label>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="interests" value="lincoln-douglas">
+                                    <span class="checkmark"></span>
+                                    Lincoln-Douglas Debate
+                                </label>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="interests" value="public-forum">
+                                    <span class="checkmark"></span>
+                                    Public Forum Debate
+                                </label>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="interests" value="mun">
+                                    <span class="checkmark"></span>
+                                    Model UN
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Payment Information</h3>
+                        <div class="payment-options">
+                            <label class="radio-container">
+                                <input type="radio" name="paymentMethod" value="credit-card" checked>
+                                <span class="radio-checkmark"></span>
+                                Credit Card
+                            </label>
+                            <label class="radio-container">
+                                <input type="radio" name="paymentMethod" value="paypal">
+                                <span class="radio-checkmark"></span>
+                                PayPal
+                            </label>
+                            <label class="radio-container">
+                                <input type="radio" name="paymentMethod" value="bank-transfer">
+                                <span class="radio-checkmark"></span>
+                                Bank Transfer
+                            </label>
+                        </div>
+                        
+                        <div id="credit-card-fields">
+                            <div class="grid grid-2">
+                                <div class="form-group">
+                                    <label for="cardName">Name on Card</label>
+                                    <input type="text" id="cardName" name="cardName" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardNumber">Card Number</label>
+                                    <input type="text" id="cardNumber" name="cardNumber" class="form-control" placeholder="XXXX XXXX XXXX XXXX">
+                                </div>
+                            </div>
+                            <div class="grid grid-3">
+                                <div class="form-group">
+                                    <label for="expiryMonth">Expiry Month</label>
+                                    <select id="expiryMonth" name="expiryMonth" class="form-control">
+                                        <option value="">MM</option>
+                                        <option value="01">01</option>
+                                        <option value="02">02</option>
+                                        <option value="03">03</option>
+                                        <option value="04">04</option>
+                                        <option value="05">05</option>
+                                        <option value="06">06</option>
+                                        <option value="07">07</option>
+                                        <option value="08">08</option>
+                                        <option value="09">09</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="expiryYear">Expiry Year</label>
+                                    <select id="expiryYear" name="expiryYear" class="form-control">
+                                        <option value="">YYYY</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2027">2027</option>
+                                        <option value="2028">2028</option>
+                                        <option value="2029">2029</option>
+                                        <option value="2030">2030</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" name="cvv" class="form-control" placeholder="XXX">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group terms">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <span class="checkmark"></span>
+                            I agree to the <a href="#" data-toggle="modal" data-target="#termsModal">Terms and Conditions</a>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-full">Complete Registration</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="text-center mb-3">What Our Members Say</h2>
+                <div class="grid grid-3">
+                    <div class="testimonial-card animate-on-scroll">
+                        <img src="../assets/images/testimonial1.jpg" alt="Member Photo">
+                        <blockquote>
+                            "Joining GDS was the best decision of my academic career. The training and networking opportunities are unmatched."
+                        </blockquote>
+                        <p class="testimonial-author">- Sarah Chen, Student Member</p>
+                    </div>
+                    <div class="testimonial-card animate-on-scroll">
+                        <img src="../assets/images/testimonial2.jpg" alt="Member Photo">
+                        <blockquote>
+                            "The premium membership has given me access to international competitions I never would have found on my own."
+                        </blockquote>
+                        <p class="testimonial-author">- Ahmad Rahman, Premium Member</p>
+                    </div>
+                    <div class="testimonial-card animate-on-scroll">
+                        <img src="../assets/images/testimonial3.jpg" alt="Member Photo">
+                        <blockquote>
+                            "The resources and community support have transformed my debate abilities in just a few months."
+                        </blockquote>
+                        <p class="testimonial-author">- Nguyen Thi Minh, Standard Member</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="resources.html#guides">Debate Guides</a></li>
+                    <li><a href="resources.html#materials">Training Materials</a></li>
+                    <li><a href="resources.html#videos">Video Library</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="contact.html">Get in Touch</a></li>
+                    <li><a href="join.html">Join Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Global Debate Society. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../src/js/main.js"></script>
+    <script src="../src/js/join.js"></script>
+</body>
+</html> 

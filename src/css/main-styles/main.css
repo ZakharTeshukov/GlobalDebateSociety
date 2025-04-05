@@ -1,3 +1,419 @@
+/**
+ * Global Debate Society - Main Stylesheet
+ * Version: 1.0.0
+ * 
+ * This is the main stylesheet for the Global Debate Society website.
+ * It imports all modular CSS files and contains global typography and 
+ * page-specific styles for the homepage.
+ */
+
+/* === Import Standard Styles === */
+@import url('./variables.css');
+@import url('./components.css');
+@import url('./layout.css');
+@import url('./navbar.css');
+@import url('./footer.css');
+
+/* === Global Typography === */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-heading);
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-color);
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; font-weight: var(--font-weight-bold); }
+h2 { font-size: 2rem; font-weight: var(--font-weight-semibold); }
+h3 { font-size: 1.75rem; font-weight: var(--font-weight-semibold); }
+h4 { font-size: 1.5rem; font-weight: var(--font-weight-medium); }
+h5 { font-size: 1.25rem; font-weight: var(--font-weight-medium); }
+h6 { font-size: 1rem; font-weight: var(--font-weight-medium); }
+
+p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+a:hover {
+    color: var(--info-color);
+}
+
+/* === Hero Section === */
+.hero {
+    position: relative;
+    height: 80vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-color-light);
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 30, 0.7), rgba(0, 0, 30, 0.7)), url('../img/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 0 var(--spacing-lg);
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-md);
+    color: var(--bg-light);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-lg);
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* === Features Section === */
+.features {
+    padding: var(--spacing-xxl) 0;
+}
+
+.feature-card {
+    text-align: center;
+    padding: var(--spacing-lg);
+    transition: var(--transition-medium);
+    height: 100%;
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.feature-title {
+    margin-bottom: var(--spacing-sm);
+    font-weight: var(--font-weight-semibold);
+}
+
+/* === Events Section === */
+.upcoming-events {
+    background-color: var(--bg-off-white);
+    padding: var(--spacing-xxl) 0;
+}
+
+.event-card {
+    display: flex;
+    margin-bottom: var(--spacing-lg);
+    background-color: var(--bg-light);
+}
+
+.event-date {
+    flex: 0 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: var(--spacing-md);
+    text-align: center;
+}
+
+.event-date .day {
+    font-size: 1.8rem;
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
+}
+
+.event-date .month {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.event-content {
+    flex: 1;
+    padding: var(--spacing-lg);
+}
+
+.event-title {
+    margin-bottom: var(--spacing-xs);
+}
+
+.event-meta {
+    display: flex;
+    color: var(--text-color-muted);
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.9rem;
+}
+
+.event-meta div {
+    margin-right: var(--spacing-md);
+    display: flex;
+    align-items: center;
+}
+
+.event-meta i {
+    margin-right: var(--spacing-xs);
+    color: var(--secondary-color);
+}
+
+/* === Testimonials Section === */
+.testimonials {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: var(--spacing-xxl) 0;
+    text-align: center;
+}
+
+.testimonials .section-title {
+    color: var(--bg-light);
+}
+
+.testimonial-slider {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.testimonial-item {
+    padding: var(--spacing-xl);
+}
+
+.testimonial-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+}
+
+/* Fixed quotation marks */
+.testimonial-text::before {
+    content: "\201C"; /* Unicode for opening double quote */
+    font-size: 4rem;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.testimonial-text::after {
+    content: "\201D"; /* Unicode for closing double quote */
+    font-size: 4rem;
+    position: absolute;
+    bottom: -60px;
+    right: -20px;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.testimonial-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: var(--spacing-md);
+}
+
+.testimonial-name {
+    font-weight: var(--font-weight-semibold);
+    text-align: left;
+}
+
+.testimonial-role {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    text-align: left;
+}
+
+/* === Call to Action Section === */
+.cta {
+    text-align: center;
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--bg-light);
+}
+
+.cta-title {
+    margin-bottom: var(--spacing-md);
+    font-size: 2.5rem;
+}
+
+.cta-subtitle {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto var(--spacing-lg);
+    color: var(--text-color-muted);
+}
+
+/* === Latest Blog Section === */
+.latest-blog {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--bg-off-white);
+}
+
+.blog-card-small {
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition-medium);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card-small:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.blog-card-small-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.blog-card-small-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-medium);
+}
+
+.blog-card-small:hover .blog-card-small-img img {
+    transform: scale(1.05);
+}
+
+.blog-card-small-content {
+    padding: var(--spacing-lg);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card-small-title {
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.3rem;
+}
+
+.blog-card-small-title a {
+    color: var(--primary-color);
+}
+
+.blog-card-small-title a:hover {
+    color: var(--secondary-color);
+}
+
+.blog-card-small-meta {
+    color: var(--text-color-muted);
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+}
+
+.blog-card-small-meta i {
+    margin-right: var(--spacing-xs);
+    color: var(--secondary-color);
+}
+
+.blog-card-small-meta span {
+    margin-right: var(--spacing-md);
+}
+
+.blog-card-small-excerpt {
+    margin-bottom: var(--spacing-md);
+    flex-grow: 1;
+}
+
+.blog-card-small-link {
+    align-self: flex-start;
+    font-weight: var(--font-weight-medium);
+}
+
+/* === Responsive Adjustments === */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .feature-card {
+        margin-bottom: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 70vh;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .event-card {
+        flex-direction: column;
+    }
+    
+    .event-date {
+        flex: 0 0 auto;
+        flex-direction: row;
+        padding: var(--spacing-sm);
+    }
+    
+    .event-date .day {
+        font-size: 1.5rem;
+        margin-right: var(--spacing-xs);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .testimonial-text {
+        font-size: 1rem;
+    }
+}
+
 /* Global Styles */
 :root {
     --primary-color: #2c3e50;
@@ -379,217 +795,6 @@ footer {
 @media (max-width: 480px) {
     .grid-2, .grid-3, .grid-4 {
         grid-template-columns: 1fr;
-    }
-}
-
-/* Hero Section */
-.hero {
-    background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)),
-                url('../images/debate-bg.jpg') center/cover;
-    color: var(--white);
-    padding: 8rem 2rem;
-    text-align: center;
-    position: relative;
-}
-
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    color: var(--white);
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-}
-
-/* Features Section */
-.features {
-    padding: 5rem 0;
-    background-color: var(--light-gray);
-}
-
-.feature-card {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: var(--card-shadow);
-    transition: var(--transition);
-}
-
-.feature-card:hover {
-    transform: translateY(-5px);
-}
-
-.feature-card i {
-    font-size: 2.5rem;
-    color: var(--secondary-color);
-    margin-bottom: 1.5rem;
-}
-
-.feature-card h3 {
-    margin-bottom: 1rem;
-}
-
-/* Upcoming Events Section */
-.upcoming-events {
-    padding: 5rem 0;
-}
-
-.event-card {
-    background: var(--white);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--card-shadow);
-    transition: var(--transition);
-}
-
-.event-card:hover {
-    transform: translateY(-5px);
-}
-
-.event-date {
-    background: var(--primary-color);
-    color: var(--white);
-    padding: 1rem;
-    text-align: center;
-}
-
-.event-date .month {
-    font-size: 1.2rem;
-    display: block;
-}
-
-.event-date .day {
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-.event-details {
-    padding: 1.5rem;
-}
-
-.event-location {
-    color: #666;
-    margin-bottom: 1rem;
-}
-
-.event-location i {
-    margin-right: 0.5rem;
-    color: var(--secondary-color);
-}
-
-/* Testimonials Section */
-.testimonials {
-    padding: 5rem 0;
-    background-color: var(--light-gray);
-}
-
-.testimonial-card {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: var(--card-shadow);
-}
-
-.testimonial-card img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 1.5rem;
-    object-fit: cover;
-}
-
-.testimonial-card blockquote {
-    font-style: italic;
-    margin-bottom: 1rem;
-    color: var(--text-color);
-}
-
-.testimonial-author {
-    color: var(--secondary-color);
-    font-weight: 500;
-}
-
-/* CTA Section */
-.cta {
-    padding: 5rem 0;
-    background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)),
-                url('../images/cta-bg.jpg') center/cover;
-    color: var(--white);
-}
-
-.cta h2 {
-    color: var(--white);
-    margin-bottom: 1rem;
-}
-
-.cta p {
-    margin-bottom: 2rem;
-    font-size: 1.2rem;
-}
-
-.cta-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-}
-
-/* Responsive Design for Home Page */
-@media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero-buttons .btn {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .cta-buttons .btn {
-        width: 100%;
-        max-width: 300px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-
-    .hero {
-        padding: 6rem 1rem;
-    }
-
-    .features,
-    .upcoming-events,
-    .testimonials,
-    .cta {
-        padding: 3rem 0;
     }
 }
 

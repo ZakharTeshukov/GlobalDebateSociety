@@ -4,86 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Debate Society - Empowering Voices, Fostering Critical Thinking</title>
-    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/main-styles/variables.css">
+    <link rel="stylesheet" href="src/css/main-styles/colors.css">
+    <link rel="stylesheet" href="src/css/main-styles/main.css">
+    <link rel="stylesheet" href="src/css/main-styles/navbar.css">
+    <link rel="stylesheet" href="src/css/main-styles/footer.css">
+    <link rel="stylesheet" href="src/css/main-styles/components.css">
+    <link rel="stylesheet" href="src/css/pages-styles/home.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav class="main-nav">
-            <div class="logo">
-                <h1>Global Debate Society</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="../../index.html" class="active">Home</a></li>
+    <header> 
+        <nav class="navbar">
+            <a href="index.html" class="navbar-logo">
+                <span class="navbar-logo-text">Global Debate Society</span>
+            </a>
+            
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="navbar-nav">
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="pages/about.html">About</a></li>
                 <li><a href="pages/events.html">Events</a></li>
                 <li><a href="pages/resources.html">Resources</a></li>
-                <li><a href="pages/contact.html">Contact</a></li>
+                <li><a href="pages/join.html">Join Us</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="hero animate-on-scroll">
+        <section class="hero">
+            <div class="hero-bg"></div>
             <div class="hero-content">
-                <h1>Welcome to Global Debate Society</h1>
-                <p>Empowering voices and fostering critical thinking across Southeast Asia</p>
+                <h1 class="hero-title">Welcome to Global Debate Society</h1>
+                <p class="hero-subtitle">Empowering voices and fostering critical thinking across Southeast Asia</p>
                 <div class="hero-buttons">
-                    <a href="pages/join.html" class="btn btn-primary">Join Us</a>
-                    <a href="pages/events.html" class="btn btn-outline">Upcoming Events</a>
+                    <a href="pages/join.html" class="btn btn-primary btn-lg">Join Us</a>
+                    <a href="pages/events.html" class="btn btn-outline btn-lg">Upcoming Events</a>
                 </div>
             </div>
         </section>
 
-        <section class="features container">
-            <h2 class="text-center mb-3">Why Choose Global Debate Society?</h2>
-            <div class="grid grid-3">
-                <div class="feature-card animate-on-scroll">
-                    <i class="fas fa-users"></i>
-                    <h3>Community</h3>
-                    <p>Join a vibrant community of debaters, speakers, and critical thinkers from across Southeast Asia.</p>
-                </div>
-                <div class="feature-card animate-on-scroll">
-                    <i class="fas fa-brain"></i>
-                    <h3>Skill Development</h3>
-                    <p>Enhance your critical thinking, public speaking, and argumentation skills through structured programs.</p>
-                </div>
-                <div class="feature-card animate-on-scroll">
-                    <i class="fas fa-globe-asia"></i>
-                    <h3>Global Network</h3>
-                    <p>Connect with international debate organizations and participate in worldwide competitions.</p>
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Why Choose Global Debate Society?</h2>
+                <div class="grid grid-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="feature-title">Community</h3>
+                        <p>Join a vibrant community of debaters, speakers, and critical thinkers from across Southeast Asia.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="feature-title">Skill Development</h3>
+                        <p>Enhance your critical thinking, public speaking, and argumentation skills through structured programs.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <h3 class="feature-title">Global Network</h3>
+                        <p>Connect with international debate organizations and participate in worldwide competitions.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="upcoming-events">
             <div class="container">
-                <h2 class="text-center mb-3">Featured Events</h2>
-                <div class="grid grid-2">
-                    <div class="event-card animate-on-scroll">
-                        <div class="event-date">
-                            <span class="month">APR</span>
-                            <span class="day">15</span>
-                        </div>
-                        <div class="event-details">
-                            <h3>Southeast Asian Debate Championship</h3>
-                            <p class="event-location"><i class="fas fa-map-marker-alt"></i> Ho Chi Minh City, Vietnam</p>
-                            <p class="event-description">Join the premier debate competition in Southeast Asia.</p>
-                            <a href="pages/events.html#championship" class="btn btn-primary">Learn More</a>
-                        </div>
+                <h2 class="section-title">Featured Events</h2>
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="month">APR</span>
+                        <span class="day">15</span>
                     </div>
-                    <div class="event-card animate-on-scroll">
-                        <div class="event-date">
-                            <span class="month">APR</span>
-                            <span class="day">22</span>
+                    <div class="event-content">
+                        <h3 class="event-title">Southeast Asian Debate Championship</h3>
+                        <div class="event-meta">
+                            <div>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Ho Chi Minh City, Vietnam</span>
+                            </div>
+                            <div>
+                                <i class="fas fa-clock"></i>
+                                <span>9:00 AM - 6:00 PM</span>
+                            </div>
                         </div>
-                        <div class="event-details">
-                            <h3>Public Speaking Masterclass</h3>
-                            <p class="event-location"><i class="fas fa-map-marker-alt"></i> Online Event</p>
-                            <p class="event-description">Master the art of public speaking with expert guidance.</p>
-                            <a href="pages/events.html#masterclass" class="btn btn-primary">Learn More</a>
+                        <p>Join the premier debate competition in Southeast Asia with teams from across the region. Compete for regional recognition and valuable prizes.</p>
+                        <a href="pages/events.html#championship" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="month">APR</span>
+                        <span class="day">22</span>
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Public Speaking Masterclass</h3>
+                        <div class="event-meta">
+                            <div>
+                                <i class="fas fa-video"></i>
+                                <span>Online Event</span>
+                            </div>
+                            <div>
+                                <i class="fas fa-clock"></i>
+                                <span>7:00 PM - 9:00 PM</span>
+                            </div>
                         </div>
+                        <p>Master the art of public speaking with expert guidance from award-winning speakers and debate champions. Perfect for both beginners and experienced speakers.</p>
+                        <a href="pages/events.html#masterclass" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -91,87 +130,170 @@
 
         <section class="testimonials">
             <div class="container">
-                <h2 class="text-center mb-3">What Our Members Say</h2>
-                <div class="grid grid-3">
-                    <div class="testimonial-card animate-on-scroll">
-                        <img src="assets/images/testimonial1.jpg" alt="Member Photo">
-                        <blockquote>
-                            "Global Debate Society has transformed my public speaking abilities and critical thinking skills."
-                        </blockquote>
-                        <p class="testimonial-author">- Sarah Chen, Singapore</p>
-                    </div>
-                    <div class="testimonial-card animate-on-scroll">
-                        <img src="assets/images/testimonial2.jpg" alt="Member Photo">
-                        <blockquote>
-                            "The community here is incredibly supportive and the training programs are world-class."
-                        </blockquote>
-                        <p class="testimonial-author">- Ahmad Rahman, Malaysia</p>
-                    </div>
-                    <div class="testimonial-card animate-on-scroll">
-                        <img src="assets/images/testimonial3.jpg" alt="Member Photo">
-                        <blockquote>
-                            "Participating in international debates has broadened my perspective significantly."
-                        </blockquote>
-                        <p class="testimonial-author">- Nguyen Thi Minh, Vietnam</p>
+                <h2 class="section-title">What Our Members Say</h2>
+                <div class="testimonial-slider">
+                    <div class="testimonial-item">
+                        <div class="testimonial-text">
+                            Global Debate Society has transformed my public speaking abilities and critical thinking skills. The mentors are world-class and the community is incredibly supportive.
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="assets/images/testimonial1.jpg" alt="Member Photo" class="testimonial-avatar">
+                            <div>
+                                <div class="testimonial-name">Sarah Chen</div>
+                                <div class="testimonial-role">Singapore</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="cta">
-            <div class="container text-center">
-                <h2>Ready to Join Our Community?</h2>
-                <p>Start your journey with Global Debate Society today!</p>
-                <div class="cta-buttons">
-                    <a href="pages/join.html" class="btn btn-primary">Become a Member</a>
-                    <a href="pages/contact.html" class="btn btn-outline">Contact Us</a>
+        <section class="latest-blog">
+            <div class="container">
+                <h2 class="section-title">Latest from Our Blog</h2>
+                <div class="section-subtitle">Stay updated with debate techniques, success stories, and event recaps</div>
+                
+                <div class="grid grid-3">
+                    <article class="blog-card-small">
+                        <div class="blog-card-small-img">
+                            <img src="assets/images/blog/featured-debate.jpg" alt="Featured debate article">
+                        </div>
+                        <div class="blog-card-small-content">
+                            <h3 class="blog-card-small-title">
+                                <a href="pages/blog.html">Highlights from the 2024 Southeast Asian Debate Championship</a>
+                            </h3>
+                            <div class="blog-card-small-meta">
+                                <span><i class="far fa-calendar"></i> April 2, 2024</span>
+                                <span><i class="far fa-folder"></i> Championship</span>
+                            </div>
+                            <p class="blog-card-small-excerpt">A recap of the exciting moments, winning teams and strategies from this year's championship event held in Ho Chi Minh City.</p>
+                            <a href="pages/blog.html" class="link link-underline blog-card-small-link">Read More</a>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card-small">
+                        <div class="blog-card-small-img">
+                            <img src="assets/images/blog/debate-techniques.jpg" alt="Debate techniques">
+                        </div>
+                        <div class="blog-card-small-content">
+                            <h3 class="blog-card-small-title">
+                                <a href="pages/blog.html">5 Advanced Rebuttal Techniques That Win Debates</a>
+                            </h3>
+                            <div class="blog-card-small-meta">
+                                <span><i class="far fa-calendar"></i> March 28, 2024</span>
+                                <span><i class="far fa-folder"></i> Training</span>
+                            </div>
+                            <p class="blog-card-small-excerpt">Learn powerful rebuttal strategies that champion debaters use to effectively counter opponents' arguments and win debates.</p>
+                            <a href="pages/blog.html" class="link link-underline blog-card-small-link">Read More</a>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card-small">
+                        <div class="blog-card-small-img">
+                            <img src="assets/images/blog/virtual-debates.jpg" alt="Virtual debates">
+                        </div>
+                        <div class="blog-card-small-content">
+                            <h3 class="blog-card-small-title">
+                                <a href="pages/blog.html">The Rise of Virtual Debates: Challenges and Opportunities</a>
+                            </h3>
+                            <div class="blog-card-small-meta">
+                                <span><i class="far fa-calendar"></i> March 20, 2024</span>
+                                <span><i class="far fa-folder"></i> Technology</span>
+                            </div>
+                            <p class="blog-card-small-excerpt">Exploring how virtual debate formats are changing the landscape of competitive debating and creating new possibilities.</p>
+                            <a href="pages/blog.html" class="link link-underline blog-card-small-link">Read More</a>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <a href="pages/blog.html" class="btn btn-outline">View All Blog Posts</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta bg-primary">
+            <div class="container">
+                <h2 class="cta-title">Ready to Join Our Community?</h2>
+                <p class="cta-subtitle">Start your journey with Global Debate Society today!</p>
+                <div class="hero-buttons">
+                    <a href="pages/join.html" class="btn btn-accent btn-lg">Become a Member</a>
+                    <a href="pages/about.html#contact" class="btn btn-outline btn-lg">Learn More</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="footer">
         <div class="footer-content">
-            <div class="footer-section">
+            <div class="footer-col footer-about">
+                <h3>Global Debate Society</h3>
+                <p>We are dedicated to fostering critical thinking, public speaking, and argumentation skills throughout Southeast Asia through debate education and competitions.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
                 <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="../../index.html">Home</a></li>
-                    <li><a href="pages/about.html">About</a></li>
+                <ul class="footer-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pages/about.html">About Us</a></li>
                     <li><a href="pages/events.html">Events</a></li>
                     <li><a href="pages/resources.html">Resources</a></li>
+                    <li><a href="pages/join.html">Join Us</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
+            
+            <div class="footer-col">
                 <h3>Resources</h3>
-                <ul>
+                <ul class="footer-list">
                     <li><a href="pages/resources.html#guides">Debate Guides</a></li>
                     <li><a href="pages/resources.html#materials">Training Materials</a></li>
                     <li><a href="pages/resources.html#videos">Video Library</a></li>
+                    <li><a href="pages/blog.html">Blog Articles</a></li>
+                    <li><a href="pages/faq.html">FAQs</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
+            
+            <div class="footer-col">
                 <h3>Contact</h3>
-                <ul>
-                    <li><a href="pages/contact.html">Get in Touch</a></li>
-                    <li><a href="pages/join.html">Join Us</a></li>
-                    <li><a href="pages/faq.html">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Connect</h3>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                <div class="footer-contact-item">
+                    <div class="footer-contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="footer-contact-text">
+                        123 Debate Street, Singapore 189654
+                    </div>
+                </div>
+                <div class="footer-contact-item">
+                    <div class="footer-contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="footer-contact-text">
+                        info@globaldebatesociety.org
+                    </div>
+                </div>
+                <div class="footer-contact-item">
+                    <div class="footer-contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="footer-contact-text">
+                        +65 6123 4567
+                    </div>
                 </div>
             </div>
         </div>
+        
         <div class="footer-bottom">
             <p>&copy; 2024 Global Debate Society. All rights reserved.</p>
         </div>
     </footer>
 
+    <script src="src/js/mobile-menu.js"></script>
     <script src="src/js/main.js"></script>
 </body>
 </html> 

@@ -4,22 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Global Debate Society</title>
-    <link rel="stylesheet" href="../src/css/main.css">
-    <link rel="stylesheet" href="../src/css/about.css">
+    <!-- Updated CSS imports with new structure -->
+    <link rel="stylesheet" href="../src/css/main-styles/variables.css">
+    <link rel="stylesheet" href="../src/css/main-styles/colors.css">
+    <link rel="stylesheet" href="../src/css/main-styles/main.css">
+    <link rel="stylesheet" href="../src/css/main-styles/navbar.css">
+    <link rel="stylesheet" href="../src/css/main-styles/footer.css">
+    <link rel="stylesheet" href="../src/css/main-styles/components.css">
+    <link rel="stylesheet" href="../src/css/pages-styles/about.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <nav class="main-nav">
-            <div class="logo">
-                <h1>Global Debate Society</h1>
-            </div>
-            <ul class="nav-links">
+        <nav class="navbar">
+            <a href="../index.html" class="navbar-logo">
+                <span class="navbar-logo-text">Global Debate Society</span>
+            </a>
+            
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="navbar-nav">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="about.html" class="active">About</a></li>
                 <li><a href="events.html">Events</a></li>
                 <li><a href="resources.html">Resources</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="join.html">Join Us</a></li>
             </ul>
         </nav>
     </header>
@@ -109,48 +123,82 @@
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="resources.html">Resources</a></li>
-                </ul>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <span class="footer-logo-text">Global Debate Society</span>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
             </div>
-            <div class="footer-section">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="resources.html#guides">Debate Guides</a></li>
-                    <li><a href="resources.html#materials">Training Materials</a></li>
-                    <li><a href="resources.html#videos">Video Library</a></li>
-                </ul>
+            
+            <div class="footer-content">
+                <div class="footer-widget">
+                    <h3 class="footer-widget-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="join.html">Join Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-widget">
+                    <h3 class="footer-widget-title">Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="resources.html#guides">Debate Guides</a></li>
+                        <li><a href="resources.html#materials">Training Materials</a></li>
+                        <li><a href="resources.html#videos">Video Library</a></li>
+                        <li><a href="resources.html#research">Research Papers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-widget">
+                    <h3 class="footer-widget-title">Contact</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Debate Street, Singapore</li>
+                        <li><i class="fas fa-envelope"></i> info@globaldebatesociety.org</li>
+                        <li><i class="fas fa-phone"></i> +65 1234 5678</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-widget">
+                    <h3 class="footer-widget-title">Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates.</p>
+                    <form class="footer-subscribe">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
             </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <ul>
-                    <li><a href="contact.html">Get in Touch</a></li>
-                    <li><a href="pages/join.html">Join Us</a></li>
-                    <li><a href="pages/faq.html">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Connect</h3>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2024 Global Debate Society. All rights reserved.</p>
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Global Debate Society. All rights reserved.</p>
-        </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Updated JavaScript files -->
+    <script src="../src/js/mobile-menu.js"></script>
     <script src="../src/js/main.js"></script>
 </body>
 </html> 

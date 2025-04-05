@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Global Debate Society</title>
+    <link rel="stylesheet" href="../src/css/main.css">
+    <link rel="stylesheet" href="../src/css/blog.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <h1>Global Debate Society</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="join.html">Join Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Debate Insights Blog</h1>
+                <p>Thoughts, tips, and perspectives from the world of debate</p>
+            </div>
+        </section>
+        
+        <section class="featured-posts">
+            <div class="container">
+                <div class="featured-post-main">
+                    <article class="featured-card">
+                        <div class="featured-image">
+                            <img src="../assets/images/blog/featured-debate.jpg" alt="Featured debate article">
+                        </div>
+                        <div class="featured-content">
+                            <div class="post-meta">
+                                <span class="category">Championship</span>
+                                <span class="date">April 2, 2024</span>
+                            </div>
+                            <h2>Highlights from the 2024 Southeast Asian Debate Championship</h2>
+                            <p>A comprehensive recap of the intense competition, surprising outcomes, and inspiring performances that defined this year's championship event in Ho Chi Minh City.</p>
+                            <div class="post-author">
+                                <img src="../assets/images/authors/author1.jpg" alt="Dr. Lim Wei Ling">
+                                <span>Dr. Lim Wei Ling</span>
+                            </div>
+                            <a href="blog/2024-championship-highlights.html" class="btn btn-primary">Read More</a>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="featured-posts-secondary">
+                    <article class="featured-card-small">
+                        <div class="featured-image">
+                            <img src="../assets/images/blog/debate-techniques.jpg" alt="Debate techniques">
+                            <div class="post-meta">
+                                <span class="category">Training</span>
+                            </div>
+                        </div>
+                        <div class="featured-content">
+                            <h3>5 Advanced Rebuttal Techniques That Win Debates</h3>
+                            <p>Master these powerful counter-argument strategies to strengthen your position and dismantle opposing arguments effectively.</p>
+                            <div class="post-footer">
+                                <span class="date">March 28, 2024</span>
+                                <a href="blog/advanced-rebuttal-techniques.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="featured-card-small">
+                        <div class="featured-image">
+                            <img src="../assets/images/blog/virtual-debates.jpg" alt="Virtual debates">
+                            <div class="post-meta">
+                                <span class="category">Technology</span>
+                            </div>
+                        </div>
+                        <div class="featured-content">
+                            <h3>The Rise of Virtual Debates: Challenges and Opportunities</h3>
+                            <p>How online debate platforms are transforming accessibility and participation while creating new challenges for judges and competitors.</p>
+                            <div class="post-footer">
+                                <span class="date">March 20, 2024</span>
+                                <a href="blog/virtual-debates-challenges.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <section class="blog-content">
+            <div class="container">
+                <div class="blog-filters">
+                    <div class="search-container">
+                        <input type="text" id="blog-search" placeholder="Search blog posts...">
+                        <button type="button" id="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="filter-tags">
+                        <button class="filter-btn active" data-category="all">All</button>
+                        <button class="filter-btn" data-category="technique">Techniques</button>
+                        <button class="filter-btn" data-category="events">Events</button>
+                        <button class="filter-btn" data-category="training">Training</button>
+                        <button class="filter-btn" data-category="opinion">Opinion</button>
+                        <button class="filter-btn" data-category="success-stories">Success Stories</button>
+                    </div>
+                </div>
+                
+                <div class="blog-grid">
+                    <article class="blog-card" data-category="technique">
+                        <div class="blog-card-image">
+                            <img src="../assets/images/blog/persuasion.jpg" alt="Persuasion techniques">
+                            <div class="post-meta">
+                                <span class="category">Technique</span>
+                            </div>
+                        </div>
+                        <div class="blog-card-content">
+                            <h3>The Psychology of Persuasion in Competitive Debate</h3>
+                            <p>Understanding how cognitive biases influence judges' perceptions and how to ethically leverage these insights in your arguments.</p>
+                            <div class="post-footer">
+                                <span class="date">March 15, 2024</span>
+                                <a href="blog/psychology-persuasion-debate.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card" data-category="training">
+                        <div class="blog-card-image">
+                            <img src="../assets/images/blog/research-methods.jpg" alt="Research methods">
+                            <div class="post-meta">
+                                <span class="category">Training</span>
+                            </div>
+                        </div>
+                        <div class="blog-card-content">
+                            <h3>Efficient Research Methods for Time-Pressured Debates</h3>
+                            <p>Expert strategies for quickly gathering reliable information and organizing evidence to support your arguments effectively.</p>
+                            <div class="post-footer">
+                                <span class="date">March 10, 2024</span>
+                                <a href="blog/efficient-research-methods.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card" data-category="events">
+                        <div class="blog-card-image">
+                            <img src="../assets/images/blog/debate-format.jpg" alt="Debate format">
+                            <div class="post-meta">
+                                <span class="category">Events</span>
+                            </div>
+                        </div>
+                        <div class="blog-card-content">
+                            <h3>Mastering Different Debate Formats: A Comprehensive Guide</h3>
+                            <p>Learn the distinct rules, strategies, and preparation techniques for excelling in various competitive debate formats.</p>
+                            <div class="post-footer">
+                                <span class="date">March 5, 2024</span>
+                                <a href="blog/debate-format-guide.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card" data-category="opinion">
+                        <div class="blog-card-image">
+                            <img src="../assets/images/blog/debate-education.jpg" alt="Debate in education">
+                            <div class="post-meta">
+                                <span class="category">Opinion</span>
+                            </div>
+                        </div>
+                        <div class="blog-card-content">
+                            <h3>Why Debate Should Be Required in All Schools</h3>
+                            <p>The compelling case for making formal debate part of core education to develop critical thinking, communication, and citizenship skills.</p>
+                            <div class="post-footer">
+                                <span class="date">February 28, 2024</span>
+                                <a href="blog/debate-in-schools.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card" data-category="success-stories">
+                        <div class="blog-card-image">
+                            <img src="../assets/images/blog/success-story.jpg" alt="Success story">
+                            <div class="post-meta">
+                                <span class="category">Success Stories</span>
+                            </div>
+                        </div>
+                        <div class="blog-card-content">
+                            <h3>From Novice to National Champion: Lin Mei-Hua's Journey</h3>
+                            <p>How a shy university student transformed into Malaysia's top debater through persistence, innovative training, and community support.</p>
+                            <div class="post-footer">
+                                <span class="date">February 22, 2024</span>
+                                <a href="blog/lin-meihua-success-story.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card" data-category="technique">
+                        <div class="blog-card-image">
+                            <img src="../assets/images/blog/public-speaking.jpg" alt="Public speaking">
+                            <div class="post-meta">
+                                <span class="category">Technique</span>
+                            </div>
+                        </div>
+                        <div class="blog-card-content">
+                            <h3>Voice Modulation Techniques for Impactful Debate Speeches</h3>
+                            <p>Practical exercises and tips to control pace, tone, and emphasis to captivate your audience and strengthen your arguments.</p>
+                            <div class="post-footer">
+                                <span class="date">February 18, 2024</span>
+                                <a href="blog/voice-modulation-techniques.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="pagination">
+                    <span class="current-page">1</span>
+                    <a href="blog-page2.html">2</a>
+                    <a href="blog-page3.html">3</a>
+                    <a href="blog-page2.html" class="next-page">Next <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>Subscribe to Our Newsletter</h2>
+                    <p>Get the latest debate insights, tips, and event announcements delivered directly to your inbox.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                    <p class="form-note">We respect your privacy and will never share your information.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="resources.html#guides">Debate Guides</a></li>
+                    <li><a href="resources.html#materials">Training Materials</a></li>
+                    <li><a href="resources.html#videos">Video Library</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="contact.html">Get in Touch</a></li>
+                    <li><a href="join.html">Join Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Global Debate Society. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../src/js/main.js"></script>
+    <script src="../src/js/blog.js"></script>
+</body>
+</html> 

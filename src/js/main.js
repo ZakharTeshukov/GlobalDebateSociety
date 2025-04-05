@@ -1,3 +1,190 @@
+/**
+ * Global Debate Society - Main JavaScript
+ */
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Set current active link in navigation
+    setActiveNavLink();
+    
+    // Add box shadow to navbar on scroll
+    handleNavbarScroll();
+    
+    // Initialize tooltips if any
+    initializeTooltips();
+    
+    // Back to top button functionality
+    handleBackToTop();
+    
+    // Update copyright year
+    updateCopyright();
+    
+    // Animate elements on scroll if they have the class
+    animateOnScroll();
+    
+    // Initialize smooth scrolling for anchor links
+    initSmoothScrolling();
+});
+
+/**
+ * Sets the active navigation link based on current page
+ */
+function setActiveNavLink() {
+    const currentPage = window.location.pathname;
+    const navLinks = document.querySelectorAll('.navbar-nav a');
+    
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        
+        // Check for exact match or homepage
+        if (currentPage.endsWith(href) || 
+            (currentPage.endsWith('/') && href === 'index.html')) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}
+
+/**
+ * Adds shadow to navbar on scroll
+ */
+function handleNavbarScroll() {
+    const navbar = document.querySelector('.navbar');
+    if (!navbar) return;
+    
+    const scrollThreshold = 50;
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > scrollThreshold) {
+            navbar.classList.add('navbar-scrolled');
+        } else {
+            navbar.classList.remove('navbar-scrolled');
+        }
+    });
+}
+
+/**
+ * Initializes tooltips on elements with data-tooltip attribute
+ */
+function initializeTooltips() {
+    const tooltipElements = document.querySelectorAll('[data-tooltip]');
+    
+    tooltipElements.forEach(element => {
+        element.addEventListener('mouseenter', function() {
+            const tooltipText = this.getAttribute('data-tooltip');
+            
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tooltip';
+            tooltip.textContent = tooltipText;
+            
+            document.body.appendChild(tooltip);
+            
+            const elementRect = this.getBoundingClientRect();
+            tooltip.style.top = `${elementRect.top - tooltip.offsetHeight - 10}px`;
+            tooltip.style.left = `${elementRect.left + (elementRect.width / 2) - (tooltip.offsetWidth / 2)}px`;
+            tooltip.style.opacity = '1';
+            
+            this.addEventListener('mouseleave', function() {
+                document.body.removeChild(tooltip);
+            }, { once: true });
+        });
+    });
+}
+
+/**
+ * Back to top button functionality
+ */
+function handleBackToTop() {
+    // Create back to top button if it doesn't exist
+    let backToTopBtn = document.querySelector('.back-to-top');
+    
+    if (!backToTopBtn) {
+        backToTopBtn = document.createElement('button');
+        backToTopBtn.className = 'back-to-top';
+        backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+        document.body.appendChild(backToTopBtn);
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+    
+    // Show/hide button based on scroll position
+    const scrollThreshold = 300;
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > scrollThreshold) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    });
+}
+
+/**
+ * Updates copyright year in footer
+ */
+function updateCopyright() {
+    const copyright = document.querySelector('.footer-bottom p');
+    if (copyright) {
+        const year = new Date().getFullYear();
+        copyright.textContent = `© ${year} Global Debate Society. All rights reserved.`;
+    }
+}
+
+/**
+ * Animates elements when they scroll into view
+ */
+function animateOnScroll() {
+    // Add .animate-fade-in class to elements that should animate
+    const animatedElements = document.querySelectorAll('.animate-fade-in');
+    
+    if (animatedElements.length === 0) return;
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    animatedElements.forEach(element => {
+        observer.observe(element);
+    });
+}
+
+/**
+ * Initialize smooth scrolling for anchor links
+ */
+function initSmoothScrolling() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            
+            if (targetId === '#') return;
+            
+            e.preventDefault();
+            
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+}
+
 // Handle mobile navigation
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Navigation Toggle
@@ -111,17 +298,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     animateOnScroll();
 
-    // Dynamic Copyright Year
-    const updateCopyright = () => {
-        const copyright = document.querySelector('.footer-bottom p');
-        if (copyright) {
-            const year = new Date().getFullYear();
-            copyright.textContent = `© ${year} Global Debate Society. All rights reserved.`;
-        }
-    };
-
-    updateCopyright();
-
     // Add active class to current navigation item
     const setActiveNavItem = () => {
         const currentPath = window.location.pathname;
@@ -207,23 +383,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 250);
     });
 });
-
-// Add animation on scroll
-const animateOnScroll = () => {
-    const elements = document.querySelectorAll('.feature-card, .hero-content, .cta-button');
-    
-    elements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementBottom = element.getBoundingClientRect().bottom;
-        
-        if (elementTop < window.innerHeight && elementBottom > 0) {
-            element.classList.add('animate');
-        }
-    });
-};
-
-window.addEventListener('scroll', animateOnScroll);
-window.addEventListener('load', animateOnScroll);
 
 // Form validation (if contact form exists)
 const contactForm = document.querySelector('.contact-form');
