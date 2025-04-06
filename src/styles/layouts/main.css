@@ -8,11 +8,14 @@
  */
 
 /* === Import Standard Styles === */
-@import url('./variables.css');
-@import url('./components.css');
-@import url('./layout.css');
-@import url('./navbar.css');
-@import url('./footer.css');
+@import url('../utils/variables.css');
+@import url('../utils/reset.css');
+@import url('../utils/mixins.css');
+@import url('../layouts/navbar.css');
+@import url('../layouts/footer.css');
+@import url('../components/buttons.css');
+@import url('../components/cards.css');
+@import url('../components/forms.css');
 
 /* === Global Typography === */
 h1, h2, h3, h4, h5, h6 {
@@ -21,6 +24,8 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--primary-color);
     line-height: 1.2;
 }
+
+
 
 h1 { font-size: 2.5rem; font-weight: var(--font-weight-bold); }
 h2 { font-size: 2rem; font-weight: var(--font-weight-semibold); }
@@ -438,6 +443,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--white);
+    overflow-x: hidden;
 }
 
 /* Typography */
@@ -917,4 +923,9 @@ footer {
 
 .read-more:hover i {
     transform: translateX(3px);
-} 
+}
+
+/* Hide scrollbar for Firefox */
+* {
+    scrollbar-width: none;  /* Firefox */
+}
