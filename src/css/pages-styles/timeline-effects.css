@@ -1,0 +1,206 @@
+/**
+ * Timeline Additional Effects
+ *
+ * Additional effects for the interactive timeline, including
+ * ripple effects and animations.
+ */
+
+/* Year Label - removed */
+.timeline-year-label {
+    display: none;
+}
+
+/* Node Ripple Effect */
+.timeline-node-ripple {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(var(--primary-color-rgb), 0.6);
+    z-index: -1;
+    opacity: 1;
+    animation: node-ripple 1s ease-out forwards;
+}
+
+@keyframes node-ripple {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2.5);
+        opacity: 0.8;
+    }
+}
+
+/* Custom styling for timeline event transitions */
+.timeline-event {
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 1;
+}
+
+.timeline-event-active {
+    transform: translateZ(0);
+    opacity: 1;
+}
+
+/* Perspective effect on expanded events */
+.timeline-event-expanded .timeline-event-content {
+    transform: perspective(1000px) rotateX(2deg);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                box-shadow 0.5s ease;
+    opacity: 1;
+}
+
+/* 3D hover effect on timeline nodes */
+.timeline-event-node:hover {
+    transform: translate(-50%, 0) scale(1.1) rotate(5deg);
+    opacity: 1;
+}
+
+/* Timeline icon animations */
+.timeline-event-node i {
+    transition: transform 0.3s ease, color 0.3s ease;
+    opacity: 1;
+}
+
+.timeline-event-node:hover i,
+.timeline-event-active .timeline-event-node i {
+    transform: scale(1.2);
+    color: var(--accent-color);
+    opacity: 1;
+}
+
+/* Timeline event content hover */
+.timeline-event-content:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    opacity: 1;
+}
+
+/* Hover effect on timeline track */
+.timeline-container:hover .timeline-track {
+    background-color: rgba(var(--primary-color-rgb), 0.4);
+    opacity: 1;
+}
+
+/* Timeline section entry */
+.timeline-section.animate-in {
+    animation: section-fade-in 1s ease forwards;
+    opacity: 1;
+}
+
+@keyframes section-fade-in {
+    0% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Timeline node pulsing effect for active events */
+.timeline-event-active .timeline-event-node::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(var(--primary-color-rgb), 0.4);
+    animation: node-pulse 2s infinite;
+    z-index: -1;
+    opacity: 1;
+}
+
+@keyframes node-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Visual indicator for timeline event connectors */
+.timeline-event::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    width: 50px;
+    height: 2px;
+    background-color: rgba(var(--primary-color-rgb), 0.7);
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+    opacity: 1;
+}
+
+.timeline-event-left::after {
+    right: calc(50% + 30px);
+}
+
+.timeline-event-right::after {
+    left: calc(50% + 30px);
+}
+
+.timeline-event-active::after {
+    background-color: rgba(var(--primary-color-rgb), 1);
+    opacity: 1;
+}
+
+.timeline-event:last-child::after {
+    display: none;
+}
+
+/* For mobile view */
+@media (max-width: 992px) {
+    .timeline-event::after {
+        left: 30px;
+    }
+}
+
+/* Custom loading animation for the timeline section */
+.timeline-section.loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(var(--bg-light-rgb), 0.8);
+    z-index: 10;
+    opacity: 1;
+}
+
+.timeline-section.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(var(--primary-color-rgb), 0.6);
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    animation: timeline-loader 1s linear infinite;
+    z-index: 11;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+
+@keyframes timeline-loader {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+} 

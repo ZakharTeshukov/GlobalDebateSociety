@@ -12,11 +12,45 @@
     <link rel="stylesheet" href="../../src/css/main-styles/footer.css">
     <link rel="stylesheet" href="../../src/css/main-styles/components.css">
     <link rel="stylesheet" href="../../src/css/pages-styles/about.css">
+    <!-- New timeline styles -->
+    <link rel="stylesheet" href="../../src/css/pages-styles/timeline.css">
+    <link rel="stylesheet" href="../../src/css/pages-styles/timeline-effects.css">
+    <link rel="stylesheet" href="../../src/css/pages-styles/timeline-animations.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Critical styles to ensure timeline visibility -->
+    <style>
+        .timeline-section {
+            display: block !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            margin-bottom: 8rem !important;
+        }
+        
+        /* Remove any year labels or background elements */
+        .timeline-year-label {
+            display: none !important;
+        }
+        
+        /* Ensure appropriate spacing between sections */
+        #our-team {
+            margin-top: 8rem !important;
+            padding-top: 4rem !important;
+        }
+
+        /* Placeholder image style */
+        .team-member img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #f0f0f0;
+        }
+    </style>
 </head>
 <body>
-    <header>
+    <header> 
         <nav class="navbar">
             <a href="../../index.html" class="navbar-logo">
                 <span class="navbar-logo-text">Global Debate Society</span>
@@ -33,23 +67,25 @@
                 <li><a href="about.html" class="active">About</a></li>
                 <li><a href="events.html">Events</a></li>
                 <li><a href="resources.html">Resources</a></li>
-                <li><a href="join.html">Join Us</a></li>
+                <li><a href="join.html" class="btn-join">Join</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="about-hero">
-            <div class="about-content">
-                <h1>Our Mission</h1>
-                <p>Empowering voices, fostering critical thinking, and building a global community of debaters.</p>
+        <section class="hero-section about-hero">
+            <div class="hero-content">
+                <h1>About Us</h1>
+                <p>Empowering students through the art of debate and critical thinking.</p>
             </div>
         </section>
 
-        <section class="about-details">
+        <div class="page-content">
             <div class="about-section">
-                <h2>Who We Are</h2>
-                <p>Global Debate Society is a transnational organization dedicated to promoting debate education and critical thinking skills across Southeast Asia. Founded by passionate debaters and educators, we aim to create a platform where students can develop their argumentation, public speaking, and analytical abilities.</p>
+                <h2>Our Mission</h2>
+                <p class="mission-statement">To foster critical thinking, effective communication, and global awareness through debate education and competitions.</p>
+                <p>The Global Debate Society (GDS) is dedicated to promoting the art and skill of debate among students across Southeast Asia. We believe that debate is not just an academic exercise but a transformative experience that equips young people with essential life skills.</p>
+                <p>Through our programs, competitions, and resources, we aim to create a vibrant community of debaters who are articulate, thoughtful, and engaged with the pressing issues of our time.</p>
             </div>
 
             <div class="about-section">
@@ -58,22 +94,22 @@
                     <div class="value-card">
                         <i class="fas fa-brain"></i>
                         <h3>Critical Thinking</h3>
-                        <p>Fostering analytical and logical reasoning skills</p>
+                        <p>We champion the development of analytical skills and reasoned judgment.</p>
                     </div>
                     <div class="value-card">
                         <i class="fas fa-comments"></i>
-                        <h3>Open Dialogue</h3>
-                        <p>Promoting respectful and constructive discourse</p>
+                        <h3>Effective Communication</h3>
+                        <p>We believe in the power of clear, persuasive, and respectful discourse.</p>
                     </div>
                     <div class="value-card">
                         <i class="fas fa-globe-asia"></i>
                         <h3>Global Perspective</h3>
-                        <p>Understanding diverse viewpoints and cultures</p>
+                        <p>We encourage understanding diverse viewpoints and cultural contexts.</p>
                     </div>
                     <div class="value-card">
-                        <i class="fas fa-users"></i>
-                        <h3>Community</h3>
-                        <p>Building a supportive network of debaters</p>
+                        <i class="fas fa-handshake"></i>
+                        <h3>Collaborative Learning</h3>
+                        <p>We foster a supportive community where knowledge is freely shared.</p>
                     </div>
                 </div>
             </div>
@@ -100,27 +136,63 @@
                 </div>
             </div>
 
-            <div class="about-section">
+            <!-- Our Journey Timeline Section -->
+            <!-- This section contains a dynamic, interactive timeline that shows the history of GDS -->
+            <section class="timeline-section" id="our-journey">
+                <div class="timeline-heading">
+                    <h2 class="timeline-title">Our Journey</h2>
+                    <p class="timeline-subtitle">Explore the key milestones in Global Debate Society's history since our founding in 2022.</p>
+                </div>
+                <div class="timeline-container">
+                    <!-- Timeline content is dynamically generated by JavaScript -->
+                    <!-- See src/js/timeline-animation.js for implementation details -->
+                </div>
+            </section>
+
+            <!-- Clear divider to ensure spacing between sections -->
+            <div class="section-divider"></div>
+
+            <!-- Our Team Section -->
+            <section class="about-section" id="our-team">
                 <h2>Our Team</h2>
+                <p class="team-intro">Meet the dedicated individuals who drive our mission forward.</p>
                 <div class="team-grid">
                     <div class="team-member">
-                        <img src="../../src/assets/images/profile-placeholder.svg" alt="John Smith">
-                        <h3>John Smith</h3>
-                        <p>Executive Director</p>
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23f0f0f0'/%3E%3Ctext x='100' y='110' font-family='Arial' font-size='40' fill='%23999' text-anchor='middle'%3EML%3C/text%3E%3C/svg%3E" alt="Mei Lin">
+                        <h3>Mei Lin</h3>
+                        <p class="member-role">Founder & President</p>
+                        <p>Former international debate champion with a passion for education.</p>
                     </div>
                     <div class="team-member">
-                        <img src="../../src/assets/images/profile-placeholder.svg" alt="Sarah Johnson">
-                        <h3>Sarah Johnson</h3>
-                        <p>Head of Education</p>
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23f0f0f0'/%3E%3Ctext x='100' y='110' font-family='Arial' font-size='40' fill='%23999' text-anchor='middle'%3ERP%3C/text%3E%3C/svg%3E" alt="Rajiv Patel">
+                        <h3>Rajiv Patel</h3>
+                        <p class="member-role">Education Director</p>
+                        <p>Experienced debate coach specializing in training novice debaters.</p>
                     </div>
                     <div class="team-member">
-                        <img src="../../src/assets/images/profile-placeholder.svg" alt="Michael Chen">
-                        <h3>Michael Chen</h3>
-                        <p>Events Coordinator</p>
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23f0f0f0'/%3E%3Ctext x='100' y='110' font-family='Arial' font-size='40' fill='%23999' text-anchor='middle'%3ESN%3C/text%3E%3C/svg%3E" alt="Sarah Nguyen">
+                        <h3>Sarah Nguyen</h3>
+                        <p class="member-role">Outreach Coordinator</p>
+                        <p>Communications expert focused on expanding our global partnerships.</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23f0f0f0'/%3E%3Ctext x='100' y='110' font-family='Arial' font-size='40' fill='%23999' text-anchor='middle'%3EAR%3C/text%3E%3C/svg%3E" alt="Ahmad Rahman">
+                        <h3>Ahmad Rahman</h3>
+                        <p class="member-role">Program Manager</p>
+                        <p>Event organizer with experience in national and regional competitions.</p>
                     </div>
                 </div>
+            </section>
+
+            <div class="about-section">
+                <h2>Join Our Community</h2>
+                <p>Whether you're a student looking to improve your debate skills, a teacher seeking resources for your debate club, or an organization interested in partnering with us, we welcome you to join our community.</p>
+                <div class="cta-buttons">
+                    <a href="../navbar-pages/join.html" class="button primary-btn">Become a Member</a>
+                    <a href="../navbar-pages/contact.html" class="button secondary-btn">Contact Us</a>
+                </div>
             </div>
-        </section>
+        </div>
     </main>
 
     <footer class="footer">
@@ -146,14 +218,14 @@
                         <li><a href="about.html">About</a></li>
                         <li><a href="events.html">Events</a></li>
                         <li><a href="resources.html">Resources</a></li>
-                        <li><a href="join.html">Join Us</a></li>
+                        <li><a href="join.html">Join</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Resources</h3>
                     <ul class="footer-links">
-                        <li><a href="resources.html#guides">Debate Guides</a></li>
+                        <li><a href="resources.html#guides">Debate Resources</a></li>
                         <li><a href="resources.html#materials">Training Materials</a></li>
                         <li><a href="resources.html#videos">Video Library</a></li>
                         <li><a href="../footer-pages/blog.html">Blog Articles</a></li>
@@ -162,11 +234,20 @@
                 </div>
                 
                 <div class="footer-widget">
-                    <h3 class="footer-widget-title">Contact</h3>
+                    <h3 class="footer-widget-title">Contact Us</h3>
                     <ul class="footer-contact">
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Debate Street, Singapore</li>
-                        <li><i class="fas fa-envelope"></i> info@globaldebatesociety.org</li>
-                        <li><i class="fas fa-phone"></i> +65 1234 5678</li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>78 Nguyễn Đức Cảnh, Tân Phong, Quận 7, Hồ Chí Minh 700000, Vietnam</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+84 90 184 4197</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>contact@globaldebatesociety.com</span>
+                        </li>
                     </ul>
                 </div>
                 
@@ -198,8 +279,34 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Updated JavaScript files -->
+    <!-- Scripts -->
     <script src="../../src/js/mobile-menu.js"></script>
     <script src="../../src/js/main.js"></script>
+    <script src="../../src/js/timeline-animation.js"></script>
+    <script src="../../src/js/timeline-particles.js"></script>
+    <script src="../../src/js/timeline-intersect.js"></script>
+    <script src="../../src/js/timeline-tilt.js"></script>
+    
+    <!-- Timeline visibility script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('About page loaded - ensuring timeline visibility');
+            
+            setTimeout(function() {
+                const timelineSection = document.querySelector('.timeline-section');
+                if (timelineSection) {
+                    timelineSection.style.display = 'block';
+                    timelineSection.style.opacity = '1';
+                    timelineSection.style.visibility = 'visible';
+                    timelineSection.classList.remove('loading');
+                    timelineSection.classList.add('animate-in');
+                    console.log('Timeline visibility enforced');
+                    
+                    const event = new CustomEvent('timeline:animation:start');
+                    timelineSection.dispatchEvent(event);
+                }
+            }, 500);
+        });
+    </script>
 </body>
 </html> 
