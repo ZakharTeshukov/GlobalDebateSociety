@@ -1,26 +1,49 @@
 /* About Hero Section */
 .about-hero {
-    background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('../../assets/images/debate-bg.jpg');
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    overflow: hidden;
+}
+
+.about-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../src/assets/images/debate-hero-bg.svg');
     background-size: cover;
     background-position: center;
-    color: var(--white);
-    padding: 6rem 5%;
-    text-align: center;
+    z-index: -1;
 }
 
 .about-content {
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 5%;
+    text-align: center;
+    z-index: 1;
 }
 
 .about-content h1 {
     font-size: 3rem;
     margin-bottom: 1.5rem;
+    color: white;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .about-content p {
     font-size: 1.2rem;
     line-height: 1.6;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
 }
 
 /* About Details Section */
@@ -128,6 +151,7 @@
     width: 100%;
     height: 250px;
     object-fit: cover;
+    background-color: #f0f0f0;
 }
 
 .team-member h3 {
