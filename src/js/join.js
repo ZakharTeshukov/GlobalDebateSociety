@@ -1,26 +1,63 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Handle pricing plan selection
-    const pricingCards = document.querySelectorAll('.pricing-card');
-    const membershipSelect = document.getElementById('membershipType');
+    // Handle option card selection
+    const optionCards = document.querySelectorAll('.option-card');
+    const membershipSelect = document.getElementById('membership-type');
     
-    pricingCards.forEach(card => {
+    optionCards.forEach(card => {
         const selectButton = card.querySelector('.btn-primary');
-        selectButton.addEventListener('click', (e) => {
-            const planType = card.querySelector('h3').textContent.toLowerCase();
-            
-            // Update the select dropdown
-            for (let i = 0; i < membershipSelect.options.length; i++) {
-                const option = membershipSelect.options[i];
-                if (option.value === planType || option.text.toLowerCase().includes(planType)) {
-                    membershipSelect.selectedIndex = i;
-                    break;
+        if (selectButton) {
+            selectButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                const planType = card.querySelector('h3').textContent.toLowerCase();
+                
+                // Update the select dropdown
+                if (membershipSelect) {
+                    for (let i = 0; i < membershipSelect.options.length; i++) {
+                        const option = membershipSelect.options[i];
+                        if (option.value === planType || option.text.toLowerCase().includes(planType)) {
+                            membershipSelect.selectedIndex = i;
+                            break;
+                        }
+                    }
                 }
-            }
-            
-            // Smooth scroll to form
-            const form = document.getElementById('registration-form');
-            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        });
+                
+                // Highlight selected card
+                optionCards.forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+                
+                // Smooth scroll to form
+                const form = document.getElementById('join-form');
+                if (form) {
+                    form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        }
+    });
+    
+    // Accordion functionality for FAQ
+    const accordionItems = document.querySelectorAll('.accordion-item');
+    
+    // Set the first accordion item as active by default
+    if (accordionItems.length > 0) {
+        accordionItems[0].classList.add('active');
+    }
+    
+    accordionItems.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        
+        if (header) {
+            header.addEventListener('click', () => {
+                // Close all other accordion items
+                accordionItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        }
     });
     
     // Toggle payment method fields
@@ -59,55 +96,61 @@ document.addEventListener('DOMContentLoaded', () => {
     togglePaymentFields();
     
     // Form validation and submission
-    const membershipForm = document.querySelector('.membership-form');
+    const membershipForm = document.querySelector('form');
     
-    membershipForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        // Custom validation
-        const isValid = validateForm(this);
-        
-        if (isValid) {
-            const submitButton = this.querySelector('button[type="submit"]');
-            const originalText = submitButton.textContent;
+    if (membershipForm) {
+        membershipForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
             
-            try {
-                submitButton.textContent = 'Processing...';
-                submitButton.disabled = true;
+            // Custom validation
+            const isValid = validateForm(this);
+            
+            if (isValid) {
+                const submitButton = this.querySelector('button[type="submit"]');
+                const originalText = submitButton ? submitButton.textContent : '';
                 
-                // Simulate form submission (replace with actual API call)
-                await new Promise(resolve => setTimeout(resolve, 2000));
-                
-                // Show success message
-                const successMessage = document.createElement('div');
-                successMessage.className = 'alert alert-success';
-                successMessage.textContent = 'Registration successful! Welcome to Global Debate Society!';
-                this.insertBefore(successMessage, this.firstChild);
-                
-                // Scroll to top of form to see the message
-                this.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                
-                // Clear form after success
-                this.reset();
-                
-                // Remove success message after 5 seconds
-                setTimeout(() => {
-                    successMessage.remove();
-                }, 5000);
-                
-            } catch (error) {
-                // Show error message
-                const errorMessage = document.createElement('div');
-                errorMessage.className = 'alert alert-error';
-                errorMessage.textContent = 'An error occurred during registration. Please try again.';
-                this.insertBefore(errorMessage, this.firstChild);
-                
-            } finally {
-                submitButton.textContent = originalText;
-                submitButton.disabled = false;
+                try {
+                    if (submitButton) {
+                        submitButton.textContent = 'Processing...';
+                        submitButton.disabled = true;
+                    }
+                    
+                    // Simulate form submission (replace with actual API call)
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    
+                    // Show success message
+                    const successMessage = document.createElement('div');
+                    successMessage.className = 'alert alert-success';
+                    successMessage.textContent = 'Registration successful! Welcome to Global Debate Society!';
+                    this.insertBefore(successMessage, this.firstChild);
+                    
+                    // Scroll to top of form to see the message
+                    this.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    
+                    // Clear form after success
+                    this.reset();
+                    
+                    // Remove success message after 5 seconds
+                    setTimeout(() => {
+                        successMessage.remove();
+                    }, 5000);
+                    
+                } catch (error) {
+                    // Show error message
+                    const errorMessage = document.createElement('div');
+                    errorMessage.className = 'alert alert-error';
+                    errorMessage.textContent = 'An error occurred during registration. Please try again.';
+                    this.insertBefore(errorMessage, this.firstChild);
+                    
+                } finally {
+                    if (submitButton) {
+                        submitButton.textContent = originalText;
+                        submitButton.disabled = false;
+                    }
+                }
             }
-        }
-    });
+        });
+    }
     
     // Form validation function
     function validateForm(form) {
@@ -175,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Insert after the input or its parent container for radio/checkbox groups
         if (input.type === 'radio' || input.type === 'checkbox') {
             // Find the closest parent container
-            const container = input.closest('.checkbox-group') || input.closest('.payment-options');
+            const container = input.closest('.checkbox-group') || input.closest('.radio-group');
             if (container && !container.nextElementSibling?.classList.contains('error-message')) {
                 container.parentNode.insertBefore(errorMessage, container.nextSibling);
             }
@@ -238,4 +281,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    
+    // Add styling for selected option-card
+    document.addEventListener('click', (e) => {
+        if (e.target.closest('.option-card .btn')) {
+            const card = e.target.closest('.option-card');
+            document.querySelectorAll('.option-card').forEach(c => {
+                c.classList.remove('selected');
+            });
+            card.classList.add('selected');
+        }
+    });
 }); 

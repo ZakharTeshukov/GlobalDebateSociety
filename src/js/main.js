@@ -6,9 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set current active link in navigation
     setActiveNavLink();
     
-    // Add box shadow to navbar on scroll
-    handleNavbarScroll();
-    
     // Initialize tooltips if any
     initializeTooltips();
     
@@ -18,11 +15,25 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update copyright year
     updateCopyright();
     
+    // Handle navbar scroll behavior
+    handleNavbarScroll();
+    
     // Animate elements on scroll if they have the class
     animateOnScroll();
     
     // Initialize smooth scrolling for anchor links
     initSmoothScrolling();
+    
+    // Update join buttons
+    updateJoinButtons();
+    
+    // Immediately animate hero section on page load
+    setTimeout(() => {
+        document.querySelector('.hero-content')?.classList.add('animate');
+    }, 100);
+    
+    // Initialize scroll animations
+    initScrollAnimations();
 });
 
 /**
@@ -41,24 +52,6 @@ function setActiveNavLink() {
             link.classList.add('active');
         } else {
             link.classList.remove('active');
-        }
-    });
-}
-
-/**
- * Adds shadow to navbar on scroll
- */
-function handleNavbarScroll() {
-    const navbar = document.querySelector('.navbar');
-    if (!navbar) return;
-    
-    const scrollThreshold = 50;
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > scrollThreshold) {
-            navbar.classList.add('navbar-scrolled');
-        } else {
-            navbar.classList.remove('navbar-scrolled');
         }
     });
 }
@@ -185,6 +178,117 @@ function initSmoothScrolling() {
     });
 }
 
+/**
+ * Initialize animations that trigger on scroll
+ * Only trigger animations on first scroll through the page
+ */
+function initScrollAnimations() {
+    // Store if the user has already scrolled
+    let hasScrolled = false;
+    
+    // Store if we've already animated sections
+    let animatedSections = {
+        features: false,
+        events: false,
+        testimonials: false,
+        blog: false,
+        cta: false
+    };
+    
+    // Only animate each section once until page reload
+    window.addEventListener('scroll', function() {
+        // Set that user has scrolled
+        hasScrolled = true;
+        
+        // Get scroll position
+        const scrollPosition = window.scrollY + window.innerHeight * 0.8;
+        
+        // Animate features section
+        if (!animatedSections.features) {
+            const featuresSection = document.querySelector('.features');
+            if (featuresSection && featuresSection.offsetTop < scrollPosition) {
+                document.querySelector('.features .section-title')?.classList.add('animate');
+                
+                const featureCards = document.querySelectorAll('.feature-card');
+                featureCards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('animate');
+                    }, 200 * index); // Stagger animation
+                });
+                
+                animatedSections.features = true;
+            }
+        }
+        
+        // Animate events section
+        if (!animatedSections.events) {
+            const eventsSection = document.querySelector('.upcoming-events');
+            if (eventsSection && eventsSection.offsetTop < scrollPosition) {
+                document.querySelector('.upcoming-events .section-title')?.classList.add('animate');
+                
+                const eventCards = document.querySelectorAll('.event-card');
+                eventCards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('animate');
+                    }, 200 * index); // Stagger animation
+                });
+                
+                animatedSections.events = true;
+            }
+        }
+        
+        // Animate testimonials section
+        if (!animatedSections.testimonials) {
+            const testimonialsSection = document.querySelector('.testimonials');
+            if (testimonialsSection && testimonialsSection.offsetTop < scrollPosition) {
+                document.querySelector('.testimonials .section-title')?.classList.add('animate');
+                
+                const testimonialItems = document.querySelectorAll('.testimonial-item');
+                testimonialItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add('animate');
+                    }, 200 * index); // Stagger animation
+                });
+                
+                animatedSections.testimonials = true;
+            }
+        }
+        
+        // Animate blog section
+        if (!animatedSections.blog) {
+            const blogSection = document.querySelector('.latest-blog');
+            if (blogSection && blogSection.offsetTop < scrollPosition) {
+                document.querySelector('.latest-blog .section-title')?.classList.add('animate');
+                
+                const blogCards = document.querySelectorAll('.blog-card-small');
+                blogCards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('animate');
+                    }, 200 * index); // Stagger animation
+                });
+                
+                animatedSections.blog = true;
+            }
+        }
+        
+        // Animate CTA section
+        if (!animatedSections.cta) {
+            const ctaSection = document.querySelector('.cta-section');
+            if (ctaSection && ctaSection.offsetTop < scrollPosition) {
+                document.querySelector('.cta-content')?.classList.add('animate');
+                animatedSections.cta = true;
+            }
+        }
+        
+        // Check if all sections have been animated
+        const allAnimated = Object.values(animatedSections).every(value => value === true);
+        if (allAnimated) {
+            // Remove scroll listener if all sections are animated
+            window.removeEventListener('scroll', arguments.callee);
+        }
+    });
+}
+
 // Handle mobile navigation
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Navigation Toggle
@@ -225,20 +329,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // Sticky Header
-    const stickyHeader = () => {
-        const header = document.querySelector('header');
-        const scrollPosition = window.scrollY;
-
-        if (scrollPosition > 100) {
-            header.classList.add('sticky');
-        } else {
-            header.classList.remove('sticky');
-        }
-    };
-
-    window.addEventListener('scroll', stickyHeader);
 
     // Form Validation
     const forms = document.querySelectorAll('form');
@@ -442,4 +532,42 @@ function showError(input, message) {
 function isValidEmail(email) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
+}
+
+// Update all "Join Us" links to "Join" with orange button styling
+function updateJoinButtons() {
+    // Find all links that point to join.html
+    const joinLinks = document.querySelectorAll('a[href*="join.html"]');
+    
+    joinLinks.forEach(link => {
+        // Update text content if it contains "Join Us"
+        if (link.textContent.includes('Join Us')) {
+            link.textContent = 'Join';
+        }
+        
+        // Add the btn-join class if it doesn't already have it
+        if (!link.classList.contains('btn-join')) {
+            link.classList.add('btn-join');
+        }
+    });
+}
+
+// Add this new function for navbar scroll behavior
+function handleNavbarScroll() {
+    const navbar = document.querySelector('.navbar');
+    let lastScroll = 0;
+    
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll > lastScroll && currentScroll > 100) {
+            // Scrolling down & past threshold
+            navbar.classList.add('hide');
+        } else {
+            // Scrolling up or at top
+            navbar.classList.remove('hide');
+        }
+        
+        lastScroll = currentScroll;
+    });
 } 

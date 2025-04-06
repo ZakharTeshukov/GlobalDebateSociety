@@ -9,8 +9,8 @@
 
 .hero {
     position: relative;
-    height: 80vh;
-    min-height: 500px;
+    height: 100vh;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,7 +25,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../assets/images/hero-bg.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../src/assets/images/debate-hero-bg.svg');
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -35,13 +35,20 @@
     max-width: 800px;
     padding: 0 var(--spacing-lg);
     z-index: 1;
-    animation: fadeInUp 1.2s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.hero-content.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .hero-title {
     font-size: 3rem;
     font-weight: var(--font-weight-bold);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
     color: white;
     line-height: 1.2;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -49,7 +56,7 @@
 
 .hero-subtitle {
     font-size: 1.25rem;
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
     line-height: 1.6;
     max-width: 700px;
     margin-left: auto;
@@ -66,8 +73,19 @@
 /* === Features Section === */
 
 .features {
-    padding: var(--spacing-xxl) 0;
+    padding: var(--spacing-md) 0;
     background-color: var(--bg-light);
+}
+
+.features .section-title {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.features .section-title.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .feature-card {
@@ -77,6 +95,13 @@
     box-shadow: var(--shadow-sm);
     text-align: center;
     transition: var(--transition-medium);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.feature-card.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .feature-card:hover {
@@ -104,13 +129,30 @@
     font-size: 1.5rem;
     margin-bottom: var(--spacing-sm);
     font-weight: var(--font-weight-semibold);
+    color: var(--primary-color);
+}
+
+.feature-text {
+    color: var(--text-color-dark);
+    line-height: 1.6;
 }
 
 /* === Upcoming Events Section === */
 
 .upcoming-events {
-    padding: var(--spacing-xxl) 0;
+    padding: var(--spacing-md) 0;
     background-color: var(--bg-off-white);
+}
+
+.upcoming-events .section-title {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.upcoming-events .section-title.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .event-card {
@@ -121,6 +163,13 @@
     box-shadow: var(--shadow-sm);
     margin-bottom: var(--spacing-xl);
     transition: var(--transition-medium);
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.event-card.animate {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .event-card:hover {
@@ -160,13 +209,13 @@
     font-size: 1.5rem;
     margin-top: 0;
     margin-bottom: var(--spacing-sm);
-    color: var(--text-color-dark);
+    color: var(--primary-color);
 }
 
 .event-meta {
     display: flex;
     margin-bottom: var(--spacing-md);
-    color: var(--text-color-muted);
+    color: var(--text-color-dark);
     font-size: 0.9rem;
 }
 
@@ -181,11 +230,27 @@
     color: var(--secondary-color);
 }
 
+.event-description {
+    color: var(--text-color-dark);
+    line-height: 1.6;
+}
+
 /* === Testimonials Section === */
 
 .testimonials {
-    padding: var(--spacing-xxl) 0;
+    padding: var(--spacing-md) 0;
     background-color: white;
+}
+
+.testimonials .section-title {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.testimonials .section-title.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .testimonial-slider {
@@ -200,6 +265,14 @@
     box-shadow: var(--shadow-sm);
     margin: 0 auto;
     position: relative;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.testimonial-item.animate {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .testimonial-item:before {
@@ -218,6 +291,7 @@
     margin-bottom: var(--spacing-lg);
     position: relative;
     z-index: 1;
+    color: var(--text-color-dark);
 }
 
 .testimonial-author {
@@ -237,25 +311,37 @@
 .testimonial-name {
     font-weight: var(--font-weight-semibold);
     font-size: 1.1rem;
+    color: var(--primary-color);
 }
 
 .testimonial-role {
-    color: var(--text-color-muted);
+    color: var(--text-color-dark);
     font-size: 0.9rem;
 }
 
 /* === Latest Blog Section === */
 
 .latest-blog {
-    padding: var(--spacing-xxl) 0;
+    padding: var(--spacing-md) 0;
     background-color: var(--bg-off-white);
+}
+
+.latest-blog .section-title {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.latest-blog .section-title.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .section-subtitle {
     text-align: center;
-    margin-top: var(--spacing-sm);
-    margin-bottom: var(--spacing-xl);
-    color: var(--text-color-muted);
+    margin-top: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+    color: var(--text-color-dark);
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -270,6 +356,13 @@
     display: flex;
     flex-direction: column;
     transition: var(--transition-medium);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.blog-card-small.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .blog-card-small:hover {
@@ -308,13 +401,13 @@
 }
 
 .blog-card-small-title a {
-    color: var(--text-color-dark);
+    color: var(--primary-color);
     text-decoration: none;
     transition: var(--transition-fast);
 }
 
 .blog-card-small-title a:hover {
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .blog-card-small-meta {
@@ -322,7 +415,7 @@
     flex-wrap: wrap;
     gap: var(--spacing-sm);
     font-size: 0.8rem;
-    color: var(--text-color-muted);
+    color: var(--text-color-dark);
     margin-bottom: var(--spacing-sm);
 }
 
@@ -337,7 +430,7 @@
 
 .blog-card-small-excerpt {
     margin-bottom: var(--spacing-md);
-    color: var(--text-color-medium);
+    color: var(--text-color-dark);
     font-size: 0.95rem;
     line-height: 1.6;
     flex: 1;
@@ -347,37 +440,50 @@
     align-self: flex-start;
     font-weight: var(--font-weight-medium);
     margin-top: auto;
+    color: var(--secondary-color);
 }
 
 /* === Call to Action Section === */
 
 .cta-section {
-    padding: var(--spacing-xxl) 0;
-    background: linear-gradient(to right, var(--primary-dark), var(--primary-color));
+    padding: var(--spacing-xl) 0;
+    background-color: #000000;
     color: white;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .cta-content {
-    max-width: 800px;
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
     margin: 0 auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.cta-content.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .cta-title {
     font-size: 2.5rem;
-    margin-bottom: var(--spacing-md);
-    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-sm);
+    color: white;
 }
 
 .cta-text {
-    font-size: 1.1rem;
-    margin-bottom: var(--spacing-xl);
-    line-height: 1.6;
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-lg);
+    color: #f5f5f5;
 }
 
 .cta-button {
-    background-color: white;
-    color: var(--primary-color);
+    background-color: #ff6f00;
+    color: white;
     padding: var(--spacing-md) var(--spacing-xl);
     border-radius: var(--border-radius-md);
     font-weight: var(--font-weight-semibold);
@@ -389,7 +495,19 @@
 
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 4px 10px rgba(255, 111, 0, 0.4);
+}
+
+/* Animation classes for scroll effects */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* === Responsive Adjustments === */
@@ -406,8 +524,7 @@
 
 @media (max-width: 768px) {
     .hero {
-        height: 70vh;
-        min-height: 400px;
+        height: 100vh;
     }
     
     .hero-title {

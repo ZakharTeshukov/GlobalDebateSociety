@@ -20,7 +20,11 @@
     font-family: var(--font-family-heading);
     font-weight: var(--font-weight-bold);
     font-size: 1.5rem;
-    color: var(--primary-color);
+    color: #64b5f6;
+}
+
+.footer-logo-text::after {
+    display: none;
 }
 
 .footer-social {
