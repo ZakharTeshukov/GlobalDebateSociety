@@ -1,0 +1,29 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Global Debate Society",
+  "url": "https://globaldebatesociety.org",
+  "logo": "https://globaldebatesociety.org/src/assets/images/logo.png",
+  "sameAs": [
+    "https://facebook.com/globaldebatesociety",
+    "https://twitter.com/globaldebate",
+    "https://instagram.com/globaldebate",
+    "https://linkedin.com/company/global-debate-society"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-555-123-4567",
+    "contactType": "customer service",
+    "email": "info@globaldebatesociety.org",
+    "availableLanguage": ["English"]
+  },
+  "description": "The Global Debate Society is an international organization dedicated to promoting critical thinking, public speaking, and intellectual discourse through competitive debate.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Debate Avenue",
+    "addressLocality": "Discourse City",
+    "addressRegion": "DC",
+    "postalCode": "10001",
+    "addressCountry": "US"
+  }
+} 

@@ -6,7 +6,8 @@
   "scripts": {
     "convert-images": "node scripts/convert-images.js",
     "update-templates": "node scripts/update-templates.js",
-    "build": "npm run convert-images && npm run update-templates"
+    "update-seo": "node scripts/update-seo.js",
+    "build": "npm run convert-images && npm run update-templates && npm run update-seo"
   },
   "keywords": [
     "debate",

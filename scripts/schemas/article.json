@@ -1,0 +1,26 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Evolution of Cross-Examination in Modern Debate",
+  "image": [
+    "https://globaldebatesociety.org/src/assets/images/blog/cross-examination-article.jpg"
+  ],
+  "datePublished": "2023-07-15T08:00:00+08:00",
+  "dateModified": "2023-07-16T09:30:00+08:00",
+  "author": {
+    "@type": "Person",
+    "name": "Dr. Elizabeth Chen",
+    "url": "https://globaldebatesociety.org/authors/elizabeth-chen"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Global Debate Society",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://globaldebatesociety.org/src/assets/images/logo.png"
+    }
+  },
+  "description": "An in-depth analysis of how cross-examination techniques have evolved in competitive debate over the last decade, with insights from championship debaters.",
+  "articleBody": "Cross-examination is a critical component of competitive debate that allows debaters to directly question their opponents...",
+  "keywords": "debate, cross-examination, competitive debate, public speaking, argumentation"
+} 
