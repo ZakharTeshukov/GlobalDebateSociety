@@ -1,24 +1,9 @@
-/* Contact Hero Section */
-.contact-hero {
-    background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)),
-                url('../images/contact-bg.jpg') center/cover;
-    color: var(--white);
-    padding: 6rem 2rem;
-    text-align: center;
-    margin-bottom: 3rem;
-}
+/* Import shared hero styles */
+@import '../components/hero.css';
 
-.contact-hero h1 {
-    font-size: 3rem;
-    color: var(--white);
-    margin-bottom: 1rem;
-}
-
-.contact-hero p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto;
-    opacity: 0.9;
+/* Contact page specific styles */
+.contact-hero .hero-subtitle {
+    max-width: 600px; /* Narrower subtitle for contact page */
 }
 
 /* Contact Info Cards */

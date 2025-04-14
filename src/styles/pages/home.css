@@ -200,6 +200,7 @@
     gap: var(--spacing-xs);
     font-size: 1.2rem;
     font-weight: var(--font-weight-bold);
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
 }
 
 .event-content {
@@ -394,6 +395,7 @@
     text-align: center;
     position: relative;
     overflow: hidden;
+    margin-bottom: 0;
 }
 
 .cta-content {
@@ -450,6 +452,11 @@
 .animate-on-scroll.animate {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Remove the back-to-top button styles */
+.back-to-top {
+    display: none;
 }
 
 /* === Responsive Adjustments === */
