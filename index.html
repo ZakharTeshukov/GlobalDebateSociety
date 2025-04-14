@@ -7,6 +7,27 @@
     <link rel="stylesheet" href="src/styles/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/src/assets/images/icon-192x192.png">
+    
+    <!-- Performance optimization meta tags -->
+    <meta http-equiv="Cache-Control" content="max-age=86400, must-revalidate">
+    <meta name="description" content="Global Debate Society - A community for debaters, speakers, and critical thinkers across Southeast Asia.">
+    <meta name="theme-color" content="#3a86ff">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="src/styles/index.css" as="style">
+    <link rel="preload" href="src/js/main.js" as="script">
+    <link rel="preload" href="src/js/lazy-loading.js" as="script">
+    <link rel="preload" href="src/assets/images/debate-hero-bg.svg" as="image">
+    
+    <!-- Service worker registration script -->
+    <script src="src/js/sw-register.js" defer></script>
+    
+    <!-- Load lazy loading script -->
+    <script src="src/js/lazy-loading.js" defer></script>
 </head>
 <body>
     <header> 
@@ -26,7 +47,7 @@
                 <li><a href="pages/navbar-pages/about.html">About</a></li>
                 <li><a href="pages/navbar-pages/events.html">Events</a></li>
                 <li><a href="pages/navbar-pages/resources.html">Resources</a></li>
-                <li><a href="pages/navbar-pages/join.html" class="btn-join">Join</a></li>
+                <li><a href="pages/navbar-pages/join.html" class="join-btn">Join Us</a></li>
             </ul>
         </nav>
     </header>

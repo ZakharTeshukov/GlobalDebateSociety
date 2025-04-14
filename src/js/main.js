@@ -570,4 +570,88 @@ function handleNavbarScroll() {
         
         lastScroll = currentScroll;
     });
-} 
+}
+
+/**
+ * Performance optimizations
+ * 
+ * These optimizations are designed to improve page loading speed and responsiveness.
+ */
+
+// Import lazy loading functions if using ES modules
+// If not using ES modules, functions will be available globally from lazy-loading.js
+try {
+    // Try to import the modules
+    import('./lazy-loading.js')
+        .then(module => {
+            // Store the functions for later use
+            window.lazyLoadImages = module.lazyLoadImages;
+            window.convertExistingImagesToLazyLoad = module.convertExistingImagesToLazyLoad;
+        })
+        .catch(err => {
+            console.log('Module import not supported or module not found');
+        });
+} catch (e) {
+    // If import() is not supported, the functions should be globally available
+    console.log('Using global lazy loading functions');
+}
+
+/**
+ * Apply performance optimizations
+ */
+function applyPerformanceOptimizations() {
+    // Add rel=preconnect for external domains
+    addPreconnect('https://fonts.googleapis.com');
+    addPreconnect('https://fonts.gstatic.com', true);
+    addPreconnect('https://cdnjs.cloudflare.com');
+    
+    // Apply lazy loading for images that load after initial page load
+    document.addEventListener('DOMContentLoaded', () => {
+        // Use the global function if available
+        if (typeof convertExistingImagesToLazyLoad === 'function') {
+            // Wait for critical content to load first
+            setTimeout(convertExistingImagesToLazyLoad, 1000);
+        }
+    });
+    
+    // Re-trigger lazy loading when content changes dynamically
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach(mutation => {
+            if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+                // Check if new nodes contain images
+                const hasNewImages = Array.from(mutation.addedNodes).some(node => 
+                    node.nodeName === 'IMG' || 
+                    (node.nodeType === 1 && node.querySelector('img'))
+                );
+                
+                if (hasNewImages && typeof lazyLoadImages === 'function') {
+                    lazyLoadImages();
+                }
+            }
+        });
+    });
+    
+    // Start observing the document
+    observer.observe(document.body, { 
+        childList: true, 
+        subtree: true 
+    });
+}
+
+/**
+ * Add preconnect links to the document head
+ */
+function addPreconnect(url, crossorigin = false) {
+    if (!document.querySelector(`link[rel="preconnect"][href="${url}"]`)) {
+        const link = document.createElement('link');
+        link.rel = 'preconnect';
+        link.href = url;
+        if (crossorigin) {
+            link.crossOrigin = 'anonymous';
+        }
+        document.head.appendChild(link);
+    }
+}
+
+// Apply performance optimizations
+applyPerformanceOptimizations(); 

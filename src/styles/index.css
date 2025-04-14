@@ -1,7 +1,16 @@
-/* Base Styles */
+/* 
+=======================================
+BASE STYLES - Applied to every page 
+=======================================
+*/
+
+/* Utility Styles */
 @import './utils/variables.css';
 @import './utils/reset.css';
 @import './utils/mixins.css';
+
+/* Base Styles */
+@import './base.css';
 
 /* Layout Styles */
 @import './layouts/navbar.css';
@@ -13,7 +22,13 @@
 @import './components/cards.css';
 @import './components/forms.css';
 
-/* Page Styles */
+/* 
+=======================================
+PAGE-SPECIFIC STYLES - Applied selectively
+=======================================
+*/
+
+/* Page Styles - Import only what you need for each page */
 @import './pages/home.css';
 @import './pages/about.css';
 @import './pages/events.css';

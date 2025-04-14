@@ -105,6 +105,23 @@
     transform-origin: bottom left;
 }
 
+/* Join button specific styles */
+.navbar-nav a.join-btn {
+    color: white;
+    font-weight: var(--font-weight-semibold);
+    transition: transform 0.2s ease;
+}
+
+.navbar-nav a.join-btn:hover {
+    transform: scale(1.1);
+    color: white;
+}
+
+/* Remove underline animation for join button */
+.navbar-nav a.join-btn::after {
+    display: none;
+}
+
 /* Mobile Menu Button */
 .mobile-menu-btn {
     display: none;
@@ -212,6 +229,11 @@
     
     .menu-overlay.active {
         display: block;
+    }
+
+    /* Mobile responsiveness for join button */
+    .navbar-nav a.join-btn {
+        transform-origin: left;
     }
 }
 
