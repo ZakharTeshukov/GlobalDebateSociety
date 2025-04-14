@@ -1,0 +1,25 @@
+{
+  "name": "global-debate-society",
+  "version": "1.0.0",
+  "description": "Website for the Global Debate Society",
+  "main": "index.js",
+  "scripts": {
+    "convert-images": "node scripts/convert-images.js",
+    "update-templates": "node scripts/update-templates.js",
+    "build": "npm run convert-images && npm run update-templates"
+  },
+  "keywords": [
+    "debate",
+    "global",
+    "society"
+  ],
+  "author": "Global Debate Society",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "fs-extra": "^11.2.0",
+    "glob": "^10.3.10",
+    "sharp": "^0.33.2",
+    "yargs": "^17.7.2"
+  }
+} 

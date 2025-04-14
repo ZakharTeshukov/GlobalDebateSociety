@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Example - Global Debate Society</title>
+    <style>
+        /* Add webp class to the html element when WebP is supported */
+        .webp .bg-image {
+            background-image: url('../src/assets/webp/debate-hero-bg.webp');
+        }
+        
+        /* Fallback for browsers that don't support WebP */
+        .no-webp .bg-image {
+            background-image: url('../src/assets/images/debate-hero-bg.svg');
+        }
+        
+        /* Basic styles for demonstration */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        h1 {
+            color: #3a86ff;
+            margin-bottom: 2rem;
+        }
+        
+        .image-container {
+            margin: 2rem 0;
+            border: 1px solid #eee;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+        
+        .responsive-image {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        code {
+            display: block;
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            white-space: pre-wrap;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Responsive Image Examples</h1>
+    
+    <h2>1. Basic WebP with Fallback</h2>
+    <div class="image-container">
+        <picture>
+            <source srcset="../src/assets/webp/debate-hero.webp" type="image/webp">
+            <source srcset="../src/assets/images/debate-hero.jpg" type="image/jpeg">
+            <img src="../src/assets/images/debate-hero.jpg" alt="Debate Hero Image" class="responsive-image" loading="lazy">
+        </picture>
+    </div>
+    
+    <code>&lt;picture&gt;
+    &lt;source srcset="../src/assets/webp/debate-hero.webp" type="image/webp"&gt;
+    &lt;source srcset="../src/assets/images/debate-hero.jpg" type="image/jpeg"&gt;
+    &lt;img src="../src/assets/images/debate-hero.jpg" alt="Debate Hero Image" class="responsive-image" loading="lazy"&gt;
+&lt;/picture&gt;</code>
+    
+    <h2>2. Responsive Images with Multiple Sizes</h2>
+    <div class="image-container">
+        <picture>
+            <source 
+                srcset="../src/assets/webp/event1-small.webp 480w,
+                        ../src/assets/webp/event1-medium.webp 768w,
+                        ../src/assets/webp/event1-large.webp 1200w" 
+                type="image/webp">
+            <source 
+                srcset="../src/assets/responsive/event1-small.jpg 480w,
+                        ../src/assets/responsive/event1-medium.jpg 768w,
+                        ../src/assets/responsive/event1-large.jpg 1200w" 
+                type="image/jpeg">
+            <img src="../src/assets/images/event1.jpg" 
+                 alt="Southeast Asian Debate Championship" 
+                 class="responsive-image" 
+                 loading="lazy">
+        </picture>
+    </div>
+    
+    <code>&lt;picture&gt;
+    &lt;source 
+        srcset="../src/assets/webp/event1-small.webp 480w,
+                ../src/assets/webp/event1-medium.webp 768w,
+                ../src/assets/webp/event1-large.webp 1200w" 
+        type="image/webp"&gt;
+    &lt;source 
+        srcset="../src/assets/responsive/event1-small.jpg 480w,
+                ../src/assets/responsive/event1-medium.jpg 768w,
+                ../src/assets/responsive/event1-large.jpg 1200w" 
+        type="image/jpeg"&gt;
+    &lt;img src="../src/assets/images/event1.jpg" 
+         alt="Southeast Asian Debate Championship" 
+         class="responsive-image" 
+         loading="lazy"&gt;
+&lt;/picture&gt;</code>
+    
+    <h2>3. Lazy Loading with Data Attributes</h2>
+    <div class="image-container">
+        <img data-src="../src/assets/images/blog-placeholder.svg" 
+             alt="Blog Placeholder" 
+             class="responsive-image lazy-placeholder" 
+             loading="lazy">
+    </div>
+    
+    <code>&lt;img data-src="../src/assets/images/blog-placeholder.svg" 
+     alt="Blog Placeholder" 
+     class="responsive-image lazy-placeholder" 
+     loading="lazy"&gt;</code>
+    
+    <h2>4. Responsive Background Images with WebP (CSS)</h2>
+    <div class="image-container">
+        <div class="bg-image" style="height: 300px; background-size: cover; background-position: center;"></div>
+    </div>
+    
+    <code>/* CSS */
+.webp .bg-image {
+    background-image: url('../src/assets/webp/debate-hero-bg.webp');
+}
+
+.no-webp .bg-image {
+    background-image: url('../src/assets/images/debate-hero-bg.svg');
+}</code>
+    
+    <h2>Implementation Notes</h2>
+    <ul>
+        <li>The <code>&lt;picture&gt;</code> element provides multiple sources for an image.</li>
+        <li>Browsers will use the first source they support, falling back to the <code>&lt;img&gt;</code> tag.</li>
+        <li>The <code>srcset</code> attribute with width descriptors (e.g., 480w) allows the browser to select the appropriate image size.</li>
+        <li>The <code>loading="lazy"</code> attribute adds native lazy loading.</li>
+        <li>For background images, we use feature detection to add a <code>webp</code> or <code>no-webp</code> class to the HTML element.</li>
+        <li>The <code>data-src</code> attribute is used for JavaScript-based lazy loading.</li>
+    </ul>
+    
+    <script>
+        // Feature detection for WebP support
+        function testWebP(callback) {
+            const webP = new Image();
+            webP.onload = webP.onerror = function () {
+                callback(webP.height === 2);
+            };
+            webP.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
+        }
+        
+        testWebP(function(support) {
+            document.documentElement.classList.add(support ? 'webp' : 'no-webp');
+        });
+    </script>
+</body>
+</html> 
