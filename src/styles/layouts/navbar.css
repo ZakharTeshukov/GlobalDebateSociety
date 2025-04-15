@@ -107,19 +107,39 @@
 
 /* Join button specific styles */
 .navbar-nav a.join-btn {
-    color: white;
+    background-color: #ff6f00;
+    color: white !important;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
     font-weight: var(--font-weight-semibold);
-    transition: transform 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .navbar-nav a.join-btn:hover {
-    transform: scale(1.1);
-    color: white;
+    background-color: #f57c00;
+    transform: scale(1.05);
 }
 
 /* Remove underline animation for join button */
 .navbar-nav a.join-btn::after {
     display: none;
+}
+
+/* Ensure join button visibility */
+.navbar-nav .btn-join,
+.navbar-nav a.btn-primary {
+    background-color: #ff6f00;
+    color: white !important;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    font-weight: var(--font-weight-semibold);
+    transition: all 0.2s ease;
+}
+
+.navbar-nav .btn-join:hover,
+.navbar-nav a.btn-primary:hover {
+    background-color: #f57c00;
+    transform: scale(1.05);
 }
 
 /* Mobile Menu Button */
