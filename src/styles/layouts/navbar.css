@@ -97,7 +97,7 @@
 /* Make text a little gray on hover for nav links (except join button) */
 .navbar-nav a:hover:not(.join-btn),
 .navbar-nav a.active:not(.join-btn) {
-    color: #888;
+    color: #ed1c34;
 }
 
 /* Join button specific styles */
