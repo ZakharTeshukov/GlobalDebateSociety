@@ -554,4 +554,129 @@ p, .card-text, .feature-text, .event-description, .blog-card-small-excerpt {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+/* === Responsive Components === */
+@media (max-width: 992px) {
+    .card-title, .feature-title, .event-title, .blog-card-small-title {
+        font-size: 1.4rem;
+    }
+    
+    .card-body {
+        padding: var(--spacing-md);
+    }
+    
+    .alert {
+        padding: var(--spacing-md);
+    }
+}
+
+@media (max-width: 768px) {
+    /* Enhanced button for touch targets */
+    .btn {
+        padding: 0.75rem 1.5rem;
+        min-height: 44px;
+    }
+    
+    .btn-sm {
+        padding: 0.5rem 1rem;
+        min-height: 40px;
+    }
+    
+    .btn-lg {
+        padding: 1rem 2rem;
+    }
+    
+    /* Improved card spacing */
+    .card, .feature-card, .event-card, .blog-card-small {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .card-body {
+        padding: var(--spacing-md);
+    }
+    
+    .card-title, .feature-title, .event-title, .blog-card-small-title {
+        font-size: 1.3rem;
+    }
+    
+    .card-footer {
+        padding: var(--spacing-sm) var(--spacing-md);
+        flex-wrap: wrap;
+        gap: var(--spacing-xs);
+    }
+    
+    /* Form elements for mobile */
+    .form-control {
+        padding: 0.7rem 1rem;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    /* Better alert styling for mobile */
+    .alert {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+    
+    /* Eliminate hover animations on mobile */
+    .card:hover, .feature-card:hover, .event-card:hover, .blog-card-small:hover {
+        transform: none;
+    }
+    
+    /* Improve badge legibility */
+    .badge {
+        padding: 0.3em 0.7em;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Make buttons more touch-friendly on small screens */
+    .btn {
+        width: 100%;
+        padding: 0.7rem 1rem;
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .card-body {
+        padding: var(--spacing-sm);
+    }
+    
+    .card-title, .feature-title, .event-title, .blog-card-small-title {
+        font-size: 1.2rem;
+    }
+    
+    .card-text, .feature-text, .event-description, .blog-card-small-excerpt {
+        font-size: 0.95rem;
+    }
+    
+    /* Stack items in card footer */
+    .card-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+    
+    /* Full-width form elements on mobile */
+    .form-group {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .form-control {
+        padding: 0.8rem;
+    }
+    
+    /* Simplified alerts for very small screens */
+    .alert {
+        padding: var(--spacing-sm);
+        margin-bottom: var(--spacing-md);
+    }
+}
+
+/* Back to top button - more touch friendly on mobile */
+@media (max-width: 768px) {
+    .back-to-top {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
 } 

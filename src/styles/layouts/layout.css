@@ -370,6 +370,20 @@ body {
 .opacity-100 { opacity: 1; }
 
 /* Responsive padding/margin utility classes */
+@media (max-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-title::after {
+        width: 70px;
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 0 var(--spacing-md);
@@ -394,21 +408,8 @@ body {
     .page-title {
         font-size: 2rem;
     }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 0 var(--spacing-sm);
-    }
     
-    .section-title {
-        font-size: 1.6rem;
-    }
-    
-    .page-title {
-        font-size: 1.8rem;
-    }
-    
+    /* Improve spacing on mobile */
     .row {
         margin-right: -10px;
         margin-left: -10px;
@@ -417,5 +418,129 @@ body {
     [class*="col-"] {
         padding-right: 10px;
         padding-left: 10px;
+        margin-bottom: 20px;
+    }
+    
+    /* Better handling of flexbox on small screens */
+    .d-flex {
+        flex-wrap: wrap;
+    }
+    
+    .gap-4, .gap-5 {
+        gap: var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    /* Enhance container padding for extra small screens */
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .container-fluid {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .section {
+        padding: var(--spacing-md) 0;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .section-title::after {
+        width: 60px;
+        bottom: -10px;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .page-title {
+        font-size: 1.8rem;
+    }
+    
+    .page-subtitle {
+        font-size: 1rem;
+    }
+    
+    .row {
+        margin-right: -8px;
+        margin-left: -8px;
+    }
+    
+    [class*="col-"] {
+        padding-right: 8px;
+        padding-left: 8px;
+        margin-bottom: 15px;
+    }
+    
+    /* Adjust gaps for extra small screens */
+    .gap-3, .gap-4, .gap-5 {
+        gap: var(--spacing-sm);
+    }
+    
+    /* Ensure proper padding for all sections */
+    main section:not(.full-width) {
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+    }
+    
+    /* Improve button touch targets on mobile */
+    .btn, button:not(.mobile-menu-btn) {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Improve mobile tap targets */
+@media (max-width: 768px) {
+    a, button, input[type="button"], input[type="submit"] {
+        min-height: 44px;
+        padding: 10px;
+    }
+    
+    /* Fix form elements on mobile */
+    input:not([type="checkbox"]):not([type="radio"]),
+    select,
+    textarea {
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+    
+    /* Better scrolling */
+    html, body {
+        overscroll-behavior-y: none;
+    }
+    
+    /* Prevent content overflow */
+    img, video, iframe {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Specific fixes for very small screens */
+@media (max-width: 360px) {
+    .container, .container-fluid {
+        padding: 0 var(--spacing-xs);
+    }
+    
+    .section-title {
+        font-size: 1.4rem;
+    }
+    
+    .page-title {
+        font-size: 1.6rem;
+    }
+    
+    .section {
+        padding: var(--spacing-sm) 0;
     }
 } 

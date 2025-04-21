@@ -35,4 +35,143 @@ PAGE-SPECIFIC STYLES - Applied selectively
 @import './pages/contact.css';
 @import './pages/resources.css';
 @import './pages/join.css';
-@import './pages/timeline-animations.css'; 
+@import './pages/timeline-animations.css';
+
+/* Global styles that apply to the entire site */
+
+/* Mobile optimization additions */
+html {
+    touch-action: manipulation; /* Improves touch performance */
+    -webkit-text-size-adjust: 100%; /* Prevents automatic text enlargement on iOS */
+}
+
+/* Apply consistent padding to page content */
+.page-content {
+    padding: 0 var(--spacing-md);
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color-light);
+    border-radius: 4px;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    /* Enhance vertical spacing between sections */
+    section + section {
+        margin-top: 2rem;
+    }
+    
+    /* Improve tap targets globally */
+    a, 
+    button, 
+    input[type="button"], 
+    input[type="submit"],
+    select,
+    .btn,
+    .nav-link,
+    .footer-link {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 12px;
+    }
+    
+    /* Proper form element sizing to prevent zoom on iOS */
+    input, select, textarea {
+        font-size: 16px;
+    }
+    
+    /* Add extra padding to the sides of all pages for better readability */
+    main section {
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+    }
+    
+    /* Improved iframe responsiveness */
+    iframe {
+        max-width: 100%;
+        width: 100%;
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for small phones */
+    body {
+        font-size: 15px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.3rem;
+    }
+    
+    /* Increase side padding for very small screens */
+    main section {
+        padding-left: var(--spacing-xs);
+        padding-right: var(--spacing-xs);
+    }
+    
+    /* Make iframes smaller on tiny screens */
+    iframe {
+        height: 250px;
+    }
+}
+
+/* Landscape orientation adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+    /* Adjust for landscape mode on mobile */
+    .branch-hero, 
+    .hero-section {
+        min-height: 400px;
+        height: 70vh;
+    }
+}
+
+/* Utility class for hiding content from visual browsers but keeping it for screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Skip to main content link for accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px;
+    z-index: 2000;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+} 

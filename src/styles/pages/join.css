@@ -215,19 +215,34 @@
     opacity: 0.6;
 }
 
+.option-image {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1.5rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+}
+
 .option-card .btn {
-    margin-top: auto;
-    margin-bottom: 2rem;
-    align-self: center;
-    padding: 1rem 2.5rem;
+    display: block;
+    width: calc(100% - 3rem);
+    margin: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 8px;
     font-weight: var(--font-weight-semibold);
-    font-size: 1.1rem;
     transition: all 0.3s ease;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
 }
 
 .option-card .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(255, 64, 129, 0.3);
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
 }
 
 /* Benefits Section */
@@ -285,17 +300,9 @@
 }
 
 .benefit-icon {
-    width: 80px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
-    color: white;
-    border-radius: 50%;
-    margin: 0 auto 1.5rem;
-    font-size: 2rem;
-    box-shadow: 0 5px 15px rgba(63, 81, 181, 0.3);
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
 }
 
 .benefit-card h3 {
@@ -469,7 +476,7 @@ input:focus, select:focus, textarea:focus {
 .testimonials h2 {
     text-align: center;
     margin-bottom: 3rem;
-    color: var(--primary-dark);
+    color: var(--text-dark);
     font-size: 2.5rem;
     position: relative;
     padding-bottom: 1rem;
@@ -490,16 +497,15 @@ input:focus, select:focus, textarea:focus {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    padding: 0 1rem;
 }
 
 .testimonial {
-    background-color: white;
+    background-color: var(--white);
     border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s;
-    opacity: 1;
-    transform: translateY(0);
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 .testimonial:hover {
@@ -508,33 +514,20 @@ input:focus, select:focus, textarea:focus {
 }
 
 .testimonial-content {
-    padding: 2.5rem 2rem;
-    position: relative;
-}
-
-.testimonial-content::before {
-    content: "\201C";
-    position: absolute;
-    top: 0;
-    left: 20px;
-    font-size: 5rem;
-    color: var(--primary-light);
-    opacity: 0.2;
-    line-height: 1;
+    margin-bottom: 1.5rem;
 }
 
 .testimonial-content p {
-    position: relative;
-    z-index: 1;
-    font-style: italic;
-    line-height: 1.7;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
 }
 
 .testimonial-author {
     display: flex;
     align-items: center;
-    padding: 1.5rem 2rem;
-    background-color: var(--bg-light-gray);
+    gap: 1rem;
 }
 
 .testimonial-author img {
@@ -542,20 +535,17 @@ input:focus, select:focus, textarea:focus {
     height: 60px;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 1rem;
-    border: 3px solid white;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .author-info h4 {
+    color: var(--text-dark);
     margin: 0;
     font-size: 1.1rem;
-    color: var(--primary-color);
 }
 
 .author-info p {
-    margin: 0;
-    color: var(--text-color-muted);
+    color: var(--text-muted);
+    margin: 0.25rem 0 0;
     font-size: 0.9rem;
 }
 
@@ -658,6 +648,41 @@ input:focus, select:focus, textarea:focus {
 .more-questions a:hover {
     color: var(--primary-color);
     text-decoration: underline;
+}
+
+/* Footer newsletter styling */
+.footer-subscribe {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.footer-subscribe input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+}
+
+.footer-subscribe input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-subscribe .btn {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.footer-subscribe .btn:hover {
+    background-color: var(--secondary-dark);
+    transform: translateY(-2px);
 }
 
 /* Responsive Styles */
