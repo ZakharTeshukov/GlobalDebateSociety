@@ -89,7 +89,7 @@
 }
 
 .card-body {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
 }
 
 .card-title, .feature-title, .event-title, .blog-card-small-title {
@@ -137,13 +137,15 @@
 
 /* === Form Elements === */
 .form-group {
-    margin-bottom: var(--spacing-lg);
+    width: 100%;
+    margin-bottom: var(--spacing-md);
 }
 
 .form-control {
-    display: block;
     width: 100%;
-    padding: 0.6rem 1rem;
+    max-width: 100%;
+    padding: var(--spacing-sm);
+    display: block;
     font-size: 1rem;
     line-height: 1.5;
     color: var(--text-color-dark);
@@ -370,7 +372,8 @@
 /* === Grid System === */
 .grid {
     display: grid;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
+    width: 100%;
 }
 
 .grid-2 {
@@ -593,7 +596,7 @@ p, .card-text, .feature-text, .event-description, .blog-card-small-excerpt {
     }
     
     .card-body {
-        padding: var(--spacing-md);
+        padding: var(--spacing-sm);
     }
     
     .card-title, .feature-title, .event-title, .blog-card-small-title {
@@ -638,7 +641,7 @@ p, .card-text, .feature-text, .event-description, .blog-card-small-excerpt {
     }
     
     .card-body {
-        padding: var(--spacing-sm);
+        padding: var(--spacing-xs);
     }
     
     .card-title, .feature-title, .event-title, .blog-card-small-title {
@@ -678,5 +681,191 @@ p, .card-text, .feature-text, .event-description, .blog-card-small-excerpt {
         width: 50px;
         height: 50px;
         font-size: 1.2rem;
+    }
+}
+
+/* === Component Styles === */
+
+/* Cards */
+.card {
+    width: 100%;
+    max-width: 100%;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.card-body {
+    padding: var(--spacing-md);
+}
+
+/* Navigation */
+.nav-container {
+    width: 100%;
+    max-width: 100%;
+}
+
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Buttons */
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+/* Forms */
+.form-group {
+    width: 100%;
+    margin-bottom: var(--spacing-md);
+}
+
+.form-control {
+    width: 100%;
+    max-width: 100%;
+    padding: var(--spacing-sm);
+}
+
+/* Tables */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Grid Items */
+.grid {
+    display: grid;
+    gap: var(--spacing-md);
+    width: 100%;
+}
+
+/* Media Objects */
+.media {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    width: 100%;
+}
+
+.media-body {
+    flex: 1;
+    min-width: 0; /* Prevent text overflow */
+}
+
+/* Lists */
+.list-group {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list-group-item {
+    width: 100%;
+    padding: var(--spacing-sm);
+}
+
+@media (max-width: 768px) {
+    /* Card adjustments */
+    .card {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .card-body {
+        padding: var(--spacing-sm);
+    }
+    
+    /* Navigation adjustments */
+    .nav-list {
+        gap: var(--spacing-sm);
+    }
+    
+    /* Form adjustments */
+    .form-group {
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    /* Grid adjustments */
+    .grid {
+        grid-template-columns: 1fr !important; /* Force single column on mobile */
+        gap: var(--spacing-sm);
+    }
+    
+    /* Media object adjustments */
+    .media {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .media-body {
+        width: 100%;
+    }
+    
+    /* Button group adjustments */
+    .btn-group {
+        width: 100%;
+    }
+    
+    .btn-group .btn {
+        flex: 1;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further reduce spacing */
+    .card-body {
+        padding: var(--spacing-xs);
+    }
+    
+    .list-group-item {
+        padding: var(--spacing-xs);
+    }
+    
+    /* Improve touch targets */
+    .nav-link,
+    .list-group-item a {
+        padding: 12px;
+        display: block;
+    }
+    
+    /* Ensure proper text wrapping */
+    h1, h2, h3, h4, h5, h6,
+    p, span, a {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+    
+    /* Adjust image containers */
+    .img-container {
+        margin: 0 calc(-1 * var(--spacing-xs));
+    }
+    
+    /* Better form handling */
+    select {
+        max-width: 100%;
+        background-position: right var(--spacing-xs) center;
+    }
+    
+    /* Improve table scrolling */
+    .table-responsive {
+        margin: 0 calc(-1 * var(--spacing-xs));
+        padding: 0 var(--spacing-xs);
     }
 } 
