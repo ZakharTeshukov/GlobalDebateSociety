@@ -1,24 +1,24 @@
 :root {
     /* Colors */
-    --primary-color: #3F51B5;
-    --primary-color-rgb: 63, 81, 181;
-    --secondary-color: #FF4081;
-    --accent-color: #E74C3C;
-    --success-color: #2ECC71;
-    --warning-color: #F39C12;
-    --info-color: #3498DB;
+    --primary-color: #2563eb; /* Modern blue */
+    --primary-color-rgb: 37, 99, 235;
+    --secondary-color: #e11d48; /* Vibrant magenta */
+    --accent-color: #14b8a6; /* Teal accent */
+    --success-color: #22c55e;
+    --warning-color: #f59e42;
+    --info-color: #0ea5e9;
     
     /* Background Colors */
     --bg-light: #FFFFFF;
-    --bg-off-white: #F5F5F5;
-    --bg-dark: #1A1A1A;
-    --bg-light-gray: #EEEEEE;
+    --bg-off-white: #F8FAFC;
+    --bg-dark: #0f172a;
+    --bg-light-gray: #E5E7EB;
     
     /* Text Colors */
-    --text-color-dark: #333333;
-    --text-color-medium: #666666;
+    --text-color-dark: #1e293b;
+    --text-color-medium: #64748b;
     --text-color-light: #FFFFFF;
-    --text-color-muted: #999999;
+    --text-color-muted: #94a3b8;
     
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -40,21 +40,21 @@
     --font-weight-bold: 700;
     
     /* Border Radius */
-    --border-radius-sm: 4px;
-    --border-radius-md: 8px;
-    --border-radius-lg: 12px;
-    --border-radius-xl: 16px;
+    --border-radius-sm: 6px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 18px;
+    --border-radius-xl: 24px;
     
     /* Shadows */
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
-    --card-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    --shadow-sm: 0 2px 8px rgba(16, 30, 54, 0.06);
+    --shadow-md: 0 4px 16px rgba(16, 30, 54, 0.10);
+    --shadow-lg: 0 8px 32px rgba(16, 30, 54, 0.12);
+    --card-shadow: 0 2px 24px rgba(16, 30, 54, 0.08);
     
     /* Transitions */
-    --transition-fast: 0.2s ease;
-    --transition-medium: 0.3s ease;
-    --transition-slow: 0.5s ease;
+    --transition-fast: 0.2s cubic-bezier(0.4,0,0.2,1);
+    --transition-medium: 0.3s cubic-bezier(0.4,0,0.2,1);
+    --transition-slow: 0.5s cubic-bezier(0.4,0,0.2,1);
     
     /* Z-index layers */
     --z-index-dropdown: 1000;

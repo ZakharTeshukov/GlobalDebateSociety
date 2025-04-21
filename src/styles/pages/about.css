@@ -1,10 +1,6 @@
 /* Import shared hero styles */
 @import '../components/hero.css';
 
-/* About page specific styles */
-.about-hero {
-    /* Only override specific properties if needed */
-}
 
 .about-hero .hero-title {
     font-size: 3.5rem; /* Larger title for about page */
@@ -12,7 +8,7 @@
 
 /* Join Our Community Section */
 .join-community {
-    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('../../assets/images/community-bg.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/images/community-bg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

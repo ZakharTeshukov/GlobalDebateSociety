@@ -1,0 +1,463 @@
+/* Import shared hero styles */
+@import '../components/hero.css';
+
+/* Branch Page Styles */
+:root {
+    --section-padding: 6rem 0;
+    --section-margin: 2rem 0;
+}
+
+/* Hero Section */
+.branch-hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/images/hero-backgrounds/debate-hero-bg.svg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-white);
+    overflow: hidden;
+}
+
+.branch-hero-content {
+    max-width: 800px;
+    padding: 2rem;
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Style placeholder branch logo in hero */
+.branch-logo {
+    max-width: 200px;
+    margin-bottom: 1rem;
+}
+
+.branch-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.branch-location {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    color: #fff;
+    margin-bottom: 2rem;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+/* Section Styles */
+.branch-section {
+    padding: var(--section-padding);
+    background: var(--color-white);
+}
+
+.branch-section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.branch-section-subtitle {
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    color: var(--color-text-secondary);
+}
+
+/* Leadership Section */
+.leadership-section {
+    background: var(--color-light);
+}
+
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.leader-card {
+    background: var(--color-white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.leader-card:hover {
+    transform: translateY(-5px);
+}
+
+.leader-photo {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.leader-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.leader-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+}
+
+.leader-title {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 1rem;
+}
+
+.leader-contact {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+/* Statistics Section */
+.stats-section {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 2rem;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Services Section */
+.services-section {
+    background: var(--color-white);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.service-card {
+    background: var(--color-light);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.service-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+.service-description {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../../assets/images/hero-backgrounds/debate-hero-bg.svg');
+    background-size: cover;
+    background-position: center;
+    color: var(--color-white);
+    text-align: center;
+    padding: 6rem 1rem;
+}
+
+.cta-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.cta-description {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    opacity: 0.9;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background: var(--color-primary-dark);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .branch-title {
+        font-size: 3rem;
+    }
+
+    .branch-location {
+        font-size: 1.2rem;
+    }
+
+    .branch-section-title {
+        font-size: 2rem;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    .cta-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .branch-title {
+        font-size: 2.5rem;
+    }
+
+    .branch-section {
+        padding: 4rem 0;
+    }
+
+    .leader-card {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Hide broken img fallback since background covers this */
+.branch-hero-img {
+    display: none;
+}
+
+/* Section spacing and layout improvements */
+section {
+    margin-bottom: 3.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.branch-about,
+.branch-remarks,
+.branch-leadership,
+.branch-contact,
+.branch-map,
+.branch-stats,
+.branch-events,
+.branch-achievements,
+.branch-cta {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    padding: 2.5rem 1.5rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.branch-about h2,
+.branch-remarks h2,
+.branch-leadership h2,
+.branch-contact h2,
+.branch-map h2,
+.branch-stats h2,
+.branch-events h2,
+.branch-achievements h2,
+.branch-cta h2 {
+    color: var(--color-primary, #3a86ff);
+    margin-bottom: 1.2rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.branch-about p,
+.branch-remarks p,
+.branch-contact ul,
+.branch-stats ul,
+.branch-events .event-card p,
+.branch-achievements .achievement-card p {
+    color: #222;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+}
+
+.branch-leadership .leader-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    .branch-title {
+        font-size: 2.2rem;
+    }
+    .branch-hero-content {
+        padding: 1rem;
+    }
+    section {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+
+.branch-stats-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.stat-card {
+    background: #f3f4f6;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    width: 180px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s cubic-bezier(.4,2,.6,1);
+    cursor: pointer;
+}
+
+.stat-card:hover {
+    transform: translateY(-6px) scale(1.04);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    color: #888;
+    margin-bottom: 0.7rem;
+}
+
+.stat-number {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 1.05rem;
+    color: #555;
+    text-align: center;
+}
+
+.branch-events-list {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.branch-event-card {
+    background: #f9fafb;
+    border-left: 6px solid #3498db;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.06);
+    padding: 2rem 2.5rem;
+    min-width: 260px;
+    max-width: 340px;
+    flex: 1 1 260px;
+    transition: box-shadow 0.18s cubic-bezier(.4,2,.6,1), transform 0.18s cubic-bezier(.4,2,.6,1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.branch-event-card:hover {
+    box-shadow: 0 8px 24px rgba(44,62,80,0.13);
+    transform: translateY(-4px) scale(1.03);
+}
+
+.branch-event-card h3 {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.branch-event-card .event-date {
+    color: #3498db;
+    font-weight: 600;
+    margin-bottom: 0.7rem;
+    font-size: 1.05rem;
+}
+
+.branch-event-card p {
+    color: #444;
+    margin-bottom: 0.2rem;
+} 

@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Title | Global Debate Society</title>
     <!-- Base styles + components - applied to every page -->
-    <link rel="stylesheet" href="../../src/styles/index.css">
+    <link rel="stylesheet" href="../../styles/index.css">
     <!-- Page-specific styles - uncomment and modify as needed -->
-    <link rel="stylesheet" href="../../src/styles/pages/about.css">
-    <link rel="stylesheet" href="../../src/styles/pages/timeline-animations.css">
-    <link rel="stylesheet" href="../../src/styles/pages/timeline-effects.css">
-    <link rel="stylesheet" href="../../src/styles/pages/timeline.css">
+    <link rel="stylesheet" href="../../styles/pages/about.css">
+    <link rel="stylesheet" href="../../styles/pages/timeline-animations.css">
+    <link rel="stylesheet" href="../../styles/pages/timeline-effects.css">
+    <link rel="stylesheet" href="../../styles/pages/timeline.css">
 
-    <!-- <link rel="stylesheet" href="../../src/styles/pages/[page-name].css"> -->
+    <!-- <link rel="stylesheet" href="../../styles/pages/[page-name].css"> -->
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <!-- JavaScript -->
-    <script src="../../src/js/navbar.js" defer></script>
+    <script src="../../js/navbar.js" defer></script>
     
     <!-- Critical styles to ensure timeline visibility -->
     <style>
@@ -53,7 +53,7 @@
 <body>
     <header> 
         <nav class="navbar">
-            <a href="../../index.html" class="navbar-logo">
+            <a href="../../../index.html" class="navbar-logo">
                 <span class="navbar-logo-text">Global Debate Society</span>
             </a>
             
@@ -64,10 +64,18 @@
             </button>
             
             <ul class="navbar-nav">
-                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../../index.html">Home</a></li>
                 <li><a href="about.html" class="active">About</a></li>
                 <li><a href="events.html">Events</a></li>
                 <li><a href="resources.html">Resources</a></li>
+                <li class="navbar-dropdown">
+                    <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Chapters <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../branches/abcis.html">ABCIS</a></li>
+                        <li><a href="../branches/ssis.html">SSIS</a></li>
+                        <li><a href="../branches/lsts.html">LSTS</a></li>
+                    </ul>
+                </li>
                 <li><a href="join.html" class="join-btn">Join Us</a></li>
             </ul>
         </nav>
@@ -189,7 +197,7 @@
                 <h2>Join Our Community</h2>
                 <p>Whether you're a student looking to improve your debate skills, a teacher seeking resources for your debate club, or an organization interested in partnering with us, we welcome you to join our community.</p>
                 <div class="cta-buttons">
-                    <a href="../navbar-pages/join.html" class="button primary-btn">Become a Member</a>
+                    <a href="join.html" class="button primary-btn">Become a Member</a>
                     <a href="../navbar-pages/contact.html" class="button secondary-btn">Contact Us</a>
                 </div>
             </div>
@@ -215,7 +223,7 @@
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../../index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="events.html">Events</a></li>
                         <li><a href="resources.html">Resources</a></li>
@@ -276,12 +284,12 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="../../src/js/mobile-menu.js"></script>
-    <script src="../../src/js/main.js"></script>
-    <script src="../../src/js/timeline-animation.js"></script>
-    <script src="../../src/js/timeline-particles.js"></script>
-    <script src="../../src/js/timeline-intersect.js"></script>
-    <script src="../../src/js/timeline-tilt.js"></script>
+    <script src="../../js/mobile-menu.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="../../js/timeline-animation.js"></script>
+    <script src="../../js/timeline-particles.js"></script>
+    <script src="../../js/timeline-intersect.js"></script>
+    <script src="../../js/timeline-tilt.js"></script>
     
     <!-- Timeline visibility script -->
     <script>

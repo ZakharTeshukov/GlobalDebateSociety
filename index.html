@@ -19,9 +19,10 @@
     
     <!-- Preload critical assets -->
     <link rel="preload" href="src/styles/index.css" as="style">
+    <link rel="preload" href="src/styles/pages/home.css" as="style">
     <link rel="preload" href="src/js/main.js" as="script">
     <link rel="preload" href="src/js/lazy-loading.js" as="script">
-    <link rel="preload" href="src/assets/images/debate-hero-bg.svg" as="image">
+    <link rel="preload" href="src/assets/images/hero-backgrounds/debate-hero-bg.svg" as="image">
     
     <!-- Service worker registration script -->
     <script src="src/js/sw-register.js" defer></script>
@@ -30,24 +31,33 @@
     <script src="src/js/lazy-loading.js" defer></script>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header> 
-        <nav class="navbar">
-            <a href="index.html" class="navbar-logo">
+        <nav class="navbar" role="navigation" aria-label="Main Navigation">
+            <a href="index.html" class="navbar-logo" aria-label="Global Debate Society Home">
                 <span class="navbar-logo-text">Global Debate Society</span>
             </a>
             
-            <button class="mobile-menu-btn">
+            <button class="mobile-menu-btn" aria-label="Open main menu" aria-controls="navbar-nav" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             
-            <ul class="navbar-nav">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="pages/navbar-pages/about.html">About</a></li>
-                <li><a href="pages/navbar-pages/events.html">Events</a></li>
-                <li><a href="pages/navbar-pages/resources.html">Resources</a></li>
-                <li><a href="pages/navbar-pages/join.html" class="join-btn">Join Us</a></li>
+            <ul class="navbar-nav" id="navbar-nav">
+                <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                <li><a href="src/pages/navbar-pages/about.html">About</a></li>
+                <li><a href="src/pages/navbar-pages/events.html">Events</a></li>
+                <li><a href="src/pages/navbar-pages/resources.html">Resources</a></li>
+                <li class="navbar-dropdown">
+                    <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Chapters <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="src/pages/branches/abcis.html">ABCIS</a></li>
+                        <li><a href="src/pages/branches/ssis.html">SSIS</a></li>
+                        <li><a href="src/pages/branches/lsts.html">LSTS</a></li>
+                    </ul>
+                </li>
+                <li><a href="src/pages/navbar-pages/join.html" class="join-btn">Join Us</a></li>
             </ul>
         </nav>
     </header>
@@ -59,8 +69,8 @@
                 <h1 class="hero-title">Welcome to Global Debate Society</h1>
                 <p class="hero-subtitle">Empowering voices and fostering critical thinking across Southeast Asia</p>
                 <div class="hero-buttons">
-                    <a href="pages/navbar-pages/join.html" class="btn btn-primary btn-lg btn-join">Join</a>
-                    <a href="pages/navbar-pages/events.html" class="btn btn-outline btn-lg">Upcoming Events</a>
+                    <a href="src/pages/navbar-pages/join.html" class="btn btn-primary btn-lg btn-join">Join</a>
+                    <a href="src/pages/navbar-pages/events.html" class="btn btn-outline btn-lg">Upcoming Events</a>
                 </div>
             </div>
         </section>
@@ -115,7 +125,7 @@
                                 </div>
                             </div>
                             <p class="event-description">Join the premier debate competition in Southeast Asia with teams from across the region. Compete for regional recognition and valuable prizes.</p>
-                            <a href="pages/navbar-pages/events.html#championship" class="btn btn-primary">Reserve Spot</a>
+                            <a href="src/pages/navbar-pages/events.html#championship" class="btn btn-primary">Reserve Spot</a>
                         </div>
                     </div>
                     
@@ -136,7 +146,7 @@
                                 </div>
                             </div>
                             <p class="event-description">Master the art of public speaking with expert guidance from award-winning speakers and debate champions. Perfect for both beginners and experienced speakers.</p>
-                            <a href="pages/navbar-pages/events.html#masterclass" class="btn btn-primary">Reserve Spot</a>
+                            <a href="src/pages/navbar-pages/events.html#masterclass" class="btn btn-primary">Reserve Spot</a>
                         </div>
                     </div>
 
@@ -157,7 +167,7 @@
                                 </div>
                             </div>
                             <p class="event-description">Dive deep into international policy debate formats with expert coaches. Learn advanced research techniques and policy analysis frameworks.</p>
-                            <a href="pages/navbar-pages/events.html#workshop" class="btn btn-primary">Reserve Spot</a>
+                            <a href="src/pages/navbar-pages/events.html#workshop" class="btn btn-primary">Reserve Spot</a>
                         </div>
                     </div>
 
@@ -178,7 +188,7 @@
                                 </div>
                             </div>
                             <p class="event-description">An intensive one-day bootcamp designed for young debaters aged 14-18. Focus on fundamental debate skills and confidence building.</p>
-                            <a href="pages/navbar-pages/events.html#bootcamp" class="btn btn-primary">Reserve Spot</a>
+                            <a href="src/pages/navbar-pages/events.html#bootcamp" class="btn btn-primary">Reserve Spot</a>
                         </div>
                     </div>
 
@@ -199,7 +209,7 @@
                                 </div>
                             </div>
                             <p class="event-description">Learn effective communication strategies across different cultural contexts. Essential for international debaters and public speakers.</p>
-                            <a href="pages/navbar-pages/events.html#workshop" class="btn btn-primary">Reserve Spot</a>
+                            <a href="src/pages/navbar-pages/events.html#workshop" class="btn btn-primary">Reserve Spot</a>
                         </div>
                     </div>
 
@@ -220,7 +230,7 @@
                                 </div>
                             </div>
                             <p class="event-description">Join our specialized debate series focusing on environmental policies and climate change solutions in Southeast Asia.</p>
-                            <a href="pages/navbar-pages/events.html#series" class="btn btn-primary">Reserve Spot</a>
+                            <a href="src/pages/navbar-pages/events.html#series" class="btn btn-primary">Reserve Spot</a>
                         </div>
                     </div>
                 </div>
@@ -235,58 +245,58 @@
                 <div class="grid grid-3">
                     <article class="blog-card-small">
                         <div class="blog-card-small-img">
-                            <img src="src/assets/images/blog-placeholder.svg" alt="Featured debate article">
+                            <img src="src/assets/images/placeholders/blog-placeholder.svg" alt="Featured debate article">
                         </div>
                         <div class="blog-card-small-content">
                             <h3 class="blog-card-small-title">
-                                <a href="pages/footer-pages/blog.html">Highlights from the 2024 Southeast Asian Debate Championship</a>
+                                <a href="src/pages/footer-pages/blog.html">Highlights from the 2024 Southeast Asian Debate Championship</a>
                             </h3>
                             <div class="blog-card-small-meta">
                                 <span><i class="far fa-calendar"></i> April 2, 2024</span>
                                 <span><i class="far fa-folder"></i> Championship</span>
                             </div>
                             <p class="blog-card-small-excerpt">A recap of the exciting moments, winning teams and strategies from this year's championship event held in Ho Chi Minh City.</p>
-                            <a href="pages/footer-pages/blog.html" class="link link-underline blog-card-small-link">Read More</a>
+                            <a href="src/pages/footer-pages/blog.html" class="link link-underline blog-card-small-link">Read More</a>
                         </div>
                     </article>
                     
                     <article class="blog-card-small">
                         <div class="blog-card-small-img">
-                            <img src="src/assets/images/blog-placeholder.svg" alt="Debate techniques">
+                            <img src="src/assets/images/placeholders/blog-placeholder.svg" alt="Debate techniques">
                         </div>
                         <div class="blog-card-small-content">
                             <h3 class="blog-card-small-title">
-                                <a href="pages/footer-pages/blog.html">5 Advanced Rebuttal Techniques That Win Debates</a>
+                                <a href="src/pages/footer-pages/blog.html">5 Advanced Rebuttal Techniques That Win Debates</a>
                             </h3>
                             <div class="blog-card-small-meta">
                                 <span><i class="far fa-calendar"></i> March 28, 2024</span>
                                 <span><i class="far fa-folder"></i> Training</span>
                             </div>
                             <p class="blog-card-small-excerpt">Learn powerful rebuttal strategies that champion debaters use to effectively counter opponents' arguments and win debates.</p>
-                            <a href="pages/footer-pages/blog.html" class="link link-underline blog-card-small-link">Read More</a>
+                            <a href="src/pages/footer-pages/blog.html" class="link link-underline blog-card-small-link">Read More</a>
                         </div>
                     </article>
                     
                     <article class="blog-card-small">
                         <div class="blog-card-small-img">
-                            <img src="src/assets/images/blog-placeholder.svg" alt="Virtual debates">
+                            <img src="src/assets/images/placeholders/blog-placeholder.svg" alt="Virtual debates">
                         </div>
                         <div class="blog-card-small-content">
                             <h3 class="blog-card-small-title">
-                                <a href="pages/footer-pages/blog.html">The Rise of Virtual Debates: Challenges and Opportunities</a>
+                                <a href="src/pages/footer-pages/blog.html">The Rise of Virtual Debates: Challenges and Opportunities</a>
                             </h3>
                             <div class="blog-card-small-meta">
                                 <span><i class="far fa-calendar"></i> March 20, 2024</span>
                                 <span><i class="far fa-folder"></i> Technology</span>
                             </div>
                             <p class="blog-card-small-excerpt">Exploring how virtual debate formats are changing the landscape of competitive debating and creating new possibilities.</p>
-                            <a href="pages/footer-pages/blog.html" class="link link-underline blog-card-small-link">Read More</a>
+                            <a href="src/pages/footer-pages/blog.html" class="link link-underline blog-card-small-link">Read More</a>
                         </div>
                     </article>
                 </div>
                 
                 <div class="text-center mt-4">
-                    <a href="pages/footer-pages/blog.html" class="btn btn-outline">View All Blog Posts</a>
+                    <a href="src/pages/footer-pages/blog.html" class="btn btn-outline">View All Blog Posts</a>
                 </div>
             </div>
         </section>
@@ -296,7 +306,7 @@
                 <div class="cta-content">
                     <h2 class="cta-title">Ready to Join Our Community?</h2>
                     <p class="cta-text">Start your journey with Global Debate Society today!</p>
-                    <a href="pages/navbar-pages/join.html" class="cta-button">Join</a>
+                    <a href="src/pages/navbar-pages/join.html" class="cta-button">Join</a>
                 </div>
             </div>
         </section>
@@ -322,21 +332,21 @@
                     <h3 class="footer-widget-title">Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="pages/navbar-pages/about.html">About</a></li>
-                        <li><a href="pages/navbar-pages/events.html">Events</a></li>
-                        <li><a href="pages/navbar-pages/resources.html">Resources</a></li>
-                        <li><a href="pages/navbar-pages/join.html">Join</a></li>
+                        <li><a href="src/pages/navbar-pages/about.html">About</a></li>
+                        <li><a href="src/pages/navbar-pages/events.html">Events</a></li>
+                        <li><a href="src/pages/navbar-pages/resources.html">Resources</a></li>
+                        <li><a href="src/pages/navbar-pages/join.html">Join</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Resources</h3>
                     <ul class="footer-links">
-                        <li><a href="pages/navbar-pages/resources.html#guides">Debate Resources</a></li>
-                        <li><a href="pages/navbar-pages/resources.html#materials">Training Materials</a></li>
-                        <li><a href="pages/navbar-pages/resources.html#videos">Video Library</a></li>
-                        <li><a href="pages/footer-pages/blog.html">Blog Articles</a></li>
-                        <li><a href="pages/footer-pages/faq.html">FAQs</a></li>
+                        <li><a href="src/pages/navbar-pages/resources.html#guides">Debate Resources</a></li>
+                        <li><a href="src/pages/navbar-pages/resources.html#materials">Training Materials</a></li>
+                        <li><a href="src/pages/navbar-pages/resources.html#videos">Video Library</a></li>
+                        <li><a href="src/pages/footer-pages/blog.html">Blog Articles</a></li>
+                        <li><a href="src/pages/footer-pages/faq.html">FAQs</a></li>
                     </ul>
                 </div>
                 

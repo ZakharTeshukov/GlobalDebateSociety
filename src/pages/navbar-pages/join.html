@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Title | Global Debate Society</title>
+    <title>Join Us | Global Debate Society</title>
     <!-- Base styles + components - applied to every page -->
-    <link rel="stylesheet" href="../../src/styles/index.css">
-    <!-- Page-specific styles - uncomment and modify as needed -->
-    <link rel="stylesheet" href="../../src/styles/pages/join.css">
-    <!-- <link rel="stylesheet" href="../../src/styles/pages/[page-name].css"> -->
+    <link rel="stylesheet" href="../../styles/index.css">
+    <!-- Page-specific styles -->
+    <link rel="stylesheet" href="../../styles/pages/join.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <!-- JavaScript -->
-    <script src="../../src/js/navbar.js" defer></script>
+    <script src="../../js/navbar.js" defer></script>
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <a href="../../index.html" class="navbar-logo">
+            <a href="../../../index.html" class="navbar-logo">
                 <span class="navbar-logo-text">Global Debate Society</span>
             </a>
             
@@ -30,9 +29,17 @@
             </button>
             
             <ul class="navbar-nav">
-                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../../index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="events.html">Events</a></li>
+                <li class="navbar-dropdown">
+                    <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Chapters <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../branches/abcis.html">ABCIS</a></li>
+                        <li><a href="../branches/ssis.html">SSIS</a></li>
+                        <li><a href="../branches/lsts.html">LSTS</a></li>
+                    </ul>
+                </li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="join.html" class="join-btn active">Join Us</a></li>
             </ul>
@@ -404,7 +411,7 @@
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../../index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="events.html">Events</a></li>
                         <li><a href="resources.html">Resources</a></li>
@@ -461,8 +468,8 @@
     </button>
 
     <!-- Updated JavaScript files -->
-    <script src="../../src/js/mobile-menu.js"></script>
-    <script src="../../src/js/join.js"></script>
-    <script src="../../src/js/main.js"></script>
+    <script src="../../js/mobile-menu.js"></script>
+    <script src="../../js/join.js"></script>
+    <script src="../../js/main.js"></script>
 </body>
 </html> 

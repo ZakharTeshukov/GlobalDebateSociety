@@ -2,7 +2,7 @@
 
 /* Hero section */
 .join-hero {
-    background: linear-gradient(rgba(63, 81, 181, 0.85), rgba(63, 81, 181, 0.95)), url('../../assets/images/debate-hero.jpg');
+    background: linear-gradient(rgba(63, 81, 181, 0.85), rgba(63, 81, 181, 0.95)), url('../../assets/images/hero-backgrounds/debate-hero-bg.svg');
     background-size: cover;
     background-position: center;
     color: var(--white);
@@ -419,7 +419,7 @@ input:focus, select:focus, textarea:focus {
 /* Host Event Section */
 .host-events {
     padding: 5rem 0;
-    background: linear-gradient(rgba(63, 81, 181, 0.9), rgba(63, 81, 181, 0.95)), url('../../assets/images/event-bg.jpg');
+    background: linear-gradient(rgba(63, 81, 181, 0.9), rgba(63, 81, 181, 0.95)), url('../../assets/images/hero-backgrounds/debate-hero-bg.svg');
     background-size: cover;
     background-position: center;
     text-align: center;
