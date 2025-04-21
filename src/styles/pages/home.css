@@ -491,14 +491,20 @@
         margin: 0 var(--spacing-sm);
     }
     
+    .upcoming-events .container {
+        padding: 0 var(--spacing-xs);
+    }
+    
     .events-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
-        padding: 0 var(--spacing-sm);
+        padding: 0;
+        width: 100%;
     }
     
     .event-card {
-        margin-bottom: var(--spacing-sm);
+        margin: 0;
+        width: 100%;
     }
     
     .event-meta {
@@ -568,8 +574,23 @@
         font-size: 0.9rem;
     }
     
+    .upcoming-events .container {
+        padding: 0 var(--spacing-xs);
+    }
+    
     .events-grid {
         margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    
+    .event-card {
+        margin: 0;
+        width: 100%;
+    }
+    
+    .event-content {
+        padding: var(--spacing-md) var(--spacing-sm);
     }
     
     .event-meta {
