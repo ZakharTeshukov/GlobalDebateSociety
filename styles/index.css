@@ -1,0 +1,5 @@
+/* Custom style for homepage footer contact us text */
+footer .footer-contact li span {
+  color: #777;
+  font-size: 0.9rem;
+} 

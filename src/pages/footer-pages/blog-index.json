@@ -1,0 +1,162 @@
+[
+  {
+    "title": "The Power of Persuasion in Debate",
+    "summary": "Explore how persuasive techniques can turn the tide in competitive debates.",
+    "date": "2024-06-01",
+    "tags": ["Debate Techniques", "Persuasion"],
+    "slug": "power-of-persuasion",
+    "cover": "../../assets/images/placeholders/blog-placeholder.svg"
+  },
+  {
+    "title": "Research Skills for Debaters",
+    "summary": "A guide to effective research methods for building strong arguments.",
+    "date": "2024-05-28",
+    "tags": ["Research Methods", "Debate Techniques"],
+    "slug": "research-skills-debaters",
+    "cover": "../../assets/images/placeholders/blog-placeholder.svg"
+  },
+  {
+    "title": "Judging Criteria Explained",
+    "summary": "Understand what judges look for and how to impress them.",
+    "date": "2024-05-25",
+    "tags": ["Judging & Adjudication"],
+    "slug": "judging-criteria-explained",
+    "cover": "../../assets/images/placeholders/blog-placeholder.svg"
+  },
+  {
+    "title": "Debate Formats Around the World",
+    "summary": "A look at popular debate formats and their unique rules.",
+    "date": "2024-05-20",
+    "tags": ["Debate History", "Debate Techniques"],
+    "slug": "debate-formats-world",
+    "cover": "../../assets/images/placeholders/blog-placeholder.svg"
+  },
+  {
+    "title": "Building Confidence as a Speaker",
+    "summary": "Tips for overcoming stage fright and speaking with confidence.",
+    "date": "2024-05-18",
+    "tags": ["Personal Development", "Public Speaking"],
+    "slug": "building-confidence-speaker",
+    "cover": "../../assets/images/placeholders/blog-placeholder.svg"
+  },
+  {
+    "title": "How to Structure Arguments",
+    "summary": "Learn the best ways to organize your points for maximum impact.",
+    "date": "2024-05-15",
+    "tags": ["Debate Techniques", "Argumentation"],
+    "slug": "structure-arguments",
+    "cover": "../../assets/images/placeholders/blog-placeholder.svg"
+  },
+  {
+    "title": "The Role of Evidence in Debates",
+    "summary": "Why evidence matters and how to use it effectively.",
+    "date": "2024-05-12",
+    "tags": ["Evidence", "Research Methods"],
+    "slug": "role-of-evidence",
+    "cover": "../../assets/images/placeholders/blog-placeholder.svg"
+  },
+  {
+    "title": "Debate Champions: Lessons from the Best",
+    "summary": "Insights from top debaters and what you can learn from them.",
+    "date": "2024-05-10",
+    "tags": ["Competition Insights", "Personal Development"],
+    "slug": "debate-champions-lessons",
+    "cover": "../../assets/images/placeholders/blog-placeholder.svg"
+  },
+  {
+    "title": "Critical Thinking in Everyday Life",
+    "summary": "How debate skills translate to better decision-making.",
+    "date": "2024-05-08",
+    "tags": ["Critical Thinking", "Personal Development"],
+    "slug": "critical-thinking-everyday",
+    "cover": "../../assets/images/placeholders/blog-placeholder.svg"
+  },
+  {
+    "title": "Adjudication Myths Busted",
+    "summary": "Common misconceptions about judging and the truth behind them.",
+    "date": "2024-05-05",
+    "tags": ["Judging & Adjudication"],
+    "slug": "adjudication-myths-busted",
+    "cover": "../../assets/images/placeholders/blog-placeholder.svg"
+  },
+  {
+    "title": "Debate and Current Affairs",
+    "summary": "Why staying updated with news is crucial for debaters.",
+    "date": "2024-05-03",
+    "tags": ["Current Affairs", "Research Methods"],
+    "slug": "debate-current-affairs",
+    "cover": "../../assets/images/placeholders/blog-placeholder.svg"
+  },
+  {
+    "title": "Mastering Rebuttals",
+    "summary": "How to effectively counter your opponent's arguments.",
+    "date": "2024-05-01",
+    "tags": ["Debate Techniques", "Argumentation"],
+    "slug": "mastering-rebuttals",
+    "cover": "../../assets/images/placeholders/blog-placeholder.svg"
+  },
+  {
+    "title": "The Art of Cross-Examination",
+    "summary": "Strategies for asking sharp, revealing questions.",
+    "date": "2024-04-28",
+    "tags": ["Debate Techniques", "Logic"],
+    "slug": "art-of-cross-examination",
+    "cover": "../../assets/images/placeholders/blog-placeholder.svg"
+  },
+  {
+    "title": "Debate Ethics: What's Fair?",
+    "summary": "A discussion on ethics and sportsmanship in debate.",
+    "date": "2024-04-25",
+    "tags": ["Debate History", "Personal Development"],
+    "slug": "debate-ethics-fairness",
+    "cover": "../../assets/images/placeholders/blog-placeholder.svg"
+  },
+  {
+    "title": "How to Judge a Debate",
+    "summary": "A step-by-step guide for new adjudicators.",
+    "date": "2024-04-22",
+    "tags": ["Judging & Adjudication"],
+    "slug": "how-to-judge-debate",
+    "cover": "../../assets/images/placeholders/blog-placeholder.svg"
+  },
+  {
+    "title": "Debate Prep: What to Do Before a Tournament",
+    "summary": "Preparation tips to boost your performance on competition day.",
+    "date": "2024-04-20",
+    "tags": ["Competition Insights", "Personal Development"],
+    "slug": "debate-prep-tournament",
+    "cover": "../../assets/images/placeholders/blog-placeholder.svg"
+  },
+  {
+    "title": "Public Speaking Hacks for Debaters",
+    "summary": "Quick tips to improve your delivery and presence.",
+    "date": "2024-04-18",
+    "tags": ["Public Speaking", "Debate Techniques"],
+    "slug": "public-speaking-hacks",
+    "cover": "../../assets/images/placeholders/blog-placeholder.svg"
+  },
+  {
+    "title": "Debate Strategy: Planning Your Case",
+    "summary": "How to outline and plan a winning case.",
+    "date": "2024-04-15",
+    "tags": ["Debate Strategy", "Argumentation"],
+    "slug": "debate-strategy-case",
+    "cover": "../../assets/images/placeholders/blog-placeholder.svg"
+  },
+  {
+    "title": "Rhetoric in Modern Debates",
+    "summary": "The role of rhetorical devices in persuasive speaking.",
+    "date": "2024-04-12",
+    "tags": ["Rhetoric", "Debate Techniques"],
+    "slug": "rhetoric-modern-debates",
+    "cover": "../../assets/images/placeholders/blog-placeholder.svg"
+  },
+  {
+    "title": "Logic and Fallacies",
+    "summary": "Spotting and avoiding logical fallacies in debate.",
+    "date": "2024-04-10",
+    "tags": ["Logic", "Critical Thinking"],
+    "slug": "logic-and-fallacies",
+    "cover": "../../assets/images/placeholders/blog-placeholder.svg"
+  }
+] 

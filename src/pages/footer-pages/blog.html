@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Global Debate Society</title>
-    <link rel="stylesheet" href="../../src/styles/index.css">
-    <link rel="stylesheet" href="../../src/styles/pages/blog.css">
+    <link rel="stylesheet" href="../../styles/layouts/variables.css">
+    <link rel="stylesheet" href="../../styles/layouts/colors.css">
+    <link rel="stylesheet" href="../../styles/layouts/layout.css">
+    <link rel="stylesheet" href="../../styles/layouts/components.css">
+    <link rel="stylesheet" href="../../styles/index.css">
+    <link rel="stylesheet" href="../../styles/pages/blog.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -44,123 +48,15 @@
             <div class="container">
                 <div class="blog-layout">
                     <div class="blog-main">
-                        <article class="featured-post">
-                            <div class="post-image">
-                                <img src="../../assets/images/blog-featured.jpg" alt="The Evolution of Competitive Debate">
+                        <div class="blog-filters">
+                            <div class="search-container">
+                                <input type="text" id="blog-search" placeholder="Search blog posts...">
+                                <button id="search-btn"><i class="fas fa-search"></i></button>
                             </div>
-                            <div class="post-content">
-                                <div class="post-meta">
-                                    <span class="post-category">Debate Trends</span>
-                                    <span class="post-date">June 1, 2024</span>
-                                </div>
-                                <h2 class="post-title">The Evolution of Competitive Debate in Southeast Asia</h2>
-                                <p class="post-excerpt">Examining how debate formats and topics have evolved over the past decade and the unique characteristics of Southeast Asian debate culture.</p>
-                                <div class="post-author">
-                                    <img src="../../assets/images/author1.jpg" alt="Michael Chen">
-                                    <span>By Michael Chen</span>
-                                </div>
-                                <a href="#" class="btn btn-primary">Read More</a>
-                            </div>
-                        </article>
-
-                        <div class="posts-grid">
-                            <article class="post-card">
-                                <div class="post-image">
-                                    <img src="../../assets/images/blog1.jpg" alt="Effective Research Strategies">
-                                </div>
-                                <div class="post-content">
-                                    <div class="post-meta">
-                                        <span class="post-category">Research</span>
-                                        <span class="post-date">May 25, 2024</span>
-                                    </div>
-                                    <h3 class="post-title">Effective Research Strategies for Competitive Debaters</h3>
-                                    <p class="post-excerpt">Learn how to efficiently gather evidence and build strong arguments through strategic research techniques.</p>
-                                    <a href="#" class="post-link">Read More <i class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </article>
-
-                            <article class="post-card">
-                                <div class="post-image">
-                                    <img src="../../assets/images/blog2.jpg" alt="Mastering Rebuttals">
-                                </div>
-                                <div class="post-content">
-                                    <div class="post-meta">
-                                        <span class="post-category">Technique</span>
-                                        <span class="post-date">May 18, 2024</span>
-                                    </div>
-                                    <h3 class="post-title">Mastering Rebuttals: Responding Effectively to Opposition Arguments</h3>
-                                    <p class="post-excerpt">Develop your ability to analyze, deconstruct, and counter your opponents' arguments with these proven techniques.</p>
-                                    <a href="#" class="post-link">Read More <i class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </article>
-
-                            <article class="post-card">
-                                <div class="post-image">
-                                    <img src="../../assets/images/blog3.jpg" alt="The Ethics of Cross-Examination">
-                                </div>
-                                <div class="post-content">
-                                    <div class="post-meta">
-                                        <span class="post-category">Ethics</span>
-                                        <span class="post-date">May 10, 2024</span>
-                                    </div>
-                                    <h3 class="post-title">The Ethics of Cross-Examination in Debate</h3>
-                                    <p class="post-excerpt">Exploring the fine line between effective questioning and respectful discourse in competitive debate.</p>
-                                    <a href="#" class="post-link">Read More <i class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </article>
-
-                            <article class="post-card">
-                                <div class="post-image">
-                                    <img src="../../assets/images/blog4.jpg" alt="Public Speaking Anxiety">
-                                </div>
-                                <div class="post-content">
-                                    <div class="post-meta">
-                                        <span class="post-category">Personal Development</span>
-                                        <span class="post-date">May 5, 2024</span>
-                                    </div>
-                                    <h3 class="post-title">Overcoming Public Speaking Anxiety in Debate</h3>
-                                    <p class="post-excerpt">Practical strategies and mental techniques to manage nervousness and perform confidently in high-pressure situations.</p>
-                                    <a href="#" class="post-link">Read More <i class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </article>
-
-                            <article class="post-card">
-                                <div class="post-image">
-                                    <img src="../../assets/images/blog5.jpg" alt="Judging Perspectives">
-                                </div>
-                                <div class="post-content">
-                                    <div class="post-meta">
-                                        <span class="post-category">Judging</span>
-                                        <span class="post-date">April 28, 2024</span>
-                                    </div>
-                                    <h3 class="post-title">Understanding the Judge's Perspective: What Evaluators Look For</h3>
-                                    <p class="post-excerpt">Insights from experienced judges on what makes a winning debate performance and common mistakes to avoid.</p>
-                                    <a href="#" class="post-link">Read More <i class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </article>
-
-                            <article class="post-card">
-                                <div class="post-image">
-                                    <img src="../../assets/images/blog6.jpg" alt="Digital Debate Platforms">
-                                </div>
-                                <div class="post-content">
-                                    <div class="post-meta">
-                                        <span class="post-category">Technology</span>
-                                        <span class="post-date">April 20, 2024</span>
-                                    </div>
-                                    <h3 class="post-title">The Rise of Digital Debate Platforms and Virtual Competitions</h3>
-                                    <p class="post-excerpt">How technology is transforming the debate landscape and creating new opportunities for participation.</p>
-                                    <a href="#" class="post-link">Read More <i class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </article>
+                            <div class="filter-tags" id="filter-tags"></div>
                         </div>
-
-                        <div class="pagination">
-                            <a href="#" class="active">1</a>
-                            <a href="#">2</a>
-                            <a href="#">3</a>
-                            <a href="#" class="pagination-next">Next <i class="fas fa-chevron-right"></i></a>
-                        </div>
+                        <div id="blog-list" class="blog-grid"></div>
+                        <div class="pagination" id="blog-pagination"></div>
                     </div>
 
                     <aside class="blog-sidebar">
@@ -328,9 +224,7 @@
                     <p>&copy; 2024 Global Debate Society. All rights reserved.</p>
                 </div>
                 <div class="footer-bottom-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Cookie Policy</a>
+                    <a href="dont-sue-us.html">Dont sue us policy</a>
                 </div>
             </div>
         </div>
@@ -344,5 +238,6 @@
     <!-- Updated JavaScript files -->
     <script src="../../src/js/mobile-menu.js"></script>
     <script src="../../src/js/main.js"></script>
+    <script src="../../js/blog.js"></script>
 </body>
 </html> 

@@ -1,0 +1,4 @@
+/* Added extra spacing between the Contact Us and Newsletter sections */
+.footer-content .footer-widget:nth-child(4) {
+    margin-top: 2rem;
+} 

@@ -116,19 +116,8 @@ Regular updates required for:
 - Performance optimization
 - Feature enhancements
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ## Contact
 
 For questions or support, please contact:
-- Email: info@globaldebatesociety.org
-- Website: www.globaldebatesociety.org
-
-## Acknowledgments
-
-- Font Awesome for icons
-- Google Fonts for typography
-- Contributors and maintainers 
-- 
+- Email: contact@globaldebatesociety.com
+- Website: www.globaldebatesociety.com

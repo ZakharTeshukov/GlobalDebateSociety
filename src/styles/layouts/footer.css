@@ -231,6 +231,10 @@
     .subscribe-button-container button:hover {
         transform: none;
     }
+    
+    .footer-content .footer-widget:nth-child(3) {
+        margin-right: 0;
+    }
 }
 
 @media (max-width: 480px) {
@@ -311,4 +315,19 @@
     .footer-bottom-links a {
         padding: 10px 0;
     }
+}
+
+/* Make "All rights reserved" text white on all pages */
+.footer-bottom .copyright p {
+    color: #fff;
+}
+
+/* Make Newsletter text white */
+.footer-content .footer-widget:last-of-type > p {
+    color: #fff;
+}
+
+/* Add extra spacing between Contact Us and Newsletter widgets on larger screens */
+.footer-content .footer-widget:nth-child(3) {
+    margin-right: var(--spacing-xl);
 } 

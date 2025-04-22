@@ -1,119 +1,34 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Filter blog posts by category
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const blogCards = document.querySelectorAll('.blog-card');
-    
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Remove active class from all buttons
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            
-            // Add active class to clicked button
-            button.classList.add('active');
-            
-            // Get the category to filter by
-            const category = button.getAttribute('data-category');
-            
-            // Filter blog cards
-            blogCards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'flex';
-                    // Add animation class
-                    card.classList.add('fade-in');
-                    // Remove animation class after animation completes
-                    setTimeout(() => {
-                        card.classList.remove('fade-in');
-                    }, 500);
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
+document.addEventListener('DOMContentLoaded', async () => {
+    const blogs = await fetchBlogIndex();
+    renderTags(blogs);
+    renderBlogList(blogs);
+
+    let currentTag = 'all';
+    let currentSearch = '';
+
+    document.getElementById('filter-tags').addEventListener('click', e => {
+        if (e.target.classList.contains('filter-btn')) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            e.target.classList.add('active');
+            currentTag = e.target.getAttribute('data-tag');
+            const filtered = filterBlogs(blogs, currentTag, currentSearch);
+            renderBlogList(filtered);
+        }
     });
-    
-    // Handle blog search
-    const searchInput = document.getElementById('blog-search');
-    const searchButton = document.getElementById('search-btn');
-    
-    const searchBlog = () => {
-        const searchTerm = searchInput.value.toLowerCase().trim();
-        
-        // If search term is empty, show all posts
-        if (!searchTerm) {
-            document.querySelector('.filter-btn[data-category="all"]').click();
-            return;
-        }
-        
-        // Reset filter buttons
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        
-        // Count visible cards for search results feedback
-        let visibleCount = 0;
-        
-        // Filter blog cards based on search
-        blogCards.forEach(card => {
-            const title = card.querySelector('h3').textContent.toLowerCase();
-            const content = card.querySelector('p').textContent.toLowerCase();
-            const category = card.querySelector('.category').textContent.toLowerCase();
-            
-            if (title.includes(searchTerm) || content.includes(searchTerm) || category.includes(searchTerm)) {
-                card.style.display = 'flex';
-                card.classList.add('fade-in');
-                setTimeout(() => {
-                    card.classList.remove('fade-in');
-                }, 500);
-                visibleCount++;
-            } else {
-                card.style.display = 'none';
-            }
-        });
-        
-        // Add search results feedback
-        updateSearchResults(visibleCount, searchTerm);
-    };
-    
-    // Add search results message
-    const updateSearchResults = (count, term) => {
-        // Remove existing results message if any
-        const existingMessage = document.querySelector('.search-results-message');
-        if (existingMessage) {
-            existingMessage.remove();
-        }
-        
-        // Create message element
-        const resultsMessage = document.createElement('div');
-        resultsMessage.className = 'search-results-message';
-        
-        // Set message text based on results count
-        if (count > 0) {
-            resultsMessage.textContent = `Found ${count} result${count > 1 ? 's' : ''} for "${term}"`;
-        } else {
-            resultsMessage.textContent = `No results found for "${term}"`;
-            // Add a clear search button
-            const clearButton = document.createElement('button');
-            clearButton.className = 'clear-search';
-            clearButton.textContent = 'Clear Search';
-            clearButton.addEventListener('click', () => {
-                searchInput.value = '';
-                document.querySelector('.filter-btn[data-category="all"]').click();
-                resultsMessage.remove();
-            });
-            resultsMessage.appendChild(clearButton);
-        }
-        
-        // Insert message after search container
-        const searchContainer = document.querySelector('.search-container');
-        searchContainer.parentNode.insertBefore(resultsMessage, searchContainer.nextSibling);
-    };
-    
-    // Add event listeners for search
-    searchButton.addEventListener('click', searchBlog);
-    searchInput.addEventListener('keyup', (e) => {
+
+    document.getElementById('search-btn').addEventListener('click', () => {
+        currentSearch = document.getElementById('blog-search').value.toLowerCase().trim();
+        const filtered = filterBlogs(blogs, currentTag, currentSearch);
+        renderBlogList(filtered);
+    });
+    document.getElementById('blog-search').addEventListener('keyup', e => {
         if (e.key === 'Enter') {
-            searchBlog();
+            currentSearch = document.getElementById('blog-search').value.toLowerCase().trim();
+            const filtered = filterBlogs(blogs, currentTag, currentSearch);
+            renderBlogList(filtered);
         }
     });
-    
+
     // Newsletter form handling
     const newsletterForm = document.querySelector('.newsletter-form');
     if (newsletterForm) {
@@ -250,4 +165,59 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Add dynamic styles
     addDynamicStyles();
-}); 
+});
+
+// Blog Database Dynamic Rendering
+async function fetchBlogIndex() {
+    const res = await fetch('blog-index.json');
+    return res.json();
+}
+
+function renderTags(blogs) {
+    const tagSet = new Set();
+    blogs.forEach(blog => {
+        if (Array.isArray(blog.tags)) {
+            blog.tags.forEach(tag => tagSet.add(tag));
+        }
+    });
+    const tags = Array.from(tagSet).sort();
+    const filterTags = document.getElementById('filter-tags');
+    filterTags.innerHTML = '<button class="filter-btn active" data-tag="all">All</button>' +
+        tags.map(tag => `<button class="filter-btn" data-tag="${tag}">${tag}</button>`).join('');
+}
+
+function renderBlogList(blogs) {
+    const blogList = document.getElementById('blog-list');
+    if (!blogList) return;
+    if (blogs.length === 0) {
+        blogList.innerHTML = '<p>No blog posts found.</p>';
+        return;
+    }
+    blogList.innerHTML = blogs.map(blog => `
+        <article class="blog-card" data-category="${(blog.tags && blog.tags[0]) || ''}">
+            <div class="blog-card-image">
+                <img src="${blog.cover || '../../assets/images/placeholders/blog-placeholder.svg'}" alt="${blog.title}">
+            </div>
+            <div class="blog-card-content">
+                <div class="post-meta">
+                    <span class="category">${(blog.tags && blog.tags[0]) || ''}</span>
+                    <span class="date">${blog.date}</span>
+                </div>
+                <h3>${blog.title}</h3>
+                <p>${blog.summary || ''}</p>
+                <a href="post.html?slug=${blog.slug}" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </article>
+    `).join('');
+}
+
+function filterBlogs(blogs, tag, searchTerm) {
+    return blogs.filter(blog => {
+        const matchesTag = tag === 'all' || (blog.tags && blog.tags.includes(tag));
+        const matchesSearch = !searchTerm ||
+            blog.title.toLowerCase().includes(searchTerm) ||
+            (blog.summary && blog.summary.toLowerCase().includes(searchTerm)) ||
+            (blog.tags && blog.tags.some(t => t.toLowerCase().includes(searchTerm)));
+        return matchesTag && matchesSearch;
+    });
+} 

@@ -22,7 +22,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <nav class="navbar" role="navigation" aria-label="Main Navigation">
             <a href="../../../index.html" class="navbar-logo" aria-label="Global Debate Society Home">
@@ -56,9 +55,8 @@
     <main id="main-content">
         <!-- Hero Section -->
         <section class="branch-hero">
-            <img src="../../assets/images/hero-backgrounds/ssis-hero.jpg" alt="SSIS Hero" class="branch-hero-img">
             <div class="branch-hero-content">
-                <img src="../../assets/images/placeholders/profile-placeholder.svg" alt="SSIS Logo" class="branch-logo">
+                <img src="../../../src/assets/images/logos/SSIS-logo-vertical-blue.png" alt="SSIS Logo" class="branch-logo" style="width: auto; height: 550px;">
                 <h1 class="branch-title">GDS@SSIS</h1>
                 <p class="branch-location">Saigon South International School, Ho Chi Minh City</p>
             </div>
@@ -193,53 +191,66 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-widgets">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <span class="footer-logo-text">Global Debate Society</span>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-content">
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="../../../pages/navbar-pages/about.html">About Us</a></li>
-                        <li><a href="../../../pages/navbar-pages/events.html">Events</a></li>
-                        <li><a href="../../../pages/navbar-pages/resources.html">Resources</a></li>
-                        <li><a href="../../../pages/navbar-pages/join.html">Join Us</a></li>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="../navbar-pages/about.html">About</a></li>
+                        <li><a href="../navbar-pages/events.html">Events</a></li>
+                        <li><a href="../navbar-pages/resources.html">Resources</a></li>
+                        <li><a href="../navbar-pages/join.html">Join</a></li>
                     </ul>
                 </div>
-                
+                <div class="footer-widget">
+                    <h3 class="footer-widget-title">Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="../navbar-pages/resources.html#guides">Debate Resources</a></li>
+                        <li><a href="../navbar-pages/resources.html#materials">Training Materials</a></li>
+                        <li><a href="../navbar-pages/resources.html#videos">Video Library</a></li>
+                        <li><a href="../footer-pages/blog.html">Blog Articles</a></li>
+                        <li><a href="../footer-pages/faq.html">FAQs</a></li>
+                    </ul>
+                </div>
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Contact Us</h3>
                     <ul class="footer-contact">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>78 Nguyễn Đức Cảnh, Tân Phong, Quận 7, Hồ Chí Minh 700000, Vietnam</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <span>+84 90 184 4197</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <span>contact@globaldebatesociety.com</span>
-                        </li>
+                        <li><i class="fas fa-map-marker-alt"></i><span>78 Nguyen Duc Canh Street, Tan Phong Ward, District 7, Ho Chi Minh City</span></li>
+                        <li><i class="fas fa-phone"></i><span>+84 90 184 4197</span></li>
+                        <li><i class="fas fa-envelope"></i><span>contact@globaldebatesociety.com</span></li>
                     </ul>
                 </div>
-                
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Newsletter</h3>
                     <p>Subscribe to our newsletter for the latest updates.</p>
-                    <form class="footer-subscribe">
-                        <input type="email" placeholder="Your email address" required>
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    <form class="footer-subscribe-container">
+                        <div class="email-input-container">
+                            <input type="email" placeholder="Your email address" required>
+                        </div>
+                        <div class="subscribe-button-container">
+                            <button type="submit" class="btn btn-primary">SUBSCRIBE</button>
+                        </div>
                     </form>
                 </div>
             </div>
-            
             <div class="footer-bottom">
                 <div class="copyright">
                     <p>&copy; 2024 Global Debate Society. All rights reserved.</p>
                 </div>
                 <div class="footer-bottom-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Cookie Policy</a>
+                    <a href="../footer-pages/dont-sue-us.html">Dont sue us policy</a>
                 </div>
             </div>
         </div>
