@@ -165,6 +165,11 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-lg);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 var(--spacing-sm);
+    margin: 0 auto;
 }
 
 .event-card {
@@ -498,8 +503,10 @@
     .events-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
-        padding: 0;
+        padding: 0 var(--spacing-sm);
         width: 100%;
+        box-sizing: border-box;
+        margin: 0 auto;
     }
     
     .event-card {
@@ -579,9 +586,11 @@
     }
     
     .events-grid {
-        margin: 0;
-        padding: 0;
+        padding: 0 var(--spacing-sm);
         width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin: 0 auto;
     }
     
     .event-card {

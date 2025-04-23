@@ -104,9 +104,13 @@
 
 /* Footer Contact Info */
 .footer-contact {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: center;
+    margin: 0 auto !important;
+    text-align: center !important;
+    width: 100%;
 }
 
 .footer-contact li {
@@ -198,6 +202,15 @@
     .footer-widgets {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-md);
+        justify-items: center;
+    }
+    
+    .footer-widget {
+        text-align: center;
+    }
+    
+    .footer-widget-title {
+        text-align: center;
     }
     
     .footer-bottom {
@@ -235,11 +248,26 @@
     .footer-content .footer-widget:nth-child(3) {
         margin-right: 0;
     }
+    
+    .footer-content, .footer-widget {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
 }
 
 @media (max-width: 480px) {
     .footer-widgets {
         grid-template-columns: 1fr;
+        justify-items: center;
     }
     
     .footer-widget {
@@ -251,6 +279,11 @@
         left: 50%;
         transform: translateX(-50%);
         width: 60px;
+    }
+    
+    .footer-contact {
+        display: inline-block;
+        margin: 0 auto;
     }
     
     .footer-contact li {
@@ -298,6 +331,26 @@
         width: 100%;
         text-align: center;
     }
+    
+    /* Stack logo above social media on mobile */
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-logo {
+        margin-bottom: var(--spacing-sm);
+    }
+    .footer-social {
+        margin-top: var(--spacing-sm);
+    }
+    
+    /* Center all footer widget sections horizontally */
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 /* Improve tap targets on small mobile devices */
@@ -330,4 +383,33 @@
 /* Add extra spacing between Contact Us and Newsletter widgets on larger screens */
 .footer-content .footer-widget:nth-child(3) {
     margin-right: var(--spacing-xl);
+}
+
+/* === Mobile Logo Shortening === */
+@media (max-width: 576px) {
+    /* Hide full text and replace with GDS */
+    .footer-logo-text {
+        font-size: 0;
+        line-height: 0;
+    }
+    .footer-logo-text::after {
+        content: "GDS";
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #007bff;
+        letter-spacing: 0.5px;
+        display: inline-block;
+        line-height: normal;
+    }
+}
+
+.footer-widget .footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: center;
+    margin: 0 auto !important;
+    text-align: center !important;
+    width: 100%;
 } 
