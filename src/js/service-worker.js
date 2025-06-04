@@ -19,7 +19,7 @@ const CACHE_ASSETS = [
   '/pages/footer-pages/blog.html',
   '/pages/footer-pages/contact.html',
   '/pages/footer-pages/faq.html',
-  '/src/styles/index.css',
+  '/src/src/styles/index.css',
   '/src/js/main.js',
   '/src/js/lazy-loading.js',
   '/src/js/navbar.js',

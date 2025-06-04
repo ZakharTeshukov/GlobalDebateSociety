@@ -66,6 +66,17 @@
     justify-content: center;
 }
 
+.hero-buttons .btn-join {
+    background-color: var(--orange-500); /* Assuming var(--orange-500) is defined for orange */
+    /* If not defined, use a hex code like #FFA500 */
+    /* color: var(--white); Ensure text color is still appropriate */
+}
+
+.hero-buttons .btn-join:hover {
+    background-color: var(--orange-600); /* Darker orange for hover */
+     /* If not defined, use a hex code like #E69500 */
+}
+
 /* === Features Section === */
 
 .features {
@@ -77,6 +88,8 @@
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s ease;
+    padding-top: var(--spacing-lg); /* Added padding */
+    padding-bottom: var(--spacing-md); /* Added padding */
 }
 
 .features .section-title.animate {

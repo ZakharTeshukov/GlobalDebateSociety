@@ -2,22 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Title | Global Debate Society</title>
-    <!-- Base styles + components - applied to every page -->
-    <link rel="stylesheet" href="../../styles/index.css">
-    <!-- Page-specific styles - uncomment and modify as needed -->
-    <link rel="stylesheet" href="../../styles/pages/about.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>About Us | Global Debate Society</title>
     
-    <!-- <link rel="stylesheet" href="../../styles/pages/[page-name].css"> -->
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Google Fonts -->
+    <link rel="stylesheet" href="../../src/styles/index.css"> <!-- Common styles -->
+    <link rel="stylesheet" href="../../styles/pages/about.css"> <!-- Page-specific styles -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <!-- JavaScript -->
-    <script src="../../js/navbar.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../../src/styles/base.css"> <!-- Base styles -->
+    <link rel="stylesheet" href="../../src/styles/layouts/footer.css"> <!-- Footer styles -->
     
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="../../manifest.json">
+    <link rel="apple-touch-icon" href="../../src/assets/images/icon-192x192.png">
     
+    <!-- Performance optimization meta tags -->
+    <meta http-equiv="Cache-Control" content="max-age=86400, must-revalidate">
+    <meta name="description" content="Empowering students through the art of debate and critical thinking. Discover our mission, values, and the dedicated team working to foster a global community of critical thinkers."> <!-- Page-specific description -->
+    <meta name="theme-color" content="#3a86ff">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="../../src/styles/index.css" as="style">
+    <link rel="preload" href="../../styles/pages/about.css" as="style">
+    <link rel="preload" href="../../src/styles/base.css" as="style">
+    <link rel="preload" href="../../src/styles/layouts/footer.css" as="style">
+    <link rel="preload" href="../../src/js/main.js" as="script">
+    <link rel="preload" href="../../src/js/mobile-menu.js" as="script">
+    <link rel="preload" href="../../src/js/hero-scroll.js" as="script">
 </head>
 <body>
     <header> 
@@ -175,7 +186,7 @@
                 <p>Whether you're a student looking to improve your debate skills, a teacher seeking resources for your debate club, or an organization interested in partnering with us, we welcome you to join our community.</p>
                 <div class="cta-buttons">
                     <a href="join.html" class="button primary-btn">Become a Member</a>
-                    <a href="../navbar-pages/contact.html" class="button secondary-btn">Contact Us</a>
+                    <a href="../footer-pages/contact.html" class="button secondary-btn">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -198,27 +209,6 @@
             
             <div class="footer-content">
                 <div class="footer-widget">
-                    <h3 class="footer-widget-title">Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="../../../index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="events.html">Events</a></li>
-                        <li><a href="resources.html">Resources</a></li>
-                        <li><a href="join.html">Join</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-widget">
-                    <h3 class="footer-widget-title">Resources</h3>
-                    <ul class="footer-links">
-                        <li><a href="resources.html#guides">Debate Resources</a></li>
-                        <li><a href="resources.html#materials">Training Materials</a></li>
-                        <li><a href="resources.html#videos">Video Library</a></li>
-                        <li><a href="../footer-pages/faq.html">FAQs</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-widget">
                     <h3 class="footer-widget-title">Contact Us</h3>
                     <ul class="footer-contact">
                         <li class="footer-contact-item">
@@ -237,6 +227,37 @@
                 </div>
                 
                 <div class="footer-widget">
+                    <h3 class="footer-widget-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../../index.html">Home</a></li>
+                        <li><a href="../../src/pages/navbar-pages/about.html">About</a></li>
+                        <li><a href="../../src/pages/navbar-pages/events.html">Events</a></li>
+                        <li><a href="../../src/pages/navbar-pages/resources.html">Resources</a></li>
+                        <li><a href="../../src/pages/navbar-pages/join.html">Join</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-widget">
+                    <h3 class="footer-widget-title">Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="../../src/pages/navbar-pages/resources.html#guides">Debate Resources</a></li>
+                        <li><a href="../../src/pages/navbar-pages/resources.html#materials">Training Materials</a></li>
+                        <li><a href="../../src/pages/navbar-pages/resources.html#videos">Video Library</a></li>
+                        <li><a href="../../src/pages/footer-pages/faq.html">FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-widget">
+                    <h3 class="footer-widget-title">Join Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="../../src/pages/navbar-pages/join-as-debater.html">As Debater</a></li>
+                        <li><a href="../../src/pages/navbar-pages/join-as-coach.html">As Coach</a></li>
+                        <li><a href="../../src/pages/navbar-pages/join-as-leader.html">As Leader</a></li>
+                        <li><a href="../../src/pages/navbar-pages/join-as-chapter.html">As Chapter</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-widget newsletter-widget">
                     <h3 class="footer-widget-title">Newsletter</h3>
                     <p>Stay updated with our latest news and events.</p>
                     <form class="footer-subscribe-container">
@@ -255,15 +276,15 @@
                     <p>&copy; 2024 Global Debate Society. All rights reserved.</p>
                 </div>
                 <div class="footer-bottom-links">
-                    <a href="../footer-pages/dont-sue-us.html">Dont sue us policy</a>
+                    <a href="../../src/pages/footer-pages/dont-sue-us.html">Dont sue us policy</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="../../js/mobile-menu.js"></script>
-    <script src="../../js/hero-scroll.js"></script>
-    <script src="../../js/main.js"></script>
+    <script src="../../src/js/mobile-menu.js"></script>
+    <script src="../../src/js/hero-scroll.js"></script>
+    <script src="../../src/js/main.js"></script>
 
 </body>
 </html> 

@@ -10,6 +10,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Hero scroll button for Events page
+    const scrollButton = document.getElementById('scrollToEventsContent');
+    const targetSection = document.getElementById('main-events-content');
+
+    if (scrollButton && targetSection) {
+        scrollButton.addEventListener('click', () => {
+            targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    }
+
     // Calendar Initialization
     const calendar = document.getElementById('calendar');
     if (calendar) {
