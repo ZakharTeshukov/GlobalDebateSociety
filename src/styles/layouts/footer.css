@@ -32,8 +32,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
     transition: var(--transition-fast);
@@ -133,6 +133,9 @@
 .footer-contact-item span {
     flex-grow: 1;
     text-align: left;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    min-width: 0;
 }
 
 /* Footer Subscribe Form */
@@ -200,6 +203,20 @@
     font-size: 0.9rem;
 }
 
+/* Global styles for footer content layout */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.footer-content > * {
+    flex-grow: 1;
+    flex-basis: auto;
+    min-width: 0;
+}
+
 /* Responsive Design */
 @media (max-width: 992px) {
     .footer-widgets {
@@ -212,10 +229,6 @@
         grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-md);
         justify-items: center;
-    }
-    
-    .footer-widget {
-        /* text-align: center; */
     }
     
     .footer-widget-title {
@@ -422,4 +435,4 @@
     align-items: flex-start;
     margin: 0;
     width: 100%;
-} 
+}

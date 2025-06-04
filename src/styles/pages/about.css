@@ -128,11 +128,11 @@
 /* Values Grid */
 .values-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, minmax(260px, 1fr));
     gap: 2.5rem;
     margin-top: 2.5rem;
     padding: 2rem 1.5rem;
-    max-width: 1300px;
+    max-width: 1210px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -186,11 +186,11 @@
 /* Impact Stats */
 .impact-stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(4, minmax(260px, 1fr));
     gap: 2.5rem;
     margin-top: 2.5rem;
     padding: 2rem 1.5rem;
-    max-width: 1150px;
+    max-width: 1210px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -249,12 +249,12 @@
 /* Team Grid */
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, minmax(260px, 1fr));
     gap: 2.5rem;
     margin-top: 2.5rem;
     padding: 2rem 1.5rem;
     justify-items: center;
-    max-width: 1300px;
+    max-width: 1210px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -316,64 +316,54 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1199px) { /* Screens <= 1199px: 2 cards per row */
     .values-grid,
-    .impact-stats {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 2rem;
-    }
-
+    .impact-stats,
     .team-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2.5rem;
+        grid-template-columns: repeat(2, minmax(260px, 1fr));
+        gap: 2rem; /* Consistent gap for 2-column layout */
     }
 
+    /* Centering for last odd item in .team-grid 2-col layout */
+    .team-grid > *:last-child:nth-child(2n + 1) {
+        grid-column: 1 / -1;
+        max-width: 400px; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Card adjustments for 2-column layout */
     .value-card,
     .stat-card {
         min-height: auto;
         padding: 2rem;
     }
-
     .team-member img {
         height: 250px;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) { /* Screens <= 767px: 1 card per row */
     .values-grid,
     .impact-stats,
     .team-grid {
         grid-template-columns: 1fr;
+        gap: var(--spacing-lg); /* Consistent gap for 1-column layout (e.g., 1.5rem) */
     }
 
+    /* Card adjustments for 1-column layout */
+    .value-card,
+    .stat-card,
+    .team-member {
+        padding: 1.5rem;
+    }
     .value-card i,
-    .stat-card::before {
+    .stat-card::before { /* Note: .stat-card::before is display: none in base styles */
         width: 60px;
         height: 60px;
     }
-
     .team-member {
         max-width: 100%;
-    }
-}
-
-@media (max-width: 1200px) {
-    .team-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 992px) {
-    .team-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    /* Center single item in last row */
-    .team-grid > *:last-child:nth-child(2n + 1) {
-        grid-column: 1 / -1;
-        max-width: 400px;
-        margin-left: auto;
-        margin-right: auto;
     }
 }
 

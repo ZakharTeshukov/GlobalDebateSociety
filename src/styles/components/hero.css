@@ -118,6 +118,10 @@
         flex-direction: column;
         gap: var(--spacing-sm);
     }
+
+    .hero-learn-more {
+        margin-top: var(--spacing-sm);
+    }
 }
 
 @media (max-width: 480px) {
