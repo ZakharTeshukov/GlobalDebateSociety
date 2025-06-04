@@ -1,5 +1,11 @@
 /* Base styles for all pages */
 
+.footer-contact-item {
+    display: flex;
+    align-items: left;
+    align-content: left;
+}
+
 /* Container and layout utilities */
 .container {
     width: 100%;
@@ -113,6 +119,23 @@
     margin-top: var(--spacing-lg);
 }
 
+/* Contact Info List Styles */
+.contact-info-list {
+    list-style: none; /* Removes default bullet points */
+    padding-left: 0; /* Removes default padding */
+}
+
+.contact-info-list li {
+    text-align: left; /* Aligns text to the left */
+    margin-bottom: var(--spacing-sm); /* Adds some space between items */
+}
+
+/* Optional: If you have icons next to contact items */
+.contact-info-list li i {
+    margin-right: var(--spacing-sm);
+    color: var(--primary-color); /* Or your desired icon color */
+}
+
 /* Grid system */
 .grid {
     display: grid;
@@ -147,4 +170,4 @@
     .grid-2, .grid-3, .grid-4 {
         grid-template-columns: 1fr;
     }
-} 
+}

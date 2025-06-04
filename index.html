@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Global Debate Society - Empowering Voices, Fostering Critical Thinking</title>
+    <title>Global Debate Society</title>
     <link rel="stylesheet" href="src/styles/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="src/styles/base.css">
+    <link rel="stylesheet" href="src/styles/layouts/footer.css">
     
     <!-- Web App Manifest -->
     <link rel="manifest" href="/manifest.json">
@@ -21,14 +23,12 @@
     <link rel="preload" href="src/styles/index.css" as="style">
     <link rel="preload" href="src/styles/pages/home.css" as="style">
     <link rel="preload" href="src/js/main.js" as="script">
-    <link rel="preload" href="src/js/lazy-loading.js" as="script">
     <link rel="preload" href="src/assets/images/hero-backgrounds/debate-hero-bg.svg" as="image">
     
     <!-- Service worker registration script -->
-    <script src="src/js/sw-register.js" defer></script>
     
     <!-- Load lazy loading script -->
-    <script src="src/js/lazy-loading.js" defer></script>
+    
 </head>
 <body>
     <header> 
@@ -48,14 +48,6 @@
                 <li><a href="src/pages/navbar-pages/about.html">About</a></li>
                 <li><a href="src/pages/navbar-pages/events.html">Events</a></li>
                 <li><a href="src/pages/navbar-pages/resources.html">Resources</a></li>
-                <li class="navbar-dropdown">
-                    <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Chapters <i class="fas fa-caret-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="src/pages/branches/abcis.html">ABCIS</a></li>
-                        <li><a href="src/pages/branches/ssis.html">SSIS</a></li>
-                        <li><a href="src/pages/branches/lsts.html">LSTS</a></li>
-                    </ul>
-                </li>
                 <li><a href="src/pages/navbar-pages/join.html" class="join-btn">Join Us</a></li>
             </ul>
         </nav>
@@ -194,17 +186,6 @@
             </div>
         </section>
 
-        <section class="latest-blog">
-            <div class="container">
-                <h2 class="section-title">Latest from Our Blog</h2>
-                <div class="section-subtitle">Stay updated with debate techniques, success stories, and event recaps</div>
-                <div id="featured-blogs" class="grid grid-3"></div>
-                <div class="text-center mt-4">
-                    <a href="src/pages/footer-pages/blog.html" class="btn btn-outline">View All Blog Posts</a>
-                </div>
-            </div>
-        </section>
-
         <section class="cta-section">
             <div class="container">
                 <div class="cta-content">
@@ -249,7 +230,6 @@
                         <li><a href="src/pages/navbar-pages/resources.html#guides">Debate Resources</a></li>
                         <li><a href="src/pages/navbar-pages/resources.html#materials">Training Materials</a></li>
                         <li><a href="src/pages/navbar-pages/resources.html#videos">Video Library</a></li>
-                        <li><a href="src/pages/footer-pages/blog.html">Blog Articles</a></li>
                         <li><a href="src/pages/footer-pages/faq.html">FAQs</a></li>
                     </ul>
                 </div>
@@ -257,15 +237,15 @@
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Contact Us</h3>
                     <ul class="footer-contact">
-                        <li>
+                        <li class="footer-contact-item">
                             <i class="fas fa-map-marker-alt"></i>
                             <span>78 Nguyễn Đức Cảnh, Tân Phong, Quận 7, Hồ Chí Minh 700000, Vietnam</span>
                         </li>
-                        <li>
+                        <li class="footer-contact-item">
                             <i class="fas fa-phone"></i>
                             <span>+84 90 184 4197</span>
                         </li>
-                        <li>
+                        <li class="footer-contact-item">
                             <i class="fas fa-envelope"></i>
                             <span>contact@globaldebatesociety.com</span>
                         </li>
@@ -274,13 +254,13 @@
                 
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Newsletter</h3>
-                    <p>Subscribe to our newsletter for the latest updates.</p>
+                    <p>Stay updated with our latest news and events.</p>
                     <form class="footer-subscribe-container">
                         <div class="email-input-container">
                             <input type="email" placeholder="Your email address" required>
                         </div>
                         <div class="subscribe-button-container">
-                            <button type="submit" class="btn btn-primary">SUBSCRIBE</button>
+                            <button type="submit" class="btn btn-primary">Get Updates</button>
                         </div>
                     </form>
                 </div>
@@ -299,6 +279,5 @@
 
     <script src="src/js/mobile-menu.js"></script>
     <script src="src/js/main.js"></script>
-    <script src="src/js/featured-blogs.js"></script>
 </body>
 </html> 

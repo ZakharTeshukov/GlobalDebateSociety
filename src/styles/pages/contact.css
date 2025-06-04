@@ -296,7 +296,6 @@
 
     .office-hours li {
         flex-direction: column;
-        text-align: center;
     }
 
     .office-hours span {

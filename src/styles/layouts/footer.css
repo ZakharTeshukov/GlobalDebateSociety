@@ -106,24 +106,33 @@
 .footer-contact {
     display: flex;
     flex-direction: column;
-    align-items: center !important;
-    justify-content: center;
-    margin: 0 auto !important;
-    text-align: center !important;
+    align-items: flex-start;
+    text-align: left;
     width: 100%;
 }
 
-.footer-contact li {
+/* Use .footer-contact-item for the li elements as per index.html changes */
+.footer-contact-item {
     display: flex;
     align-items: flex-start;
     margin-bottom: var(--spacing-sm);
+    width: 100%;
+    text-align: left;
 }
 
-.footer-contact i {
+.footer-contact-item i {
     margin-right: var(--spacing-sm);
-    margin-top: 4px;
+    margin-top: 3px;
     color: var(--accent-color);
     font-size: 1.1rem;
+    flex-shrink: 0;
+    width: 20px;
+    text-align: center;
+}
+
+.footer-contact-item span {
+    flex-grow: 1;
+    text-align: left;
 }
 
 /* Footer Subscribe Form */
@@ -206,7 +215,7 @@
     }
     
     .footer-widget {
-        text-align: center;
+        /* text-align: center; */
     }
     
     .footer-widget-title {
@@ -258,20 +267,20 @@
     .footer-contact {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
-        margin: 0 auto;
+        margin: 0;
+        width: 100%;
     }
 }
 
 @media (max-width: 480px) {
     .footer-widgets {
         grid-template-columns: 1fr;
-        justify-items: center;
+        gap: var(--spacing-lg);
     }
     
     .footer-widget {
-        text-align: center;
         margin-bottom: var(--spacing-lg);
     }
     
@@ -282,20 +291,22 @@
     }
     
     .footer-contact {
-        display: inline-block;
-        margin: 0 auto;
-    }
-    
-    .footer-contact li {
+        display: flex;
         flex-direction: column;
-        align-items: center;
-        text-align: center;
+        align-items: flex-start;
+        margin: 0;
+        width: 100%;
     }
     
-    .footer-contact i {
-        margin-right: 0;
-        margin-bottom: var(--spacing-xs);
-        font-size: 1.3rem;
+    .footer-contact-item {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    
+    .footer-contact-item i {
+        margin-right: var(--spacing-sm);
+        margin-bottom: 0;
+        font-size: 1.1rem;
     }
     
     .footer-bottom-links {
@@ -364,7 +375,7 @@
     }
     
     .footer-links li,
-    .footer-contact li,
+    .footer-contact-item,
     .footer-bottom-links a {
         padding: 10px 0;
     }
@@ -404,12 +415,11 @@
     }
 }
 
+/* MODIFIED: This rule was causing the primary issue with !important */
 .footer-widget .footer-contact {
     display: flex;
     flex-direction: column;
-    align-items: center !important;
-    justify-content: center;
-    margin: 0 auto !important;
-    text-align: center !important;
+    align-items: flex-start;
+    margin: 0;
     width: 100%;
 } 

@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Title | Global Debate Society</title>
+    <title>Events | Global Debate Society</title>
     <!-- Base styles + components - applied to every page -->
     <link rel="stylesheet" href="../../styles/index.css">
-    <!-- Page-specific styles - uncomment and modify as needed -->
-    <link rel="stylesheet" href="../../styles/pages/events.css">
-    <!-- <link rel="stylesheet" href="../../styles/pages/[page-name].css"> -->
+    <!-- Page-specific styles -->
+    <link rel="stylesheet" href="../../styles/pages/events-simple.css"> 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -34,14 +33,6 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="events.html" class="active">Events</a></li>
                 <li><a href="resources.html">Resources</a></li>
-                <li class="navbar-dropdown">
-                    <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Chapters <i class="fas fa-caret-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="../branches/abcis.html">ABCIS</a></li>
-                        <li><a href="../branches/ssis.html">SSIS</a></li>
-                        <li><a href="../branches/lsts.html">LSTS</a></li>
-                    </ul>
-                </li>
                 <li><a href="join.html" class="join-btn">Join Us</a></li>
             </ul>
         </nav>
@@ -52,291 +43,58 @@
             <div class="hero-content">
                 <h1 class="hero-title">Our Events</h1>
                 <p class="hero-subtitle">Join us at our upcoming events and be part of the global debate community.</p>
+                <p class="hero-description">Explore our diverse range of workshops, tournaments, and forums designed to enhance your debating skills and connect you with like-minded individuals.</p>
             </div>
         </section>
 
-        <section class="events-filter">
-            <div class="container">
-                <h2>Find Events</h2>
-                <div class="filter-controls">
-                    <div class="filter-group">
-                        <label for="event-type">Event Type</label>
-                        <select id="event-type">
-                            <option value="all">All Events</option>
-                            <option value="competition">Competitions</option>
-                            <option value="workshop">Workshops</option>
-                            <option value="conference">Conferences</option>
-                            <option value="meetup">Meetups</option>
-                        </select>
-                    </div>
-                    <div class="filter-group">
-                        <label for="event-location">Location</label>
-                        <select id="event-location">
-                            <option value="all">All Locations</option>
-                            <option value="singapore">Singapore</option>
-                            <option value="malaysia">Malaysia</option>
-                            <option value="thailand">Thailand</option>
-                            <option value="indonesia">Indonesia</option>
-                            <option value="philippines">Philippines</option>
-                            <option value="vietnam">Vietnam</option>
-                            <option value="online">Online</option>
-                        </select>
-                    </div>
-                    <div class="filter-group">
-                        <label for="event-date">Date</label>
-                        <select id="event-date">
-                            <option value="all">All Dates</option>
-                            <option value="this-week">This Week</option>
-                            <option value="this-month">This Month</option>
-                            <option value="next-month">Next Month</option>
-                            <option value="next-3-months">Next 3 Months</option>
-                        </select>
-                    </div>
-                    <button class="btn btn-primary filter-btn">Apply Filters</button>
-                </div>
-            </div>
-        </section>
-
-        <section class="featured-events">
-            <div class="container">
-                <h2>Featured Events</h2>
-                <div class="featured-events-grid">
-                    <div class="event-card">
-                        <div class="event-image">
-                            <img src="../../assets/images/event1.jpg" alt="Southeast Asian Debate Championship">
-                        </div>
-                        <div class="event-content">
-                            <span class="event-type competition">Competition</span>
-                            <h3 class="event-title">Southeast Asian Debate Championship</h3>
-                            <div class="event-meta">
-                                <span><i class="fas fa-map-marker-alt"></i> Ho Chi Minh City, Vietnam</span>
-                                <span><i class="fas fa-calendar"></i> April 15, 2024</span>
-                                <span><i class="fas fa-clock"></i> 9:00 AM - 6:00 PM</span>
-                            </div>
-                            <p class="event-description">Join the premier debate competition in Southeast Asia with teams from across the region. Compete for regional recognition and valuable prizes.</p>
-                            <div class="event-actions">
-                                <a href="#" class="btn-register">Reserve Spot</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="event-card">
-                        <div class="event-image">
-                            <img src="../../assets/images/event2.jpg" alt="Public Speaking Masterclass">
-                        </div>
-                        <div class="event-content">
-                            <span class="event-type workshop">Workshop</span>
-                            <h3 class="event-title">Public Speaking Masterclass</h3>
-                            <div class="event-meta">
-                                <span><i class="fas fa-map-marker-alt"></i> Online Event</span>
-                                <span><i class="fas fa-calendar"></i> April 22, 2024</span>
-                                <span><i class="fas fa-clock"></i> 7:00 PM - 9:00 PM</span>
-                            </div>
-                            <p class="event-description">Master the art of public speaking with expert guidance from award-winning speakers and debate champions. Perfect for both beginners and experienced speakers.</p>
-                            <div class="event-actions">
-                                <a href="#" class="btn-register">Reserve Spot</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="event-card">
-                        <div class="event-image">
-                            <img src="../../assets/images/event3.jpg" alt="International Debate Forum">
-                        </div>
-                        <div class="event-content">
-                            <span class="event-type conference">Conference</span>
-                            <h3 class="event-title">International Debate Forum</h3>
-                            <div class="event-meta">
-                                <span><i class="fas fa-map-marker-alt"></i> Singapore</span>
-                                <span><i class="fas fa-calendar"></i> May 5, 2024</span>
-                                <span><i class="fas fa-clock"></i> 10:00 AM - 5:00 PM</span>
-                            </div>
-                            <p class="event-description">A global gathering of debate enthusiasts, featuring keynote speakers, panel discussions, and networking opportunities with industry leaders.</p>
-                            <div class="event-actions">
-                                <a href="#" class="btn-register">Reserve Spot</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="event-card">
-                        <div class="event-image">
-                            <img src="../../assets/images/event4.jpg" alt="Youth Debate Workshop">
-                        </div>
-                        <div class="event-content">
-                            <span class="event-type workshop">Workshop</span>
-                            <h3 class="event-title">Youth Debate Workshop</h3>
-                            <div class="event-meta">
-                                <span><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</span>
-                                <span><i class="fas fa-calendar"></i> May 12, 2024</span>
-                                <span><i class="fas fa-clock"></i> 2:00 PM - 6:00 PM</span>
-                            </div>
-                            <p class="event-description">An interactive workshop designed specifically for young debaters aged 13-18. Learn fundamental debate techniques and critical thinking skills.</p>
-                            <div class="event-actions">
-                                <a href="#" class="btn-register">Reserve Spot</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="event-card">
-                        <div class="event-image">
-                            <img src="../../assets/images/event5.jpg" alt="Digital Debate Summit">
-                        </div>
-                        <div class="event-content">
-                            <span class="event-type conference">Conference</span>
-                            <h3 class="event-title">Digital Debate Summit</h3>
-                            <div class="event-meta">
-                                <span><i class="fas fa-map-marker-alt"></i> Online Event</span>
-                                <span><i class="fas fa-calendar"></i> May 20, 2024</span>
-                                <span><i class="fas fa-clock"></i> 9:00 AM - 4:00 PM</span>
-                            </div>
-                            <p class="event-description">Explore the future of online debating with tech experts and debate professionals. Learn about new digital tools and virtual debate formats.</p>
-                            <div class="event-actions">
-                                <a href="#" class="btn-register">Reserve Spot</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="event-card">
-                        <div class="event-image">
-                            <img src="../../assets/images/event6.jpg" alt="Women in Debate Forum">
-                        </div>
-                        <div class="event-content">
-                            <span class="event-type workshop">Workshop</span>
-                            <h3 class="event-title">Women in Debate Forum</h3>
-                            <div class="event-meta">
-                                <span><i class="fas fa-map-marker-alt"></i> Bangkok, Thailand</span>
-                                <span><i class="fas fa-calendar"></i> May 25, 2024</span>
-                                <span><i class="fas fa-clock"></i> 1:00 PM - 5:00 PM</span>
-                            </div>
-                            <p class="event-description">A special forum celebrating women in debate, featuring successful female debaters and coaches sharing their experiences and insights.</p>
-                            <div class="event-actions">
-                                <a href="#" class="btn-register">Reserve Spot</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="upcoming-events">
+        <section class="events-list-section">
             <div class="container">
                 <h2>Upcoming Events</h2>
-                <div class="events-grid">
-                    <div class="event-card">
-                        <div class="event-image">
-                            <img src="../../assets/images/event1.jpg" alt="Southeast Asian Debate Championship">
-                        </div>
-                        <div class="event-details">
-                            <span class="event-type competition">Competition</span>
-                            <h3>Southeast Asian Debate Championship</h3>
-                            <div class="event-meta">
-                                <span><i class="fas fa-map-marker-alt"></i> Singapore</span>
-                                <span><i class="fas fa-calendar"></i> June 15-17, 2024</span>
-                                <span><i class="fas fa-clock"></i> Full Day Event</span>
-                            </div>
-                            <p class="event-description">The premier debate competition for university students across Southeast Asia. Teams from 10 countries will compete for the championship title.</p>
-                            <a href="#" class="btn btn-primary">Register Now</a>
-                        </div>
+                <div class="events-list">
+                    <div class="event-item">
+                        <h3 class="event-title">Southeast Asian Debate Championship</h3>
+                        <p class="event-details"><i class="fas fa-calendar-alt"></i> April 15, 2024 <span class="meta-separator">|</span> <i class="fas fa-map-marker-alt"></i> Ho Chi Minh City, Vietnam</p>
                     </div>
-                    
-                    <div class="event-card">
-                        <div class="event-image">
-                            <img src="../../assets/images/event2.jpg" alt="Public Speaking Workshop">
-                        </div>
-                        <div class="event-details">
-                            <span class="event-type workshop">Workshop</span>
-                            <h3>Public Speaking Mastery Workshop</h3>
-                            <div class="event-meta">
-                                <span><i class="fas fa-map-marker-alt"></i> Online</span>
-                                <span><i class="fas fa-calendar"></i> June 22, 2024</span>
-                                <span><i class="fas fa-clock"></i> 10:00 AM - 4:00 PM</span>
-                            </div>
-                            <p class="event-description">A comprehensive workshop focused on developing advanced public speaking techniques for debaters. Learn from experienced coaches and champions.</p>
-                            <a href="#" class="btn btn-primary">Register Now</a>
-                        </div>
+                    <div class="event-item">
+                        <h3 class="event-title">Public Speaking Masterclass</h3>
+                        <p class="event-details"><i class="fas fa-calendar-alt"></i> April 22, 2024 <span class="meta-separator">|</span> <i class="fas fa-map-marker-alt"></i> Online Event</p>
                     </div>
-                    
-                    <div class="event-card">
-                        <div class="event-image">
-                            <img src="../../assets/images/event3.jpg" alt="Debate for Change Conference">
-                        </div>
-                        <div class="event-details">
-                            <span class="event-type conference">Conference</span>
-                            <h3>Debate for Change Conference</h3>
-                            <div class="event-meta">
-                                <span><i class="fas fa-map-marker-alt"></i> Bangkok, Thailand</span>
-                                <span><i class="fas fa-calendar"></i> July 10-12, 2024</span>
-                                <span><i class="fas fa-clock"></i> 9:00 AM - 5:00 PM</span>
-                            </div>
-                            <p class="event-description">An international conference exploring how debate education can drive social change and policy reform. Featuring speakers from academia, government, and NGOs.</p>
-                            <a href="#" class="btn btn-primary">Register Now</a>
-                        </div>
+                    <div class="event-item">
+                        <h3 class="event-title">International Debate Forum</h3>
+                        <p class="event-details"><i class="fas fa-calendar-alt"></i> May 5, 2024 <span class="meta-separator">|</span> <i class="fas fa-map-marker-alt"></i> Singapore</p>
                     </div>
-                </div>
-                
-                <div class="load-more">
-                    <button class="btn btn-secondary">Load More Events</button>
-                </div>
-            </div>
-        </section>
-        
-        <section class="past-events">
-            <div class="container">
-                <h2>Past Events</h2>
-                <div class="events-grid">
-                    <div class="event-card past">
-                        <div class="event-image">
-                            <img src="../../assets/images/past-event1.jpg" alt="High School Debate Tournament">
-                            <div class="event-date">
-                                <span class="date-number">05</span>
-                                <span class="date-month">MAY</span>
-                            </div>
-                        </div>
-                        <div class="event-details">
-                            <span class="event-type competition">Competition</span>
-                            <h3>High School Debate Tournament</h3>
-                            <div class="event-meta">
-                                <p><i class="fas fa-map-marker-alt"></i> Kuala Lumpur, Malaysia</p>
-                                <p><i class="fas fa-clock"></i> 5-7 May 2024</p>
-                            </div>
-                            <p class="event-description">A tournament designed for high school students from across the region. Featured 32 teams competing in British Parliamentary format.</p>
-                            <a href="#" class="btn btn-secondary">View Results</a>
-                        </div>
+                    <div class="event-item">
+                        <h3 class="event-title">Youth Debate Workshop</h3>
+                        <p class="event-details"><i class="fas fa-calendar-alt"></i> May 12, 2024 <span class="meta-separator">|</span> <i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</p>
                     </div>
-                    
-                    <div class="event-card past">
-                        <div class="event-image">
-                            <img src="../../assets/images/past-event2.jpg" alt="Adjudicator Training Program">
-                            <div class="event-date">
-                                <span class="date-number">20</span>
-                                <span class="date-month">APR</span>
-                            </div>
-                        </div>
-                        <div class="event-details">
-                            <span class="event-type workshop">Workshop</span>
-                            <h3>Adjudicator Training Program</h3>
-                            <div class="event-meta">
-                                <p><i class="fas fa-map-marker-alt"></i> Online</p>
-                                <p><i class="fas fa-clock"></i> 20-21 April 2024</p>
-                            </div>
-                            <p class="event-description">A two-day program for developing debate adjudication skills. Participants received certification upon completion.</p>
-                            <a href="#" class="btn btn-secondary">View Materials</a>
-                        </div>
+                    <div class="event-item">
+                        <h3 class="event-title">Digital Debate Summit</h3>
+                        <p class="event-details"><i class="fas fa-calendar-alt"></i> May 20, 2024 <span class="meta-separator">|</span> <i class="fas fa-map-marker-alt"></i> Online Event</p>
                     </div>
-                </div>
-                
-                <div class="view-archive">
-                    <a href="#" class="btn btn-link">View Full Event Archive <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </section>
-        
-        <section class="host-event">
-            <div class="container">
-                <div class="host-content">
-                    <h2>Host Your Own Debate Event</h2>
-                    <p>Interested in organizing a debate competition, workshop, or meetup? We provide support, resources, and guidance to help make your event a success.</p>
-                    <a href="join.html#host-event" class="btn btn-primary">Learn More</a>
+                    <div class="event-item">
+                        <h3 class="event-title">Women in Debate Forum</h3>
+                        <p class="event-details"><i class="fas fa-calendar-alt"></i> May 25, 2024 <span class="meta-separator">|</span> <i class="fas fa-map-marker-alt"></i> Bangkok, Thailand</p>
+                    </div>
+                    <div class="event-item">
+                        <h3 class="event-title">Southeast Asian Debate Championship</h3>
+                        <p class="event-details"><i class="fas fa-calendar-alt"></i> June 15-17, 2024 <span class="meta-separator">|</span> <i class="fas fa-map-marker-alt"></i> Singapore</p>
+                    </div>
+                    <div class="event-item">
+                        <h3 class="event-title">Public Speaking Mastery Workshop</h3>
+                        <p class="event-details"><i class="fas fa-calendar-alt"></i> June 28, 2024 <span class="meta-separator">|</span> <i class="fas fa-map-marker-alt"></i> Online</p>
+                    </div>
+                     <div class="event-item">
+                        <h3 class="event-title">Critical Thinking Bootcamp</h3>
+                        <p class="event-details"><i class="fas fa-calendar-alt"></i> July 5-7, 2024 <span class="meta-separator">|</span> <i class="fas fa-map-marker-alt"></i> Kuala Lumpur, Malaysia</p>
+                    </div>
+                    <div class="event-item">
+                        <h3 class="event-title">Global Youth Summit on Diplomacy</h3>
+                        <p class="event-details"><i class="fas fa-calendar-alt"></i> July 15, 2024 <span class="meta-separator">|</span> <i class="fas fa-map-marker-alt"></i> Online Event</p>
+                    </div>
+                    <div class="event-item">
+                        <h3 class="event-title"> Educators' Debate Workshop</h3>
+                        <p class="event-details"><i class="fas fa-calendar-alt"></i> August 1, 2024 <span class="meta-separator">|</span> <i class="fas fa-map-marker-alt"></i> Manila, Philippines</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -361,40 +119,52 @@
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="../../../index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="events.html">Events</a></li>
-                        <li><a href="resources.html">Resources</a></li>
-                        <li><a href="join.html">Join Us</a></li>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/src/pages/navbar-pages/about.html">About</a></li>
+                        <li><a href="/src/pages/navbar-pages/events.html">Events</a></li>
+                        <li><a href="/src/pages/navbar-pages/resources.html">Resources</a></li>
+                        <li><a href="/src/pages/navbar-pages/join.html">Join</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Resources</h3>
                     <ul class="footer-links">
-                        <li><a href="resources.html#guides">Debate Guides</a></li>
-                        <li><a href="resources.html#materials">Training Materials</a></li>
-                        <li><a href="resources.html#videos">Video Library</a></li>
-                        <li><a href="../footer-pages/blog.html">Blog Articles</a></li>
-                        <li><a href="../footer-pages/faq.html">FAQs</a></li>
+                        <li><a href="/src/pages/navbar-pages/resources.html#guides">Debate Resources</a></li>
+                        <li><a href="/src/pages/navbar-pages/resources.html#materials">Training Materials</a></li>
+                        <li><a href="/src/pages/navbar-pages/resources.html#videos">Video Library</a></li>
+                        <li><a href="/src/pages/footer-pages/faq.html">FAQs</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-widget">
-                    <h3 class="footer-widget-title">Contact</h3>
+                    <h3 class="footer-widget-title">Contact Us</h3>
                     <ul class="footer-contact">
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Debate Street, Singapore</li>
-                        <li><i class="fas fa-envelope"></i> info@globaldebatesociety.org</li>
-                        <li><i class="fas fa-phone"></i> +65 1234 5678</li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>78 Nguyễn Đức Cảnh, Tân Phong, Quận 7, Hồ Chí Minh 700000, Vietnam</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+84 90 184 4197</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>contact@globaldebatesociety.com</span>
+                        </li>
                     </ul>
                 </div>
                 
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Newsletter</h3>
-                    <p>Subscribe to our newsletter for the latest updates.</p>
-                    <form class="footer-subscribe">
-                        <input type="email" placeholder="Your email address" required>
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    <p>Stay updated with our latest news and events.</p>
+                    <form class="footer-subscribe-container">
+                        <div class="email-input-container">
+                            <input type="email" placeholder="Your email address" required>
+                        </div>
+                        <div class="subscribe-button-container">
+                            <button type="submit" class="btn btn-primary">Get Updates</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -404,19 +174,14 @@
                     <p>&copy; 2024 Global Debate Society. All rights reserved.</p>
                 </div>
                 <div class="footer-bottom-links">
-                    <a href="../footer-pages/dont-sue-us.html">Dont sue us policy</a>
+                    <a href="/src/pages/footer-pages/dont-sue-us.html">Dont sue us policy</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="back-to-top" aria-label="Back to Top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <!-- Updated JavaScript files -->
-    <script src="../../js/mobile-menu.js"></script>
-    <script src="../../js/main.js"></script>
+    <script src="/src/js/mobile-menu.js"></script>
+    <script src="/src/js/main.js"></script>
+    <!-- Removed event filter and other complex scripts -->
 </body>
 </html> 

@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ - Global Debate Society</title>
-    <link rel="stylesheet" href="../../src/styles/index.css">
-    <link rel="stylesheet" href="../../src/styles/pages/faq.css">
+    <link rel="stylesheet" href="../../styles/index.css">
+    <link rel="stylesheet" href="../../styles/pages/faq.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../../js/navbar.js" defer></script>
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <a href="../../index.html" class="navbar-logo">
+            <a href="../../../index.html" class="navbar-logo">
                 <span class="navbar-logo-text">Global Debate Society</span>
             </a>
             
@@ -23,7 +24,7 @@
             </button>
             
             <ul class="navbar-nav">
-                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../../index.html">Home</a></li>
                 <li><a href="../navbar-pages/about.html">About</a></li>
                 <li><a href="../navbar-pages/events.html">Events</a></li>
                 <li><a href="../navbar-pages/resources.html">Resources</a></li>
@@ -56,14 +57,14 @@
                         <div class="still-have-questions">
                             <h3>Still Have Questions?</h3>
                             <p>If you couldn't find the answer you're looking for, please reach out to us directly.</p>
-                            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                            <a href="./contact.html" class="btn btn-primary">Contact Us</a>
                         </div>
                     </div>
 
                     <div class="faq-content">
                         <div class="faq-search">
-                            <form class="search-form">
-                                <input type="text" placeholder="Search for questions...">
+                            <form class="search-form" id="faq-search-form">
+                                <input type="text" id="faq-search-input" placeholder="Search for questions...">
                                 <button type="submit"><i class="fas fa-search"></i></button>
                             </form>
                         </div>
@@ -87,7 +88,7 @@
                                         <i class="fas fa-chevron-down"></i>
                                     </button>
                                     <div class="accordion-content">
-                                        <p>Our headquarters are in Singapore, but we have regional chapters across Southeast Asia including Malaysia, Thailand, Indonesia, Philippines, and Vietnam. We operate primarily throughout these countries but welcome members from anywhere in the world.</p>
+                                        <p>Our main operations are centered in Vietnam, but we have a broad reach across Southeast Asia including Malaysia, Thailand, Indonesia, Philippines, and Singapore. We welcome members from anywhere in the world.</p>
                                     </div>
                                 </div>
 
@@ -122,7 +123,7 @@
                                         <i class="fas fa-chevron-down"></i>
                                     </button>
                                     <div class="accordion-content">
-                                        <p>Membership benefits vary by level but generally include access to our resource library, discounted entry to competitions, training workshops, networking opportunities, and participation in our online community forums. Premium members receive additional benefits like advanced training materials and priority registration for events.</p>
+                                        <p>Membership benefits vary by level but generally include access to our resource library, discounted entry to competitions, training workshops, networking opportunities, and participation in our online community forums.</p>
                                     </div>
                                 </div>
 
@@ -132,13 +133,7 @@
                                         <i class="fas fa-chevron-down"></i>
                                     </button>
                                     <div class="accordion-content">
-                                        <p>We offer several membership tiers with different pricing:</p>
-                                        <ul>
-                                            <li>Student Membership: $25 per year</li>
-                                            <li>Premium Membership: $60 per year</li>
-                                            <li>Professional Membership: $120 per year</li>
-                                        </ul>
-                                        <p>We also offer group discounts for schools and organizations. Financial assistance may be available for those who demonstrate need.</p>
+                                        <p>GDS offers free membership to all individuals to ensure accessibility.</p>
                                     </div>
                                 </div>
 
@@ -173,7 +168,7 @@
                                         <i class="fas fa-chevron-down"></i>
                                     </button>
                                     <div class="accordion-content">
-                                        <p>We host several major competitions throughout the year, including regional tournaments and our annual Southeast Asian Championship. Additionally, we support numerous local competitions organized by our chapters. On average, there's at least one GDS-affiliated competition every month somewhere in the region.</p>
+                                        <p>We host several major competitions throughout the year. We also support numerous local competitions. On average, there's at least one GDS-affiliated competition every month in the region.</p>
                                     </div>
                                 </div>
 
@@ -399,7 +394,7 @@
                 <div class="cta-content">
                     <h2>Didn't Find Your Answer?</h2>
                     <p>Our team is ready to help with any questions that weren't covered in our FAQ.</p>
-                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                    <a href="./contact.html" class="btn btn-primary">Contact Us</a>
                 </div>
             </div>
         </section>
@@ -424,40 +419,52 @@
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="../../index.html">Home</a></li>
-                        <li><a href="../navbar-pages/about.html">About</a></li>
-                        <li><a href="../navbar-pages/events.html">Events</a></li>
-                        <li><a href="../navbar-pages/resources.html">Resources</a></li>
-                        <li><a href="../navbar-pages/join.html">Join Us</a></li>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/src/pages/navbar-pages/about.html">About</a></li>
+                        <li><a href="/src/pages/navbar-pages/events.html">Events</a></li>
+                        <li><a href="/src/pages/navbar-pages/resources.html">Resources</a></li>
+                        <li><a href="/src/pages/navbar-pages/join.html">Join</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Resources</h3>
                     <ul class="footer-links">
-                        <li><a href="../navbar-pages/resources.html#guides">Debate Guides</a></li>
-                        <li><a href="../navbar-pages/resources.html#materials">Training Materials</a></li>
-                        <li><a href="../navbar-pages/resources.html#videos">Video Library</a></li>
-                        <li><a href="blog.html">Blog Articles</a></li>
-                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="/src/pages/navbar-pages/resources.html#guides">Debate Resources</a></li>
+                        <li><a href="/src/pages/navbar-pages/resources.html#materials">Training Materials</a></li>
+                        <li><a href="/src/pages/navbar-pages/resources.html#videos">Video Library</a></li>
+                        <li><a href="/src/pages/footer-pages/faq.html">FAQs</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-widget">
-                    <h3 class="footer-widget-title">Contact</h3>
+                    <h3 class="footer-widget-title">Contact Us</h3>
                     <ul class="footer-contact">
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Debate Street, Singapore</li>
-                        <li><i class="fas fa-envelope"></i> info@globaldebatesociety.org</li>
-                        <li><i class="fas fa-phone"></i> +65 1234 5678</li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>78 Nguyễn Đức Cảnh, Tân Phong, Quận 7, Hồ Chí Minh 700000, Vietnam</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+84 90 184 4197</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>contact@globaldebatesociety.com</span>
+                        </li>
                     </ul>
                 </div>
                 
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Newsletter</h3>
-                    <p>Subscribe to our newsletter for the latest updates.</p>
-                    <form class="footer-subscribe">
-                        <input type="email" placeholder="Your email address" required>
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    <p>Stay updated with our latest news and events.</p>
+                    <form class="footer-subscribe-container">
+                        <div class="email-input-container">
+                            <input type="email" placeholder="Your email address" required>
+                        </div>
+                        <div class="subscribe-button-container">
+                            <button type="submit" class="btn btn-primary">Get Updates</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -467,7 +474,7 @@
                     <p>&copy; 2024 Global Debate Society. All rights reserved.</p>
                 </div>
                 <div class="footer-bottom-links">
-                    <a href="dont-sue-us.html">Dont sue us policy</a>
+                    <a href="/src/pages/footer-pages/dont-sue-us.html">Dont sue us policy</a>
                 </div>
             </div>
         </div>
@@ -478,8 +485,9 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Updated JavaScript files -->
-    <script src="../../src/js/mobile-menu.js"></script>
-    <script src="../../src/js/main.js"></script>
+    <script src="../../js/mobile-menu.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="../../js/accordion.js"></script> 
+    <script src="../../js/faq-search.js"></script>
 </body>
 </html> 

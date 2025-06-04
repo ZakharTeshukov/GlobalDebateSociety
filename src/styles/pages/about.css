@@ -130,8 +130,11 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2.5rem;
-    margin-top: 2rem;
-    padding: 1rem;
+    margin-top: 2.5rem;
+    padding: 2rem 1.5rem;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .value-card {
@@ -185,13 +188,16 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 2.5rem;
-    margin-top: 2rem;
-    padding: 1rem;
+    margin-top: 2.5rem;
+    padding: 2rem 1.5rem;
+    max-width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .stat-card {
     background-color: var(--white);
-    padding: 3rem 2rem;
+    padding: 3.5rem 2.5rem;
     border-radius: 20px;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -244,10 +250,13 @@
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 3rem;
-    margin-top: 3rem;
-    padding: 1rem;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+    padding: 2rem 1.5rem;
     justify-items: center;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .team-section {
@@ -477,7 +486,7 @@
 
 .secondary-btn {
     background-color: transparent;
-    color: var(--primary-color);
+    color: var(--text-color-dark);
     border: 2px solid var(--primary-color);
     box-shadow: 0 4px 15px rgba(var(--primary-color-rgb), 0.1);
 }

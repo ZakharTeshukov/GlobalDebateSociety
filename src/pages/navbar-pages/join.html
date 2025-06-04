@@ -32,14 +32,6 @@
                 <li><a href="../../../index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="events.html">Events</a></li>
-                <li class="navbar-dropdown">
-                    <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Chapters <i class="fas fa-caret-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="../branches/abcis.html">ABCIS</a></li>
-                        <li><a href="../branches/ssis.html">SSIS</a></li>
-                        <li><a href="../branches/lsts.html">LSTS</a></li>
-                    </ul>
-                </li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="join.html" class="join-btn active">Join Us</a></li>
             </ul>
@@ -249,30 +241,31 @@
                                     <input type="checkbox" name="interests" value="training"> Training & Workshops
                                 </label>
                                 <label class="checkbox-label">
-                                    <input type="checkbox" name="interests" value="coaching"> Coaching
+                                    <input type="checkbox" name="interests" value="coaching"> Coaching & Mentoring
                                 </label>
                                 <label class="checkbox-label">
                                     <input type="checkbox" name="interests" value="judging"> Judging
                                 </label>
                                 <label class="checkbox-label">
-                                    <input type="checkbox" name="interests" value="organizing"> Event Organization
+                                    <input type="checkbox" name="interests" value="organizing"> Event Organizing
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="interests" value="volunteering"> Volunteering
                                 </label>
                             </div>
                         </div>
                         
                         <div class="form-group">
-                            <label for="comments">Why would you like to join GDS?</label>
+                            <label for="comments">Additional Comments (Optional)</label>
                             <textarea id="comments" rows="4"></textarea>
                         </div>
                         
-                        <div class="form-group form-checkbox">
-                            <input type="checkbox" id="terms" required>
-                            <label for="terms">I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></label>
+                        <div class="form-group form-consent">
+                            <input type="checkbox" id="consent" required>
+                            <label for="consent">I agree to the <a href="../footer-pages/dont-sue-us.html" target="_blank">terms and conditions</a> and <a href="../footer-pages/dont-sue-us.html#privacy" target="_blank">privacy policy</a>.</label>
                         </div>
                         
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-primary">Submit Application</button>
-                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit">Submit Application</button>
                     </form>
                 </div>
             </div>
@@ -457,40 +450,52 @@
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="../../../index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="events.html">Events</a></li>
-                        <li><a href="resources.html">Resources</a></li>
-                        <li><a href="join.html">Join Us</a></li>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/src/pages/navbar-pages/about.html">About</a></li>
+                        <li><a href="/src/pages/navbar-pages/events.html">Events</a></li>
+                        <li><a href="/src/pages/navbar-pages/resources.html">Resources</a></li>
+                        <li><a href="/src/pages/navbar-pages/join.html">Join</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Resources</h3>
                     <ul class="footer-links">
-                        <li><a href="resources.html#guides">Debate Guides</a></li>
-                        <li><a href="resources.html#materials">Training Materials</a></li>
-                        <li><a href="resources.html#videos">Video Library</a></li>
-                        <li><a href="../footer-pages/blog.html">Blog Articles</a></li>
-                        <li><a href="../footer-pages/faq.html">FAQs</a></li>
+                        <li><a href="/src/pages/navbar-pages/resources.html#guides">Debate Resources</a></li>
+                        <li><a href="/src/pages/navbar-pages/resources.html#materials">Training Materials</a></li>
+                        <li><a href="/src/pages/navbar-pages/resources.html#videos">Video Library</a></li>
+                        <li><a href="/src/pages/footer-pages/faq.html">FAQs</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-widget">
-                    <h3 class="footer-widget-title">Contact</h3>
+                    <h3 class="footer-widget-title">Contact Us</h3>
                     <ul class="footer-contact">
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Debate Street, Singapore</li>
-                        <li><i class="fas fa-envelope"></i> info@globaldebatesociety.org</li>
-                        <li><i class="fas fa-phone"></i> +65 1234 5678</li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>78 Nguyễn Đức Cảnh, Tân Phong, Quận 7, Hồ Chí Minh 700000, Vietnam</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+84 90 184 4197</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>contact@globaldebatesociety.com</span>
+                        </li>
                     </ul>
                 </div>
                 
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Newsletter</h3>
-                    <p>Subscribe to our newsletter for the latest updates.</p>
-                    <form class="footer-subscribe">
-                        <input type="email" placeholder="Your email address" required>
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    <p>Stay updated with our latest news and events.</p>
+                    <form class="footer-subscribe-container">
+                        <div class="email-input-container">
+                            <input type="email" placeholder="Your email address" required>
+                        </div>
+                        <div class="subscribe-button-container">
+                            <button type="submit" class="btn btn-primary">Get Updates</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -500,7 +505,7 @@
                     <p>&copy; 2024 Global Debate Society. All rights reserved.</p>
                 </div>
                 <div class="footer-bottom-links">
-                    <a href="../footer-pages/dont-sue-us.html">Dont sue us policy</a>
+                    <a href="/src/pages/footer-pages/dont-sue-us.html">Dont sue us policy</a>
                 </div>
             </div>
         </div>
@@ -513,7 +518,6 @@
 
     <!-- Updated JavaScript files -->
     <script src="../../js/mobile-menu.js"></script>
-    <script src="../../js/join.js"></script>
     <script src="../../js/main.js"></script>
 </body>
 </html> 
