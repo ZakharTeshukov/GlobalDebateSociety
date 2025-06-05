@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Global Debate Society</title>
     <link rel="stylesheet" href="src/styles/index.css">
+    <link rel="stylesheet" href="src/styles/base.css">
+    <link rel="stylesheet" href="src/styles/pages/home.css">
+    <link rel="stylesheet" href="src/styles/layouts/footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="src/styles/base.css">
-    <link rel="stylesheet" href="src/styles/layouts/footer.css">
     
     <!-- Web App Manifest -->
-    <link rel="manifest" href="/manifest.json">
-    <link rel="apple-touch-icon" href="/src/assets/images/icon-192x192.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="src/assets/images/icon-192x192.png">
     
     <!-- Performance optimization meta tags -->
     <meta http-equiv="Cache-Control" content="max-age=86400, must-revalidate">
@@ -21,8 +22,11 @@
     
     <!-- Preload critical assets -->
     <link rel="preload" href="src/styles/index.css" as="style">
+    <link rel="preload" href="src/styles/base.css" as="style">
     <link rel="preload" href="src/styles/pages/home.css" as="style">
+    <link rel="preload" href="src/styles/layouts/footer.css" as="style">
     <link rel="preload" href="src/js/main.js" as="script">
+    <link rel="preload" href="src/js/mobile-menu.js" as="script">
     <link rel="preload" href="src/assets/images/hero-backgrounds/debate-hero-bg.svg" as="image">
     
     <!-- Service worker registration script -->
@@ -45,10 +49,10 @@
             
             <ul class="navbar-nav" id="navbar-nav">
                 <li><a href="index.html" class="active" aria-current="page">Home</a></li>
-                <li><a href="src/pages/navbar-pages/about.html">About</a></li>
-                <li><a href="src/pages/navbar-pages/events.html">Events</a></li>
-                <li><a href="src/pages/navbar-pages/resources.html">Resources</a></li>
-                <li><a href="src/pages/navbar-pages/join.html" class="join-btn">Join Us</a></li>
+                <li><a href="src/pages/about/index.html">About</a></li>
+                <li><a href="src/pages/events/index.html">Events</a></li>
+                <li><a href="src/pages/resources/index.html">Resources</a></li>
+                <li><a href="src/pages/join/index.html" class="join-btn" style="background-color: orange; border-color: orange;">Join</a></li>
             </ul>
         </nav>
     </header>
@@ -60,8 +64,8 @@
                 <h1 class="hero-title">Welcome to Global Debate Society</h1>
                 <p class="hero-subtitle">Empowering voices and fostering critical thinking across Southeast Asia</p>
                 <div class="hero-buttons">
-                    <a href="src/pages/navbar-pages/join.html" class="btn btn-primary btn-lg btn-join">Join</a>
-                    <a href="src/pages/navbar-pages/events.html" class="btn btn-outline btn-lg">Upcoming Events</a>
+                    <a href="src/pages/navbar-pages/join/" class="btn btn-primary btn-lg btn-join">Join</a>
+                    <a href="src/pages/navbar-pages/events/" class="btn btn-outline btn-lg">Upcoming Events</a>
                 </div>
             </div>
         </section>
@@ -102,8 +106,8 @@
                     Fostering a vibrant community of critical thinkers, eloquent speakers, and future leaders across Southeast Asia. We provide a platform for engaging in meaningful discourse, developing essential life skills, and connecting with peers who share a passion for debate.
                 </p>
                 <div class="about-snippet-actions animate-on-scroll">
-                    <a href="src/pages/navbar-pages/about.html" class="btn btn-primary">Learn More About Us</a>
-                    <a href="src/pages/navbar-pages/join.html" class="btn btn-outline">Get Involved</a>
+                    <a href="src/pages/navbar-pages/about/" class="btn btn-primary">Learn More About Us</a>
+                    <a href="src/pages/navbar-pages/join/" class="btn btn-outline">Get Involved</a>
                 </div>
             </div>
         </section>
@@ -129,7 +133,7 @@
                                 </div>
                             </div>
                             <p class="event-description">Join the premier debate competition in Southeast Asia with teams from across the region. Compete for regional recognition and valuable prizes.</p>
-                            <a href="src/pages/navbar-pages/events.html#championship" class="btn btn-primary">Reserve Spot</a>
+                            <a href="src/pages/navbar-pages/events/#championship" class="btn btn-primary">Reserve Spot</a>
                         </div>
                     </div>
                     
@@ -150,7 +154,7 @@
                                 </div>
                             </div>
                             <p class="event-description">Master the art of public speaking with expert guidance from award-winning speakers and debate champions. Perfect for both beginners and experienced speakers.</p>
-                            <a href="src/pages/navbar-pages/events.html#masterclass" class="btn btn-primary">Reserve Spot</a>
+                            <a href="src/pages/navbar-pages/events/#masterclass" class="btn btn-primary">Reserve Spot</a>
                         </div>
                     </div>
 
@@ -171,7 +175,7 @@
                                 </div>
                             </div>
                             <p class="event-description">Dive deep into international policy debate formats with expert coaches. Learn advanced research techniques and policy analysis frameworks.</p>
-                            <a href="src/pages/navbar-pages/events.html#workshop" class="btn btn-primary">Reserve Spot</a>
+                            <a href="src/pages/navbar-pages/events/#workshop" class="btn btn-primary">Reserve Spot</a>
                         </div>
                     </div>
 
@@ -192,7 +196,7 @@
                                 </div>
                             </div>
                             <p class="event-description">An intensive one-day bootcamp designed for young debaters aged 14-18. Focus on fundamental debate skills and confidence building.</p>
-                            <a href="src/pages/navbar-pages/events.html#bootcamp" class="btn btn-primary">Reserve Spot</a>
+                            <a href="src/pages/navbar-pages/events/#bootcamp" class="btn btn-primary">Reserve Spot</a>
                         </div>
                     </div>
                 </div>
@@ -204,7 +208,7 @@
                 <div class="cta-content">
                     <h2 class="cta-title">Ready to Join Our Community?</h2>
                     <p class="cta-text">Start your journey with Global Debate Society today!</p>
-                    <a href="src/pages/navbar-pages/join.html" class="cta-button">Join</a>
+                    <a href="src/pages/navbar-pages/join/" class="cta-button">Join</a>
                 </div>
             </div>
         </section>
@@ -248,19 +252,19 @@
                     <h3 class="footer-widget-title">Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="src/pages/navbar-pages/about.html">About</a></li>
-                        <li><a href="src/pages/navbar-pages/events.html">Events</a></li>
-                        <li><a href="src/pages/navbar-pages/resources.html">Resources</a></li>
-                        <li><a href="src/pages/navbar-pages/join.html">Join</a></li>
+                        <li><a href="src/pages/navbar-pages/about/">About</a></li>
+                        <li><a href="src/pages/navbar-pages/events/">Events</a></li>
+                        <li><a href="src/pages/navbar-pages/resources/">Resources</a></li>
+                        <li><a href="src/pages/navbar-pages/join/">Join</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Resources</h3>
                     <ul class="footer-links">
-                        <li><a href="src/pages/navbar-pages/resources.html#guides">Debate Resources</a></li>
-                        <li><a href="src/pages/navbar-pages/resources.html#materials">Training Materials</a></li>
-                        <li><a href="src/pages/navbar-pages/resources.html#videos">Video Library</a></li>
+                        <li><a href="src/pages/navbar-pages/resources/#guides">Debate Resources</a></li>
+                        <li><a href="src/pages/navbar-pages/resources/#materials">Training Materials</a></li>
+                        <li><a href="src/pages/navbar-pages/resources/#videos">Video Library</a></li>
                         <li><a href="src/pages/footer-pages/faq.html">FAQs</a></li>
                     </ul>
                 </div>
@@ -294,7 +298,7 @@
                     <p>&copy; 2024 Global Debate Society. All rights reserved.</p>
                 </div>
                 <div class="footer-bottom-links">
-                    <a href="src/pages/footer-pages/dont-sue-us.html">Dont sue us policy</a>
+                    <a href="src/pages/footer-pages/dont-sue-us/">Dont sue us policy</a>
                 </div>
             </div>
         </div>

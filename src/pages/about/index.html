@@ -7,14 +7,14 @@
     
     <link rel="stylesheet" href="../../styles/index.css">
     <link rel="stylesheet" href="../../styles/base.css">
-    <link rel="stylesheet" href="../../styles/about.css">
+    <link rel="stylesheet" href="../../styles/pages/about.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../../styles/layouts/footer.css">
     
     <!-- Web App Manifest -->
-    <link rel="manifest" href="../../manifest.json">
-    <link rel="apple-touch-icon" href="../../src/assets/images/icon-192x192.png">
+    <link rel="manifest" href="../../../manifest.json">
+    <link rel="apple-touch-icon" href="../../assets/images/icon-192x192.png">
     
     <!-- Performance optimization meta tags -->
     <meta http-equiv="Cache-Control" content="max-age=86400, must-revalidate">
@@ -22,13 +22,13 @@
     <meta name="theme-color" content="#3a86ff">
     
     <!-- Preload critical assets -->
-    <link rel="preload" href="../../src/styles/index.css" as="style">
+    <link rel="preload" href="../../styles/index.css" as="style">
+    <link rel="preload" href="../../styles/base.css" as="style">
     <link rel="preload" href="../../styles/pages/about.css" as="style">
-    <link rel="preload" href="../../src/styles/base.css" as="style">
     <link rel="preload" href="../../styles/layouts/footer.css" as="style">
-    <link rel="preload" href="../../src/js/main.js" as="script">
-    <link rel="preload" href="../../src/js/mobile-menu.js" as="script">
-    <link rel="preload" href="../../src/js/hero-scroll.js" as="script">
+    <link rel="preload" href="../../js/main.js" as="script">
+    <link rel="preload" href="../../js/mobile-menu.js" as="script">
+    <link rel="preload" href="../../js/hero-scroll.js" as="script">
 </head>
 <body>
     <header> 
@@ -45,10 +45,10 @@
             
             <ul class="navbar-nav">
                 <li><a href="../../../index.html">Home</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="join.html" class="join-btn">Join Us</a></li>
+                <li><a href="./index.html" class="active" class="active" aria-current="page">About</a></li>
+                <li><a href="../events/index.html">Events</a></li>
+                <li><a href="../resources/index.html">Resources</a></li>
+                <li><a href="../join/index.html" class="join-btn" style="background-color: orange; border-color: orange;">Join</a></li>
             </ul>
         </nav>
     </header>
@@ -59,8 +59,8 @@
                 <h1 class="hero-title">Welcome to Global Debate Society</h1>
                 <p class="hero-subtitle">Empowering voices and fostering critical thinking across Southeast Asia</p>
                 <div class="hero-buttons">
-                    <a href="join.html" class="btn btn-primary btn-lg btn-join" style="background-color: orange; border-color: orange;">Join</a>
-                    <a href="events.html" class="btn btn-outline btn-lg">Upcoming Events</a>
+                    <a href="../join/index.html" class="btn btn-primary btn-lg btn-join" style="background-color: orange; border-color: orange;">Join</a>
+                    <a href="../events/index.html" class="btn btn-outline btn-lg">Upcoming Events</a>
                     <button id="about-learn-more-btn" class="btn btn-outline btn-lg hero-learn-more">Learn More</button>
                 </div>
             </div>
@@ -185,8 +185,8 @@
                 <h2>Join Our Community</h2>
                 <p>Whether you're a student looking to improve your debate skills, a teacher seeking resources for your debate club, or an organization interested in partnering with us, we welcome you to join our community.</p>
                 <div class="cta-buttons">
-                    <a href="join.html" class="button primary-btn">Become a Member</a>
-                    <a href="../footer-pages/contact.html" class="button secondary-btn">Contact Us</a>
+                    <a href="../join/" class="button primary-btn">Become a Member</a>
+                    <a href="../footer-pages/contact/" class="button secondary-btn">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -229,31 +229,31 @@
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="../../index.html">Home</a></li>
-                        <li><a href="../../src/pages/navbar-pages/about.html">About</a></li>
-                        <li><a href="../../src/pages/navbar-pages/events.html">Events</a></li>
-                        <li><a href="../../src/pages/navbar-pages/resources.html">Resources</a></li>
-                        <li><a href="../../src/pages/navbar-pages/join.html">Join</a></li>
+                        <li><a href="../../../index.html">Home</a></li>
+                        <li><a href="./">About</a></li>
+                        <li><a href="../events/">Events</a></li>
+                        <li><a href="../resources/">Resources</a></li>
+                        <li><a href="../join/">Join</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Resources</h3>
                     <ul class="footer-links">
-                        <li><a href="../../src/pages/navbar-pages/resources.html#guides">Debate Resources</a></li>
-                        <li><a href="../../src/pages/navbar-pages/resources.html#materials">Training Materials</a></li>
-                        <li><a href="../../src/pages/navbar-pages/resources.html#videos">Video Library</a></li>
-                        <li><a href="../../src/pages/footer-pages/faq.html">FAQs</a></li>
+                        <li><a href="../resources/#guides">Debate Resources</a></li>
+                        <li><a href="../resources/#materials">Training Materials</a></li>
+                        <li><a href="../resources/#videos">Video Library</a></li>
+                        <li><a href="../footer-pages/faq.html">FAQs</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Join Us</h3>
                     <ul class="footer-links">
-                        <li><a href="../../src/pages/navbar-pages/join-as-debater.html">As Debater</a></li>
-                        <li><a href="../../src/pages/navbar-pages/join-as-coach.html">As Coach</a></li>
-                        <li><a href="../../src/pages/navbar-pages/join-as-leader.html">As Leader</a></li>
-                        <li><a href="../../src/pages/navbar-pages/join-as-chapter.html">As Chapter</a></li>
+                        <li><a href="../join/#debater">As Debater</a></li>
+                        <li><a href="../join/#coach">As Coach</a></li>
+                        <li><a href="../join/#leader">As Leader</a></li>
+                        <li><a href="../join/#chapter">As Chapter</a></li>
                     </ul>
                 </div>
                 
@@ -276,15 +276,18 @@
                     <p>&copy; 2024 Global Debate Society. All rights reserved.</p>
                 </div>
                 <div class="footer-bottom-links">
-                    <a href="../../src/pages/footer-pages/dont-sue-us.html">Dont sue us policy</a>
+                    <a href="../footer-pages/dont-sue-us/">Dont sue us policy</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="../../src/js/mobile-menu.js"></script>
-    <script src="../../src/js/hero-scroll.js"></script>
-    <script src="../../src/js/main.js"></script>
+    <button id="back-to-top" class="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
+    <script src="../../js/mobile-menu.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="../../js/hero-scroll.js"></script>
 </body>
 </html> 
