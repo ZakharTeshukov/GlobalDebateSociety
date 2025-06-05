@@ -1,6 +1,3 @@
-/* Import shared hero styles */
-@import '../components/hero.css';
-
 /* Events Page Styles */
 :root {
     --primary-color: #2c3e50;
@@ -13,38 +10,7 @@
     --transition: all 0.3s ease;
 }
 
-/* Events Hero Section */
-.events-hero {
-    margin-bottom: 0;
-    position: relative;
-    margin-top: -80px; /* Negative margin to counteract main padding */
-    padding-top: 80px; /* Add padding back to hero content */
-}
-
-.events-hero .hero-content {
-    position: relative;
-    z-index: 2;
-    color: white;
-}
-
-.events-hero .hero-title,
-.events-hero .hero-subtitle,
-.events-hero .hero-description {
-    color: white;
-}
-
-.events-hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/images/hero-backgrounds/debate-hero-bg.svg');
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-}
+/* Hero styles removed - now handled by global hero.css */
 
 /* Featured Events Section */
 .featured-events {

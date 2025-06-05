@@ -16,7 +16,7 @@
     background-image: url('../../assets/images/hero-backgrounds/debate-hero-bg.svg');
     background-size: cover;
     background-position: center;
-    color: var(--white);
+    color: var(--text-color-light);
     position: relative;
     overflow: hidden;
     margin-bottom: 4rem;
@@ -34,7 +34,7 @@
     z-index: 1;
 }
 
-.hero-content {
+.hero-section .hero-content {
     max-width: 800px;
     margin: 0 auto;
     position: relative;
@@ -43,34 +43,34 @@
     padding: 0 var(--hero-padding-x);
 }
 
-.hero-title {
+.hero-section .hero-title {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
     font-weight: var(--font-weight-bold);
-    color: var(--white);
+    color: var(--text-color-light);
     line-height: 1.2;
     text-shadow: var(--hero-text-shadow);
 }
 
-.hero-subtitle {
+.hero-section .hero-subtitle {
     font-size: 1.4rem;
     max-width: 700px;
     margin: 0 auto 2rem;
     opacity: 0.95;
     line-height: 1.7;
-    color: var(--white);
+    color: var(--text-color-light);
 }
 
-.hero-description {
+.hero-section .hero-description {
     font-size: 1.1rem;
     max-width: 600px;
     margin: 0 auto 2rem;
     opacity: 0.9;
     line-height: 1.6;
-    color: var(--white);
+    color: var(--text-color-light);
 }
 
-.hero-buttons {
+.hero-section .hero-buttons {
     display: flex;
     gap: var(--spacing-md);
     justify-content: center;
@@ -100,48 +100,48 @@
 
 /* Responsive Design */
 @media (max-width: 992px) {
-    .hero-title {
+    .hero-section .hero-title {
         font-size: 2.8rem;
     }
     
-    .hero-subtitle {
+    .hero-section .hero-subtitle {
         font-size: 1.2rem;
     }
 }
 
 @media (max-width: 768px) {
-    .hero-content {
+    .hero-section .hero-content {
         padding: 0 var(--spacing-md);
     }
     
-    .hero-title {
+    .hero-section .hero-title {
         font-size: 2.4rem;
     }
     
-    .hero-subtitle {
+    .hero-section .hero-subtitle {
         font-size: 1.1rem;
     }
     
-    .hero-buttons {
+    .hero-section .hero-buttons {
         flex-direction: column;
         gap: var(--spacing-sm);
     }
 
-    .hero-learn-more {
+    .hero-section .hero-learn-more {
         margin-top: var(--spacing-sm);
     }
 }
 
 @media (max-width: 480px) {
-    .hero-content {
+    .hero-section .hero-content {
         padding: 0 var(--spacing-sm);
     }
     
-    .hero-title {
+    .hero-section .hero-title {
         font-size: 2rem;
     }
     
-    .hero-subtitle {
+    .hero-section .hero-subtitle {
         font-size: 1rem;
         margin-bottom: 1.5rem;
     }

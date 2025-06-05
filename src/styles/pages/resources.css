@@ -1,38 +1,6 @@
-/* Import shared hero styles */
-@import '../components/hero.css';
-
 /* Resources page specific styles */
-.resources-hero {
-    margin-bottom: 0;
-    position: relative;
-    margin-top: -80px; /* Negative margin to counteract main padding */
-    padding-top: 80px; /* Add padding back to hero content */
-}
 
-.resources-hero .hero-content {
-    position: relative;
-    z-index: 2;
-    color: white;
-}
-
-.resources-hero .hero-title,
-.resources-hero .hero-subtitle,
-.resources-hero .hero-description {
-    color: white;
-}
-
-.resources-hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/images/hero-backgrounds/debate-hero-bg.svg');
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-}
+/* Hero styles removed - now handled by global hero.css */
 
 /* Container styles */
 .container {
@@ -297,10 +265,6 @@
 }
 
 @media (max-width: 768px) {
-    .resources-hero h1 {
-        font-size: 2.5rem;
-    }
-    
     .resource-section {
         padding: 4rem 0;
     }
@@ -311,12 +275,8 @@
 }
 
 @media (max-width: 576px) {
-    .resources-hero {
+    .resource-section {
         padding: 7rem 1.5rem 5rem;
-    }
-    
-    .resources-hero h1 {
-        font-size: 2rem;
     }
     
     .resource-section h2,

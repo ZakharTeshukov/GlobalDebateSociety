@@ -1,78 +1,7 @@
-/* Import shared hero styles */
-@import '../components/hero.css';
-
 /* Ensure main content is properly positioned below navbar */
 main {
     padding-top: 80px; /* Account for fixed navbar */
     margin-top: 0; /* Override any default margin */
-}
-
-/* Fix hero section visibility - adjust for fixed navbar */
-.about-hero {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--text-color-light);
-    overflow: hidden;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/images/hero-backgrounds/debate-hero-bg.svg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin-top: -80px; /* Account for fixed navbar */
-    padding-top: 80px;
-}
-
-.about-hero .hero-content {
-    max-width: 800px;
-    padding: 0 var(--spacing-lg);
-    z-index: 1;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.about-hero .hero-content.animate {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.about-hero .hero-title {
-    font-size: 3rem;
-    font-weight: var(--font-weight-bold);
-    margin-bottom: var(--spacing-xs);
-    color: white;
-    line-height: 1.2;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.about-hero .hero-subtitle {
-    font-size: 1.25rem;
-    margin-bottom: var(--spacing-md);
-    line-height: 1.6;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    color: white;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.about-hero .hero-description {
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto var(--spacing-md);
-    color: white;
-    line-height: 1.6;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.about-hero .hero-buttons {
-    display: flex;
-    gap: var(--spacing-md);
-    justify-content: center;
 }
 
 /* Join Our Community Section */
@@ -390,26 +319,23 @@ main {
     .values-grid,
     .impact-stats,
     .team-grid {
-        grid-template-columns: repeat(2, minmax(260px, 1fr));
-        gap: 2rem; /* Consistent gap for 2-column layout */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
 
-    /* Centering for last odd item in .team-grid 2-col layout */
     .team-grid > *:last-child:nth-child(2n + 1) {
-        grid-column: 1 / -1;
-        max-width: 400px; 
-        margin-left: auto;
-        margin-right: auto;
+        grid-column: span 2;
+        justify-self: center;
+        max-width: 50%;
     }
 
-    /* Card adjustments for 2-column layout */
     .value-card,
-    .stat-card {
-        min-height: auto;
-        padding: 2rem;
+    .stat-card,
+    .team-member {
+        padding: 1.5rem;
     }
     .team-member img {
-        height: 250px;
+        width: 100px;
+        height: 100px;
     }
 }
 
@@ -418,126 +344,65 @@ main {
     .impact-stats,
     .team-grid {
         grid-template-columns: 1fr;
-        gap: var(--spacing-lg); /* Consistent gap for 1-column layout (e.g., 1.5rem) */
     }
 
-    /* Card adjustments for 1-column layout */
     .value-card,
     .stat-card,
     .team-member {
-        padding: 1.5rem;
+        padding: 1rem;
     }
     .value-card i,
-    .stat-card::before { /* Note: .stat-card::before is display: none in base styles */
-        width: 60px;
-        height: 60px;
+    .stat-card i {
+        font-size: 2rem;
     }
     .team-member {
-        max-width: 100%;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
 @media (max-width: 768px) {
-    .about-hero {
-        height: 90vh;
-        padding: 80px var(--spacing-sm) 0;
-    }
-    
-    .about-hero .hero-content {
-        padding: 0 var(--spacing-sm);
-        width: 100%;
-        max-width: 100%;
-    }
-    
-    .about-hero .hero-title {
-        font-size: 2rem;
-        padding: 0 var(--spacing-xs);
-    }
-    
-    .about-hero .hero-subtitle {
-        font-size: 1rem;
-        padding: 0 var(--spacing-xs);
-    }
-    
-    .about-hero .hero-description {
-        font-size: 0.9rem;
-        padding: 0 var(--spacing-xs);
-    }
-    
-    .about-hero .hero-buttons {
-        flex-direction: column;
-        gap: var(--spacing-sm);
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
-    }
-    
-    .about-hero .hero-buttons .btn {
-        width: 100%;
-    }
+    /* Hero styles removed, should be handled by global hero.css */
 
     .about-section h2 {
         font-size: 1.8rem;
     }
-
     .join-community {
-        padding: 6rem 0;
+        padding: 3rem 0;
     }
-
     .join-community h2 {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
     }
-
     .join-community p {
-        font-size: 1.1rem;
-        padding: 0 1rem;
+        font-size: 0.9rem;
     }
-
     .join-buttons {
-        gap: 1rem;
-        padding: 0 1rem;
+        flex-direction: column;
+        gap: var(--spacing-sm);
     }
-
     .join-button {
-        padding: 1rem 2rem;
         width: 100%;
         max-width: 300px;
+        margin: 0 auto;
     }
 }
 
 @media (max-width: 576px) {
-    .about-hero {
-        height: 80vh;
-    }
-    
-    .about-hero .hero-title {
-        font-size: 1.8rem;
-    }
-    
-    .about-hero .hero-subtitle {
-        font-size: 0.9rem;
-    }
-    
-    .about-hero .hero-description {
-        font-size: 0.85rem;
-    }
+    /* Hero styles removed, should be handled by global hero.css */
 
     .about-section {
         margin-bottom: 3rem;
     }
-
     .value-card,
-    .stat-card,
-    .team-member {
+    .stat-card {
         padding: 1.5rem;
     }
-
     .team-grid {
-        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
     }
-
     .team-member img {
-        height: 250px;
+        width: 80px;
+        height: 80px;
     }
 }
 
@@ -589,17 +454,24 @@ main {
     box-shadow: 0 4px 15px rgba(var(--primary-color-rgb), 0.1);
 }
 
+.secondary-btn:hover {
+    background-color: white;
+    color: black;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+}
+
 /* === Responsive Design === */
 @media (max-width: 992px) {
-    .about-hero .hero-title {
-        font-size: 2.5rem;
-    }
-    
-    .about-hero .hero-subtitle {
-        font-size: 1.1rem;
-    }
-    
-    .about-hero .hero-description {
-        font-size: 1rem;
-    }
-} 
+    /* All .about-hero related styles were removed from here. */
+    /* Styles for .about-section h2 and p were already here and are kept if they don't conflict. */
+     .about-section h2 {
+          font-size: 2.5rem;
+      }
+      
+     .about-section p {
+          font-size: 1.1rem;
+     }
+}
+
+/* General page styling below, hero section styling removed */ 
