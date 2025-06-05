@@ -87,7 +87,7 @@
 }
 
 .navbar-nav a.active {
-    color: var(--secondary-color);
+    color: #E65100;
     font-weight: var(--font-weight-semibold);
 }
 
@@ -97,9 +97,12 @@
 }
 
 /* Make text a little gray on hover for nav links (except join button) */
-.navbar-nav a:hover:not(.join-btn),
-.navbar-nav a.active:not(.join-btn) {
+.navbar-nav a:hover:not(.join-btn) {
     color: #ed1c34;
+}
+
+.navbar-nav a.active:not(.join-btn) {
+    color: #E65100;
 }
 
 /* Join button specific styles */
@@ -115,6 +118,11 @@
 .navbar-nav a.join-btn:hover {
     background-color: #f57c00;
     transform: scale(1.05);
+}
+
+.navbar-nav a.join-btn.active {
+    background: linear-gradient(135deg, #E65100, #F57C00);
+    box-shadow: 0 6px 32px rgba(230, 81, 0, 0.25);
 }
 
 /* Remove underline animation for join button */
@@ -307,12 +315,17 @@
         -webkit-tap-highlight-color: transparent;
     }
     .navbar-nav a:hover,
-    .navbar-nav a:focus,
-    .navbar-nav a.active {
+    .navbar-nav a:focus {
         color: #3a86ff;
         background: rgba(58, 134, 255, 0.12);
         transform: translateY(-2px);
         box-shadow: 0 4px 16px rgba(58,134,255,0.18);
+    }
+    .navbar-nav a.active {
+        color: #E65100;
+        background: rgba(230, 81, 0, 0.12);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(230, 81, 0, 0.18);
     }
     .navbar-nav a.join-btn,
     .navbar-nav .btn-join {
@@ -331,11 +344,9 @@
         z-index: 1102;
         position: relative;
     }
-    .navbar-nav a.join-btn:hover,
-    .navbar-nav .btn-join:hover {
-        background: linear-gradient(135deg, #f57c00, #ff9800);
-        box-shadow: 0 6px 32px rgba(255,111,0,0.25);
-        transform: translateY(-3px);
+    .navbar-nav a.join-btn.active {
+        background: linear-gradient(135deg, #E65100, #F57C00);
+        box-shadow: 0 6px 32px rgba(230, 81, 0, 0.25);
     }
     
     /* Hide the separate close button - using animated hamburger instead */
@@ -496,4 +507,11 @@
     .navbar-dropdown.active .dropdown-menu {
         display: block;
     }
+}
+
+.navbar-nav a.join-btn:hover,
+.navbar-nav .btn-join:hover {
+    background: linear-gradient(135deg, #f57c00, #ff9800);
+    box-shadow: 0 6px 32px rgba(255,111,0,0.25);
+    transform: translateY(-3px);
 } 

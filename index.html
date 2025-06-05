@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="src/styles/index.css">
     <link rel="stylesheet" href="src/styles/base.css">
     <link rel="stylesheet" href="src/styles/pages/home.css">
+    <link rel="stylesheet" href="src/styles/layouts/navbar.css">
     <link rel="stylesheet" href="src/styles/layouts/footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -24,6 +25,7 @@
     <link rel="preload" href="src/styles/index.css" as="style">
     <link rel="preload" href="src/styles/base.css" as="style">
     <link rel="preload" href="src/styles/pages/home.css" as="style">
+    <link rel="preload" href="src/styles/layouts/navbar.css" as="style">
     <link rel="preload" href="src/styles/layouts/footer.css" as="style">
     <link rel="preload" href="src/js/main.js" as="script">
     <link rel="preload" href="src/js/mobile-menu.js" as="script">
@@ -48,11 +50,11 @@
             </button>
             
             <ul class="navbar-nav" id="navbar-nav">
-                <li><a href="index.html" class="active" aria-current="page">Home</a></li>
-                <li><a href="src/pages/about/index.html">About</a></li>
-                <li><a href="src/pages/events/index.html">Events</a></li>
-                <li><a href="src/pages/resources/index.html">Resources</a></li>
-                <li><a href="src/pages/join/index.html" class="join-btn" style="background-color: orange; border-color: orange;">Join</a></li>
+                <li><a href="index.html" data-page="home">Home</a></li>
+                <li><a href="src/pages/about/index.html" data-page="about">About</a></li>
+                <li><a href="src/pages/events/index.html" data-page="events">Events</a></li>
+                <li><a href="src/pages/resources/index.html" data-page="resources">Resources</a></li>
+                <li><a href="src/pages/join/index.html" class="join-btn" data-page="join" style="background-color: orange; border-color: orange;">Join</a></li>
             </ul>
         </nav>
     </header>
@@ -306,6 +308,7 @@
 
     <script src="src/js/mobile-menu.js"></script>
     <script src="src/js/main.js"></script>
+    <script src="src/js/navbar.js"></script>
     <script src="src/js/hero-scroll.js"></script>
 </body>
 </html> 

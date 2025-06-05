@@ -1,6 +1,6 @@
 /**
  * Global Debate Society - Navbar functionality
- * Handles mobile menu toggle
+ * Handles mobile menu toggle and active page highlighting
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuOverlay = document.querySelector('.menu-overlay');
     const navbar = document.querySelector('.navbar');
     const navLinks = document.querySelectorAll('.navbar-nav a');
+    
+    // Set active navigation link
+    highlightCurrentPageNav();
     
     // Toggle mobile menu
     if (mobileMenuBtn) {
@@ -58,21 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Set active nav link based on current page
-    const currentPage = window.location.pathname;
-    
-    navLinks.forEach(link => {
-        const linkPath = link.getAttribute('href');
-        
-        // Check if the current page matches the link's href
-        if (currentPage.endsWith(linkPath) || 
-            (currentPage.endsWith('/') && linkPath === 'index.html')) {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
-    });
-
     // Dropdown toggle for mobile
     const dropdownToggles = document.querySelectorAll('.navbar-dropdown .dropdown-toggle');
     dropdownToggles.forEach(toggle => {
@@ -84,4 +72,38 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-}); 
+});
+
+/**
+ * Highlights the current page in the navigation using data-page attributes
+ * This is a simpler and more reliable approach than URL matching
+ */
+function highlightCurrentPageNav() {
+    // First, remove all active classes
+    const navLinks = document.querySelectorAll('.navbar-nav a');
+    navLinks.forEach(link => link.classList.remove('active'));
+    
+    // Get the current page path for simple matching
+    const path = window.location.pathname;
+    
+    // Determine which page we're on
+    let currentPage = 'home'; // Default to home
+    
+    if (path.includes('/about/')) {
+        currentPage = 'about';
+    } else if (path.includes('/events/')) {
+        currentPage = 'events';
+    } else if (path.includes('/resources/')) {
+        currentPage = 'resources';
+    } else if (path.includes('/join/')) {
+        currentPage = 'join';
+    } else if (path === '/' || path.endsWith('/index.html') || path.endsWith('/')) {
+        currentPage = 'home';
+    }
+    
+    // Find the link with matching data-page attribute
+    const activeLink = document.querySelector(`.navbar-nav a[data-page="${currentPage}"]`);
+    if (activeLink) {
+        activeLink.classList.add('active');
+    }
+} 

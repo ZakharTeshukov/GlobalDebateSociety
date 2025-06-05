@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../styles/index.css"> <!-- Common styles -->
     <link rel="stylesheet" href="../../styles/base.css"> <!-- Base styles -->
     <link rel="stylesheet" href="../../styles/pages/resources.css"> <!-- Page-specific styles -->
+    <link rel="stylesheet" href="../../styles/layouts/navbar.css"> <!-- Navbar styles -->
     <link rel="stylesheet" href="../../styles/layouts/footer.css"> <!-- Footer styles -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -25,29 +26,31 @@
     <link rel="preload" href="../../styles/index.css" as="style">
     <link rel="preload" href="../../styles/base.css" as="style">
     <link rel="preload" href="../../styles/pages/resources.css" as="style">
+    <link rel="preload" href="../../styles/layouts/navbar.css" as="style">
     <link rel="preload" href="../../styles/layouts/footer.css" as="style">
     <link rel="preload" href="../../js/main.js" as="script">
+    <link rel="preload" href="../../js/navbar.js" as="script">
     <link rel="preload" href="../../js/mobile-menu.js" as="script">
 </head>
 <body>
     <header>
-        <nav class="navbar">
-            <a href="../../../index.html" class="navbar-logo">
+        <nav class="navbar" role="navigation" aria-label="Main Navigation">
+            <a href="../../../index.html" class="navbar-logo" aria-label="Global Debate Society Home">
                 <span class="navbar-logo-text">Global Debate Society</span>
             </a>
             
-            <button class="mobile-menu-btn">
+            <button class="mobile-menu-btn" aria-label="Open main menu" aria-controls="navbar-nav" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             
-            <ul class="navbar-nav">
-                <li><a href="../../../index.html">Home</a></li>
-                <li><a href="../about/index.html">About</a></li>
-                <li><a href="../events/index.html">Events</a></li>
-                <li><a href="./index.html" class="active">Resources</a></li>
-                <li><a href="../join/index.html" class="join-btn" style="background-color: orange; border-color: orange;">Join</a></li>
+            <ul class="navbar-nav" id="navbar-nav">
+                <li><a href="../../../index.html" data-page="home">Home</a></li>
+                <li><a href="../about/index.html" data-page="about">About</a></li>
+                <li><a href="../events/index.html" data-page="events">Events</a></li>
+                <li><a href="./index.html" data-page="resources">Resources</a></li>
+                <li><a href="../join/index.html" class="join-btn" data-page="join" style="background-color: orange; border-color: orange;">Join</a></li>
             </ul>
         </nav>
     </header>
@@ -208,5 +211,6 @@
 
     <script src="../../js/mobile-menu.js"></script>
     <script src="../../js/main.js"></script>
+    <script src="../../js/navbar.js"></script>
 </body>
 </html> 
