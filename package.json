@@ -4,9 +4,9 @@
   "description": "Website for the Global Debate Society",
   "main": "index.js",
   "scripts": {
-    "convert-images": "node scripts/convert-images.js",
-    "update-templates": "node scripts/update-templates.js",
-    "update-seo": "node scripts/update-seo.js",
+    "convert-images": "node src/js/convert-images.js",
+    "update-templates": "node src/js/update-templates.js",
+    "update-seo": "node src/js/update-seo.js",
     "build": "npm run convert-images && npm run update-templates && npm run update-seo"
   },
   "keywords": [
@@ -15,7 +15,7 @@
     "society"
   ],
   "author": "Global Debate Society",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
     "fs-extra": "^11.2.0",

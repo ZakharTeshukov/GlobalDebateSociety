@@ -64,6 +64,20 @@
     display: flex;
     gap: var(--spacing-md);
     justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons .btn {
+    flex-grow: 1;
+    flex-basis: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: var(--spacing-sm);
+    padding-bottom: var(--spacing-sm);
 }
 
 .hero-buttons .btn-join {
@@ -622,9 +636,7 @@
     .event-description {
         font-size: 0.9rem;
     }
-}
-
-/* Prevent horizontal scrolling on all screen sizes */
+}/* Prevent horizontal scrolling on all screen sizes */
 html, body {
     max-width: 100%;
     overflow-x: hidden;
@@ -652,4 +664,37 @@ section {
 img {
     max-width: 100%;
     height: auto;
-} 
+}
+
+/* === About Snippet Section === */
+.about-snippet {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--bg-off-white); /* Or any other suitable background */
+    text-align: center;
+}
+
+.about-snippet .section-title {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.about-snippet .section-subtitle {
+    max-width: 800px; /* Adjust as needed */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-color-dark);
+    line-height: 1.7;
+}
+
+.about-snippet-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+.about-snippet-actions .btn {
+    min-width: 200px; /* Ensure buttons have a decent width */
+}
+
