@@ -81,14 +81,12 @@
 }
 
 .hero-buttons .btn-join {
-    background-color: var(--orange-500); /* Assuming var(--orange-500) is defined for orange */
-    /* If not defined, use a hex code like #FFA500 */
-    /* color: var(--white); Ensure text color is still appropriate */
+    background-color: #ff6f00;
+    color: white;
 }
 
 .hero-buttons .btn-join:hover {
-    background-color: var(--orange-600); /* Darker orange for hover */
-     /* If not defined, use a hex code like #E69500 */
+    background-color: #f57c00;
 }
 
 /* === Features Section === */
