@@ -16,9 +16,25 @@
 /* Events Hero Section */
 .events-hero {
     margin-bottom: 0;
+    position: relative;
+    margin-top: -80px; /* Negative margin to counteract main padding */
+    padding-top: 80px; /* Add padding back to hero content */
+}
+
+.events-hero .hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+.events-hero .hero-title,
+.events-hero .hero-subtitle,
+.events-hero .hero-description {
+    color: white;
 }
 
 .events-hero::before {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;

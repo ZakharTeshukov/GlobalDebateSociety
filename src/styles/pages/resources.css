@@ -4,9 +4,25 @@
 /* Resources page specific styles */
 .resources-hero {
     margin-bottom: 0;
+    position: relative;
+    margin-top: -80px; /* Negative margin to counteract main padding */
+    padding-top: 80px; /* Add padding back to hero content */
+}
+
+.resources-hero .hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+.resources-hero .hero-title,
+.resources-hero .hero-subtitle,
+.resources-hero .hero-description {
+    color: white;
 }
 
 .resources-hero::before {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;

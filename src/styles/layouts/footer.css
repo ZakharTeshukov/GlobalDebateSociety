@@ -207,14 +207,27 @@
 .footer-content {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacing-lg);
     margin-bottom: var(--spacing-xl);
 }
 
-.footer-content > * {
-    flex-grow: 1;
+.footer-content > .footer-widget {
+    flex-grow: 0;
     flex-basis: auto;
+    margin-right: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.footer-content > .footer-widget:first-child {
+    order: 1;
+    flex-grow: 1;
+    margin-right: 0;
+}
+
+.footer-widget.newsletter-widget {
+    flex-basis: 100%;
+    order: 2;
     min-width: 0;
+    margin-right: 0;
 }
 
 /* Responsive Design */

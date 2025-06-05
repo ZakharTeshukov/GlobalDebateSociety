@@ -1,21 +1,20 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // For homepage hero
-    const homeLearnMoreButton = document.getElementById('hero-learn-more-btn');
-    const homeTargetSection = document.getElementById('features-section');
-
-    if (homeLearnMoreButton && homeTargetSection) {
-        homeLearnMoreButton.addEventListener('click', () => {
-            homeTargetSection.scrollIntoView({ behavior: 'smooth' });
-        });
+document.addEventListener('DOMContentLoaded', function() {
+    // Animate hero content on page load
+    const heroContent = document.querySelector('.hero-content');
+    if (heroContent) {
+        setTimeout(() => {
+            heroContent.classList.add('animate');
+        }, 100);
     }
 
-    // For About page hero
-    const aboutLearnMoreButton = document.getElementById('about-learn-more-btn');
-    const aboutTargetSection = document.getElementById('about-page-content');
-
-    if (aboutLearnMoreButton && aboutTargetSection) {
-        aboutLearnMoreButton.addEventListener('click', () => {
-            aboutTargetSection.scrollIntoView({ behavior: 'smooth' });
+    // Handle "Learn More" button click
+    const learnMoreBtn = document.getElementById('about-learn-more-btn');
+    if (learnMoreBtn) {
+        learnMoreBtn.addEventListener('click', function() {
+            const aboutContent = document.getElementById('about-page-content');
+            if (aboutContent) {
+                aboutContent.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     }
 }); 
