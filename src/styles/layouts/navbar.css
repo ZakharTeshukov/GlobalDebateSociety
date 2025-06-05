@@ -192,6 +192,56 @@
 }
 
 @media (max-width: 768px) {
+    .navbar {
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+    
+    .navbar-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 80%;
+        max-width: 300px;
+        background: white;
+        padding: 80px var(--spacing-md) var(--spacing-md);
+        flex-direction: column;
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+    
+    .navbar-nav.active {
+        right: 0;
+    }
+    
+    .navbar-nav li {
+        width: 100%;
+        margin: var(--spacing-xs) 0;
+    }
+    
+    .navbar-nav a {
+        width: 100%;
+        padding: var(--spacing-sm);
+        text-align: center;
+        border-radius: var(--border-radius);
+        transition: background-color 0.3s ease;
+    }
+    
+    .navbar-nav a:not(.join-btn):hover {
+        background-color: rgba(0,0,0,0.05);
+    }
+    
+    .navbar-nav .join-btn {
+        margin-top: var(--spacing-md);
+    }
+    
     .mobile-menu-btn {
         display: block;
         z-index: 1101;
@@ -206,210 +256,46 @@
         outline: none;
         transition: transform 0.18s cubic-bezier(0.4,0,0.2,1);
     }
+    
     .mobile-menu-btn span {
         display: block;
         position: absolute;
         left: 8px;
         width: 32px;
-        height: 4px;
-        background-color: #222;
+        height: 3px;
+        background-color: var(--primary-color);
         border-radius: 2px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-        transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.25s cubic-bezier(0.4,0,0.2,1), background 0.3s, box-shadow 0.2s;
-        will-change: transform, opacity;
+        transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), 
+                    opacity 0.25s cubic-bezier(0.4,0,0.2,1);
     }
+    
     .mobile-menu-btn span:nth-child(1) {
         top: 12px;
     }
+    
     .mobile-menu-btn span:nth-child(2) {
         top: 22px;
     }
+    
     .mobile-menu-btn span:nth-child(3) {
         top: 32px;
     }
-    .mobile-menu-btn.active span {
-        background-color: #222;
-        box-shadow: 0 2px 12px rgba(58,134,255,0.18);
-    }
-    .mobile-menu-btn.active {
-        animation: menu-bounce 0.32s cubic-bezier(0.4,0,0.2,1);
-    }
+    
     .mobile-menu-btn.active span:nth-child(1) {
-        transform: translateY(10px) rotate(45deg) scaleX(1.1);
+        transform: translateY(10px) rotate(45deg);
     }
+    
     .mobile-menu-btn.active span:nth-child(2) {
         opacity: 0;
-        transform: scaleX(0.5);
     }
+    
     .mobile-menu-btn.active span:nth-child(3) {
-        transform: translateY(-10px) rotate(-45deg) scaleX(1.1);
-    }
-    @keyframes menu-bounce {
-        0% { transform: scale(1); }
-        60% { transform: scale(1.12); }
-        100% { transform: scale(1); }
-    }
-    .navbar-nav {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(250, 251, 253, 0.98);
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
-        backdrop-filter: blur(10px) saturate(120%);
-        -webkit-backdrop-filter: blur(10px) saturate(120%);
-        border-radius: 0;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 5vh 0;
-        padding-top: calc(5vh + 60px);
-        transition: opacity 0.35s cubic-bezier(0.4,0,0.2,1), transform 0.35s cubic-bezier(0.4,0,0.2,1);
-        z-index: 1100;
-        opacity: 0;
-        pointer-events: none;
-        transform: translateX(100%);
-        overflow-y: auto;
-        overscroll-behavior: contain;
-        -webkit-overflow-scrolling: touch;
-    }
-    .navbar-nav.active {
-        opacity: 1;
-        pointer-events: auto;
-        transform: translateX(0);
-    }
-    .navbar-nav li {
-        margin: 1.2rem 0;
-        width: 85%;
-        max-width: 340px;
-        text-align: center;
-        position: relative;
-        z-index: 1102;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.4s ease, transform 0.4s ease;
-        transition-delay: calc(var(--item-index, 0) * 0.1s);
-    }
-    .navbar-nav.active li {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    .navbar-nav a {
-        width: 100%;
-        text-align: center;
-        font-size: 1.5rem;
-        color: #333;
-        padding: 1.2rem 0;
-        border-radius: 0.75rem;
-        background: none;
-        transition: color 0.3s, background 0.3s, transform 0.3s;
-        outline: none;
-        display: inline-block;
-        text-decoration: none;
-        position: relative;
-        cursor: pointer;
-        pointer-events: auto;
-        -webkit-tap-highlight-color: transparent;
-    }
-    .navbar-nav a:hover,
-    .navbar-nav a:focus {
-        color: #3a86ff;
-        background: rgba(58, 134, 255, 0.12);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 16px rgba(58,134,255,0.18);
-    }
-    .navbar-nav a.active {
-        color: #E65100;
-        background: rgba(230, 81, 0, 0.12);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 16px rgba(230, 81, 0, 0.18);
-    }
-    .navbar-nav a.join-btn,
-    .navbar-nav .btn-join {
-        background: linear-gradient(135deg, #ff6f00, #ff9100);
-        color: #fff !important;
-        font-size: 1.3rem;
-        margin-top: 2.5rem;
-        margin-bottom: 1rem;
-        border-radius: 2rem;
-        width: 85%;
-        max-width: 340px;
-        box-shadow: 0 4px 24px rgba(255,111,0,0.15);
-        transition: all 0.3s ease;
-        cursor: pointer;
-        pointer-events: auto;
-        z-index: 1102;
-        position: relative;
-    }
-    .navbar-nav a.join-btn.active {
-        background: linear-gradient(135deg, #E65100, #F57C00);
-        box-shadow: 0 6px 32px rgba(230, 81, 0, 0.25);
+        transform: translateY(-10px) rotate(-45deg);
     }
     
-    /* Hide the separate close button - using animated hamburger instead */
-    .navbar-nav .close-menu-btn {
-        display: none !important;
-    }
-    
-    /* Ensure dropdown menus are styled properly */
-    .navbar-dropdown .dropdown-menu {
-        display: none;
-        position: static;
-        box-shadow: none;
-        min-width: 0;
-        background: rgba(255, 255, 255, 0.8);
-        margin-top: 0.5rem;
-        padding: 0.5rem 0;
-        width: 100%;
-        border-radius: 0.5rem;
-        opacity: 1;
-        transform: none;
-        z-index: 1103;
-    }
-    .navbar-dropdown.active .dropdown-menu {
-        display: block;
-        pointer-events: auto;
-    }
-    .dropdown-menu a {
-        font-size: 1.2rem;
-        padding: 1rem 0;
-        color: #444;
-        cursor: pointer;
-        pointer-events: auto;
-    }
-    .dropdown-menu a:hover,
-    .dropdown-menu a:focus {
-        color: #3a86ff;
-    }
-    /* Add a down arrow indicator for dropdowns */
-    .navbar-dropdown .dropdown-toggle {
-        cursor: pointer;
-        pointer-events: auto;
-    }
-    .navbar-dropdown .dropdown-toggle i {
-        margin-left: 0.5rem;
-        transition: transform 0.3s;
-    }
-    .navbar-dropdown.active .dropdown-toggle i {
-        transform: rotate(180deg);
-    }
-    
-    /* Remove the overlay completely */
-    .menu-overlay {
-        display: none !important;
-    }
-
-    /* Prevent content shifting when scrollbar appears/disappears */
+    /* Prevent body scroll when menu is open */
     body.menu-open {
-        overflow: hidden !important;
-        padding-right: var(--scrollbar-width, 0px);
-        touch-action: none;
-        position: fixed;
-        width: 100%;
-        height: 100%;
+        overflow: hidden;
     }
 }
 

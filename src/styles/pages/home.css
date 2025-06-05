@@ -480,67 +480,107 @@
 
 @media (max-width: 768px) {
     .hero {
-        height: 90vh;
-        padding: 0 var(--spacing-sm);
+        min-height: 100vh;
+        padding: var(--spacing-md);
+        display: flex;
+        align-items: center;
     }
     
     .hero-content {
-        padding: 0 var(--spacing-sm);
         width: 100%;
-        max-width: 100%;
-    }
-    
-    .hero-title {
-        font-size: 2rem;
-        padding: 0 var(--spacing-xs);
-    }
-    
-    .hero-subtitle {
-        font-size: 1rem;
-        padding: 0 var(--spacing-xs);
+        padding: 0;
+        text-align: center;
     }
     
     .hero-buttons {
         flex-direction: column;
-        gap: var(--spacing-sm);
         width: 100%;
         max-width: 300px;
         margin: 0 auto;
+        gap: var(--spacing-md);
     }
     
     .hero-buttons .btn {
         width: 100%;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
-    .features .grid-3 {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
+    .features {
+        padding: var(--spacing-lg) var(--spacing-sm);
     }
     
     .feature-card {
-        margin: 0 var(--spacing-sm);
+        padding: var(--spacing-md);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        background: white;
+        border-radius: var(--border-radius);
+        box-shadow: var(--card-shadow);
     }
     
-    .upcoming-events .container {
-        padding: 0 var(--spacing-xs);
+    .feature-icon {
+        margin-bottom: var(--spacing-sm);
     }
     
     .events-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: var(--spacing-md);
-        padding: 0 var(--spacing-sm);
-        width: 100%;
-        box-sizing: border-box;
-        margin: 0 auto;
+        padding: 0;
     }
     
     .event-card {
-        margin: 0;
-        width: 100%;
+        margin: 0 var(--spacing-sm);
+        border-radius: var(--border-radius);
+        box-shadow: var(--card-shadow);
+    }
+    
+    .event-content {
+        padding: var(--spacing-md);
     }
     
     .event-meta {
         flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    
+    .event-meta > div {
+        width: 100%;
+    }
+    
+    /* Touch target optimizations */
+    a, button, 
+    .btn,
+    .navbar-nav a,
+    .footer-links a {
+        min-height: 44px;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Form optimizations */
+    input, select, textarea {
+        font-size: 16px;
+    }
+    
+    /* Scrolling performance */
+    .smooth-scroll {
+        scroll-behavior: auto;
+    }
+    
+    /* Image optimizations */
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
     }
     
     .cta-title {
@@ -634,7 +674,9 @@
     .event-description {
         font-size: 0.9rem;
     }
-}/* Prevent horizontal scrolling on all screen sizes */
+}
+
+/* Prevent horizontal scrolling on all screen sizes */
 html, body {
     max-width: 100%;
     overflow-x: hidden;
