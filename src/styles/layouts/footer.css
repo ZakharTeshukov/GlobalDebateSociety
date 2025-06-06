@@ -36,16 +36,97 @@
     height: 48px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
-    transition: var(--transition-fast);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.social-link:hover {
-    background-color: var(--accent-color);
-    transform: translateY(-2px);
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    padding-bottom: 150%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.4s ease-in-out;
+    z-index: 0;
+}
+
+.social-link:hover::before {
+    transform: translate(-50%, -50%) scale(1);
 }
 
 .social-link i {
     font-size: 1.1rem;
+    color: var(--text-color-light);
+    transition: color 0.3s ease, transform 0.3s ease;
+    z-index: 1;
+    position: relative;
+}
+
+.social-link:hover i {
+    transform: scale(1.1);
+}
+
+/* Remove generic hover effect */
+.social-link:hover {
+    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.1); /* Keep background subtle */
+    box-shadow: none; /* Remove generic shadow */
+}
+
+/* Custom Aura/Light Spread Effects */
+.social-link.social-facebook:hover {
+    box-shadow: 0 0 20px 5px rgba(24, 119, 242, 0.7); /* Facebook Blue */
+}
+
+.social-link.social-x:hover {
+    box-shadow: 0 0 20px 5px rgba(128, 128, 128, 0.7); /* X Gray */
+}
+
+.social-link.social-instagram:hover {
+    box-shadow: 0 0 20px 5px rgba(225, 48, 108, 0.7); /* Instagram Pink */
+}
+
+.social-link.social-linkedin:hover {
+    box-shadow: 0 0 20px 5px rgba(10, 102, 194, 0.7); /* LinkedIn Blue */
+}
+
+.social-link.social-youtube:hover {
+    box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.7); /* YouTube Red */
+}
+
+/* Gradient Auras */
+.social-link.social-instagram:hover::before {
+    background: radial-gradient(circle, #F77737 0%, #E1306C 70%); /* Orange to Pink */
+    opacity: 0.6;
+}
+
+.social-link.social-facebook:hover::before {
+    background: radial-gradient(circle, #589BFF 0%, #1877F2 70%); /* Light to Dark Blue */
+    opacity: 0.6;
+}
+
+.social-link.social-x:hover::before {
+    background: radial-gradient(circle, #CCCCCC 0%, #555555 70%); /* Light to Mid Gray */
+    opacity: 0.6;
+}
+
+.social-link.social-linkedin:hover::before {
+    background: radial-gradient(circle, #4C8DC9 0%, #0A66C2 70%); /* Light to Dark Blue */
+    opacity: 0.6;
+}
+
+.social-link.social-youtube:hover::before {
+    background: radial-gradient(circle, #FF5555 0%, #FF0000 70%); /* Light to Dark Red */
+    opacity: 0.6;
+}
+
+.social-link:hover i {
+    color: #ffffff;
 }
 
 .footer a {
@@ -120,10 +201,10 @@
     text-align: left;
 }
 
-.footer-contact-item i {
+.footer-contact-item .fas {
     margin-right: var(--spacing-sm);
     margin-top: 3px;
-    color: var(--accent-color);
+    color: var(--warning-color);
     font-size: 1.1rem;
     flex-shrink: 0;
     width: 20px;
@@ -219,7 +300,6 @@
 
 .footer-content > .footer-widget:first-child {
     order: 1;
-    flex-grow: 1;
     margin-right: 0;
 }
 
@@ -313,7 +393,7 @@
         margin-bottom: var(--spacing-md);
     }
     
-    .footer-contact-item i {
+    .footer-contact-item .fas {
         display: block;
         margin: 0 auto var(--spacing-sm);
         font-size: 1.3rem;
