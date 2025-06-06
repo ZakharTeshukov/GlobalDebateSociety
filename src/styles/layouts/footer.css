@@ -228,6 +228,7 @@
     color: var(--white);
     position: relative;
     padding-bottom: var(--spacing-xs);
+    display: inline-block;
 }
 
 .footer-widget-title::after {
@@ -238,6 +239,11 @@
     width: 40px;
     height: 2px;
     background-color: var(--accent-color);
+    transition: width 0.3s ease-in-out;
+}
+
+.footer-widget-title:hover::after {
+    width: 100%;
 }
 
 /* Footer Links */
