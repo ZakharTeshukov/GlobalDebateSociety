@@ -34,23 +34,19 @@
     border-top: none;
 }
 
-/* Logo text animation */
-.navbar-logo-text {
-    font-family: var(--font-family-heading);
-    font-weight: var(--font-weight-bold);
+.navbar-logo .logo-flip-animation {
     font-size: 1.5rem;
-    color: var(--primary-color);
-    position: relative;
-    letter-spacing: 0.5px;
+    color: var(--text-color-dark);
+    --start-color: var(--text-color-dark);
+    --end-color: var(--text-color-dark);
 }
 
-/* Logo hover effects */
-.navbar-logo:hover .navbar-logo-text {
+.navbar-logo:hover .logo-flip-animation {
     color: var(--secondary-color);
 }
 
 /* Remove logo active animation */
-.navbar-logo:active .navbar-logo-text {
+.navbar-logo:active .logo-flip-animation {
     /* Remove transform */
 }
 
