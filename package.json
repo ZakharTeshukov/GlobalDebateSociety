@@ -7,7 +7,8 @@
     "convert-images": "node src/js/convert-images.js",
     "update-templates": "node src/js/update-templates.js",
     "update-seo": "node src/js/update-seo.js",
-    "build": "npm run convert-images && npm run update-templates && npm run update-seo"
+    "build": "npm run convert-images && npm run update-templates && npm run update-seo",
+    "start": "live-server"
   },
   "keywords": [
     "debate",
@@ -22,5 +23,8 @@
     "glob": "^10.3.10",
     "sharp": "^0.33.2",
     "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
   }
 } 

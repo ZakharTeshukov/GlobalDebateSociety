@@ -7,7 +7,6 @@ BASE STYLES - Applied to every page
 /* Utility Styles */
 @import './utils/variables.css';
 @import './utils/reset.css';
-@import './utils/mixins.css';
 
 /* Base Styles */
 @import './base.css';
@@ -20,7 +19,6 @@ BASE STYLES - Applied to every page
 /* Component Styles */
 @import './components/buttons.css';
 @import './components/cards.css';
-@import './components/forms.css';
 @import './components/hero.css';
 
 /* 
@@ -36,7 +34,6 @@ PAGE-SPECIFIC STYLES - Applied selectively
 @import './pages/contact.css';
 @import './pages/resources.css';
 @import './pages/join.css';
-@import './pages/timeline-animations.css';
 
 /* Global styles that apply to the entire site */
 
