@@ -1,0 +1,229 @@
+/* src/styles/layouts/mobile-nav.css */
+
+/*
+ * New Mobile Navigation System for Global Debate Society
+ *
+ * This file contains all the styles for the new, revamped mobile navigation system.
+ * It is designed to be performant, accessible, and align with the desktop styling.
+ */
+
+:root {
+    --mobile-nav-width: 100%;
+    --mobile-nav-max-width: 100vw;
+    --mobile-nav-transition-speed: 0.35s;
+    --mobile-nav-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1001;
+    transition: opacity var(--mobile-nav-transition-speed) ease-in-out, visibility 0s var(--mobile-nav-transition-speed);
+}
+
+.mobile-nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--mobile-nav-width);
+    max-width: var(--mobile-nav-max-width);
+    height: 100vh;
+    background-color: #ffffff;
+    transform: translateX(100%);
+    transition: transform var(--mobile-nav-transition-speed) var(--mobile-nav-timing-function);
+    z-index: 1002;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+}
+
+.mobile-nav.active {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+.mobile-nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: var(--spacing-sm) 1.5rem;
+    background-color: var(--bg-light);
+    border-bottom: 1px solid var(--border-color);
+}
+
+@media (max-width: 480px) {
+    .mobile-nav-header {
+        padding: var(--spacing-sm);
+    }
+}
+
+.mobile-nav-close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1011;
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+@media (max-width: 480px) {
+    .mobile-nav-close-btn {
+        right: 0;
+    }
+}
+
+.mobile-nav-close-btn::before,
+.mobile-nav-close-btn::after {
+    content: '';
+    width: 2rem;
+    height: 0.25rem;
+    background: var(--primary-color);
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.mobile-nav-close-btn::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.mobile-nav-close-btn::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.mobile-nav-close-btn:focus {
+    outline: 2px solid var(--primary-color);
+}
+
+.mobile-nav-logo {
+    padding: 0;
+    text-align: left;
+    border-bottom: none;
+}
+
+.mobile-nav-logo .logo-flip-animation {
+    font-size: 1.2rem; /* Adjusted to fit on one line */
+    color: var(--text-color-dark);
+    --start-color: var(--text-color-dark);
+    --end-color: var(--text-color-dark);
+    display: inline-block;
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+.mobile-nav-logo .logo-flip-animation .word {
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+.mobile-nav-logo .logo-flip-animation .full-text {
+    display: inline;
+}
+
+.mobile-nav-logo .logo-flip-animation .short-text {
+    display: none;
+}
+
+@media (max-width: 360px) {
+    .mobile-nav-logo .logo-flip-animation .full-text {
+        display: none;
+    }
+
+    .mobile-nav-logo .logo-flip-animation .short-text {
+        display: inline;
+    }
+}
+
+.mobile-nav-logo .logo-flip-animation .word:last-child {
+    margin-right: 0;
+}
+
+.mobile-nav-links {
+    list-style: none;
+    padding: var(--spacing-sm) 0;
+    margin: 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.mobile-nav-links li {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.mobile-nav-links li:last-child {
+    border-bottom: none;
+}
+
+.mobile-nav-links a {
+    display: block;
+    padding: 1.2rem 1.5rem;
+    color: #333;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.mobile-nav-links a:hover,
+.mobile-nav-links a.active-page {
+    background-color: var(--primary-light-color);
+    color: var(--primary-color);
+}
+
+.mobile-nav-footer {
+    padding: 1.5rem;
+    border-top: none;
+    margin-top: auto;
+}
+
+.mobile-nav-join-btn {
+    display: block;
+    width: 100%;
+    padding: 0.9rem;
+    background-color: var(--secondary-color);
+    color: #fff;
+    text-align: center;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.mobile-nav-join-btn:hover {
+    background-color: #e65100;
+}
+
+/* Hamburger Menu Button Styling */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+        position: relative;
+        z-index: 1003; /* Above overlay and nav */
+        /* Additional styling if needed */
+    }
+}
+
+body.mobile-nav-open {
+    overflow: hidden;
+} 

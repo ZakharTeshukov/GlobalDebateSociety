@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="src/styles/pages/home.css">
     <link rel="stylesheet" href="src/styles/layouts/navbar.css">
     <link rel="stylesheet" href="src/styles/layouts/footer.css">
-    <link rel="stylesheet" href="src/styles/layouts/mobile.css">
+    <link rel="stylesheet" href="src/styles/layouts/mobile-nav.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
@@ -32,8 +32,9 @@
     <link rel="preload" href="src/styles/pages/home.css" as="style">
     <link rel="preload" href="src/styles/layouts/navbar.css" as="style">
     <link rel="preload" href="src/styles/layouts/footer.css" as="style">
+    <link rel="preload" href="src/styles/layouts/mobile-nav.css" as="style">
     <link rel="preload" href="src/js/main.js" as="script">
-    <link rel="preload" href="src/js/mobile-menu.js" as="script">
+    <link rel="preload" href="src/js/mobile-nav.js" as="script">
     <link rel="preload" href="src/assets/images/hero-backgrounds/debate-hero-bg.svg" as="image">
     
     <!-- Service worker registration script -->
@@ -74,6 +75,38 @@
             </ul>
         </nav>
     </header>
+
+    <div class="mobile-nav-overlay"></div>
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <div class="mobile-nav-logo">
+                <div class="logo-flip-animation">
+                    <span class="full-text">
+                        <span class="word">
+                            <span>G</span><span>l</span><span>o</span><span>b</span><span>a</span><span>l</span>
+                        </span>
+                        <span class="word">
+                            <span>D</span><span>e</span><span>b</span><span>a</span><span>t</span><span>e</span>
+                        </span>
+                        <span class="word">
+                            <span>S</span><span>o</span><span>c</span><span>i</span><span>e</span><span>t</span><span>y</span>
+                        </span>
+                    </span>
+                    <span class="short-text">GDS</span>
+                </div>
+            </div>
+            <button class="mobile-nav-close-btn" aria-label="Close mobile menu">&times;</button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html" data-page="home">Home</a></li>
+            <li><a href="src/pages/about/index.html" data-page="about">About</a></li>
+            <li><a href="src/pages/events/index.html" data-page="events">Events</a></li>
+            <li><a href="src/pages/resources/index.html" data-page="resources">Resources</a></li>
+        </ul>
+        <div class="mobile-nav-footer">
+            <a href="src/pages/join/index.html" class="mobile-nav-join-btn">Join Now</a>
+        </div>
+    </div>
 
     <main>
         <section class="hero">
@@ -333,11 +366,11 @@
     </footer>
 
     <script src="src/js/main.js"></script>
-    <script src="src/js/mobile-menu.js"></script>
+    <script src="src/js/mobile-nav.js"></script>
     <script src="src/js/navbar.js"></script>
     <script src="src/js/hero-scroll.js"></script>
     <script src="src/js/event-listeners.js"></script>
     <script src="src/js/animations.js"></script>
     <script src="src/js/footer-animations.js"></script>
 </body>
-</html> 
+</html>

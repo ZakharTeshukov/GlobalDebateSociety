@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="../../styles/base.css">
     <link rel="stylesheet" href="../../styles/pages/about.css">
     <link rel="stylesheet" href="../../styles/layouts/navbar.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../../styles/layouts/footer.css">
+    <link rel="stylesheet" href="../../styles/layouts/mobile-nav.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <!-- Web App Manifest -->
     <link rel="manifest" href="../../../manifest.json">
@@ -28,8 +29,9 @@
     <link rel="preload" href="../../styles/pages/about.css" as="style">
     <link rel="preload" href="../../styles/layouts/navbar.css" as="style">
     <link rel="preload" href="../../styles/layouts/footer.css" as="style">
+    <link rel="preload" href="../../styles/layouts/mobile-nav.css" as="style">
     <link rel="preload" href="../../js/main.js" as="script">
-    <link rel="preload" href="../../js/mobile-menu.js" as="script">
+    <link rel="preload" href="../../js/mobile-nav.js" as="script">
     <link rel="preload" href="../../js/navbar.js" as="script">
     <link rel="preload" href="../../js/hero-scroll.js" as="script">
 </head>
@@ -37,7 +39,18 @@
     <header> 
         <nav class="navbar" role="navigation" aria-label="Main Navigation">
             <a href="../../../index.html" class="navbar-logo" aria-label="Global Debate Society Home">
-                <span class="navbar-logo-text">Global Debate Society</span>
+                <div class="logo-flip-animation desktop-logo">
+                    <div class="word">
+                        <span>G</span><span>l</span><span>o</span><span>b</span><span>a</span><span>l</span>
+                    </div>
+                    <div class="word">
+                        <span>D</span><span>e</span><span>b</span><span>a</span><span>t</span><span>e</span>
+                    </div>
+                    <div class="word">
+                        <span>S</span><span>o</span><span>c</span><span>i</span><span>e</span><span>t</span><span>y</span>
+                    </div>
+                </div>
+                <div class="mobile-logo">GDS</div>
             </a>
             
             <button class="mobile-menu-btn" aria-label="Open main menu" aria-controls="navbar-nav" aria-expanded="false">
@@ -55,6 +68,38 @@
             </ul>
         </nav>
     </header>
+
+    <div class="mobile-nav-overlay"></div>
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <div class="mobile-nav-logo">
+                <div class="logo-flip-animation">
+                    <span class="full-text">
+                        <span class="word">
+                            <span>G</span><span>l</span><span>o</span><span>b</span><span>a</span><span>l</span>
+                        </span>
+                        <span class="word">
+                            <span>D</span><span>e</span><span>b</span><span>a</span><span>t</span><span>e</span>
+                        </span>
+                        <span class="word">
+                            <span>S</span><span>o</span><span>c</span><span>i</span><span>e</span><span>t</span><span>y</span>
+                        </span>
+                    </span>
+                    <span class="short-text">GDS</span>
+                </div>
+            </div>
+            <button class="mobile-nav-close-btn" aria-label="Close mobile menu">&times;</button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="../../../index.html" data-page="home">Home</a></li>
+            <li><a href="./index.html" data-page="about">About</a></li>
+            <li><a href="../events/index.html" data-page="events">Events</a></li>
+            <li><a href="../resources/index.html" data-page="resources">Resources</a></li>
+        </ul>
+        <div class="mobile-nav-footer">
+            <a href="../join/index.html" class="mobile-nav-join-btn">Join Now</a>
+        </div>
+    </div>
 
     <main>
         <section class="hero-section about-hero">
@@ -289,9 +334,12 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script src="../../js/mobile-menu.js"></script>
     <script src="../../js/main.js"></script>
+    <script src="../../js/mobile-nav.js"></script>
     <script src="../../js/navbar.js"></script>
     <script src="../../js/hero-scroll.js"></script>
+    <script src="../../js/event-listeners.js"></script>
+    <script src="../../js/animations.js"></script>
+    <script src="../../js/footer-animations.js"></script>
 </body>
 </html> 
