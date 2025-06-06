@@ -111,7 +111,7 @@
 
 .feature-card {
     padding: var(--spacing-lg);
-    background-color: white;
+    background-color: var(--bg-light-gray);
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-sm);
     text-align: center;

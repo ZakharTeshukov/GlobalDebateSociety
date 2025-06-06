@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="src/styles/pages/home.css">
     <link rel="stylesheet" href="src/styles/layouts/navbar.css">
     <link rel="stylesheet" href="src/styles/layouts/footer.css">
+    <link rel="stylesheet" href="src/styles/layouts/mobile.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
@@ -19,6 +20,11 @@
     <meta http-equiv="Cache-Control" content="max-age=86400, must-revalidate">
     <meta name="description" content="Global Debate Society - A community for debaters, speakers, and critical thinkers across Southeast Asia.">
     <meta name="theme-color" content="#3a86ff">
+    
+    <!-- Preconnect to external font and icon services for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
     <!-- Preload critical assets -->
     <link rel="preload" href="src/styles/index.css" as="style">
@@ -39,7 +45,7 @@
     <header> 
         <nav class="navbar" role="navigation" aria-label="Main Navigation">
             <a href="index.html" class="navbar-logo" aria-label="Global Debate Society Home">
-                <div class="logo-flip-animation">
+                <div class="logo-flip-animation desktop-logo">
                     <div class="word">
                         <span>G</span><span>l</span><span>o</span><span>b</span><span>a</span><span>l</span>
                     </div>
@@ -50,6 +56,7 @@
                         <span>S</span><span>o</span><span>c</span><span>i</span><span>e</span><span>t</span><span>y</span>
                     </div>
                 </div>
+                <div class="mobile-logo">GDS</div>
             </a>
             
             <button class="mobile-menu-btn" aria-label="Open main menu" aria-controls="navbar-nav" aria-expanded="false">
@@ -229,7 +236,7 @@
         <div class="container">
             <div class="footer-top">
                 <div class="footer-logo">
-                    <div class="logo-flip-animation">
+                    <div class="logo-flip-animation desktop-logo">
                         <div class="word">
                             <span>G</span><span>l</span><span>o</span><span>b</span><span>a</span><span>l</span>
                         </div>
@@ -242,11 +249,11 @@
                     </div>
                 </div>
                 <div class="footer-social">
-                    <a href="#" class="social-link social-facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="social-link social-x"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#" class="social-link social-instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="social-link social-linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" class="social-link social-youtube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-link social-facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" class="social-link social-x"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-link social-instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link social-linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="social-link social-youtube"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
             
@@ -331,5 +338,6 @@
     <script src="src/js/hero-scroll.js"></script>
     <script src="src/js/event-listeners.js"></script>
     <script src="src/js/animations.js"></script>
+    <script src="src/js/footer-animations.js"></script>
 </body>
 </html> 
