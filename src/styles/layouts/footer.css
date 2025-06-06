@@ -238,105 +238,128 @@
 }
 
 @media (max-width: 768px) {
+    /* === Mobile Footer Reset === */
     .footer {
-        padding: var(--spacing-lg) var(--spacing-md);
+        padding: var(--spacing-lg) 0; /* Vertical padding, no horizontal */
     }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
-        text-align: center;
+
+    .footer .container {
+        padding: 0; /* Remove container padding */
+        width: 100%;
     }
-    
-    .footer-widget {
-        padding: var(--spacing-md) 0;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    
-    .footer-widget:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
-    }
-    
-    .footer-widget-title {
-        margin-bottom: var(--spacing-md);
-        font-size: 1.2rem;
-    }
-    
-    .footer-links {
+
+    /* Stack all footer sections vertically and center them */
+    .footer-top,
+    .footer-content,
+    .footer-bottom {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: var(--spacing-sm);
+        width: 100%;
     }
     
-    .footer-links li {
-        width: 100%;
+    .footer-top {
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .footer-content {
+        gap: var(--spacing-lg);
+    }
+
+    .footer-bottom {
+        gap: var(--spacing-md);
+        margin-top: var(--spacing-lg);
+    }
+
+    /* Center all widget content */
+    .footer-widget {
         text-align: center;
-    }
-    
-    .footer-links a {
-        padding: var(--spacing-sm) 0;
-        display: inline-block;
         width: 100%;
+        max-width: 400px;
+        margin: 0;
+        padding: 0;
     }
-    
-    .footer-contact-item {
-        justify-content: center;
-        gap: var(--spacing-sm);
+
+    .footer-widget-title {
+        margin-bottom: var(--spacing-md);
+    }
+
+    /* Center the decorative underline */
+    .footer-widget-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Reset and center link lists */
+    .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-links li {
         margin-bottom: var(--spacing-sm);
     }
     
+    /* Center contact info */
+    .footer-contact {
+        align-items: center;
+    }
+
+    .footer-contact-item {
+        display: block;
+        text-align: center;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .footer-contact-item i {
+        display: block;
+        margin: 0 auto var(--spacing-sm);
+        font-size: 1.3rem;
+    }
+    
+    .footer-contact-item span {
+        text-align: center;
+    }
+
+    /* Center newsletter form */
     .footer-subscribe-container {
-        max-width: 300px;
+        align-items: center;
+        max-width: 350px;
         margin: 0 auto;
     }
-    
-    .footer-social {
-        justify-content: center;
-        gap: var(--spacing-md);
-        margin-top: var(--spacing-md);
-    }
-    
-    .footer-social a {
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(255,255,255,0.1);
-        border-radius: 50%;
-        transition: all 0.3s ease;
-    }
-    
-    .footer-social a:hover {
-        background: var(--primary-color);
-        transform: translateY(-3px);
-    }
-    
-    .footer-bottom {
-        margin-top: var(--spacing-lg);
-        padding-top: var(--spacing-md);
+
+    .email-input-container input {
+        border-radius: var(--border-radius);
+        margin-bottom: var(--spacing-sm);
         text-align: center;
     }
     
-    .footer-bottom-links {
-        margin-top: var(--spacing-sm);
+    .subscribe-button-container button {
+        border-radius: var(--border-radius);
     }
-    
-    .footer-bottom-links a {
-        display: inline-block;
-        padding: var(--spacing-xs) var(--spacing-sm);
+
+    /* Reset desktop flex properties that interfere */
+    .footer-content > .footer-widget,
+    .footer-content > .footer-widget:first-child,
+    .footer-widget.newsletter-widget {
+        flex-basis: auto;
+        flex-grow: 0;
+        order: 0;
+        margin: 0;
+        min-width: unset;
     }
 }
 
 @media (max-width: 480px) {
     .footer {
-        padding: var(--spacing-md) var(--spacing-sm);
+        padding: 0;
     }
     
     .footer-widget {
         padding: var(--spacing-sm) 0;
+        font-size: 0.9rem;
     }
     
     .footer-widget-title {
@@ -357,7 +380,7 @@
 /* Improve tap targets on small mobile devices */
 @media (max-width: 360px) {
     .footer {
-        padding: var(--spacing-md) var(--spacing-xs) var(--spacing-sm);
+        padding: 0;
     }
     
     .footer-widget-title {
@@ -381,11 +404,6 @@
     color: #fff;
 }
 
-/* Add extra spacing between Contact Us and Newsletter widgets on larger screens */
-.footer-content .footer-widget:nth-child(3) {
-    margin-right: var(--spacing-xl);
-}
-
 /* === Mobile Logo Shortening === */
 @media (max-width: 576px) {
     /* Hide full text and replace with GDS */
@@ -403,13 +421,4 @@
         display: inline-block;
         line-height: normal;
     }
-}
-
-/* MODIFIED: This rule was causing the primary issue with !important */
-.footer-widget .footer-contact {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
+} 
