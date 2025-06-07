@@ -1,0 +1,210 @@
+/* FAQ Page Styles */
+
+.page-header {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 6rem 2rem 4rem;
+    text-align: center;
+}
+
+.page-header h1 {
+    color: var(--white);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 4rem 0;
+}
+
+.faq-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.category-btn {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--light-gray);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.category-btn:hover {
+    background-color: rgba(52, 152, 219, 0.2);
+}
+
+.category-btn.active {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+/* Accordion Styles */
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.accordion-item:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-header {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: var(--white);
+    transition: var(--transition);
+}
+
+.accordion-header:hover {
+    background-color: rgba(52, 152, 219, 0.05);
+}
+
+.accordion-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.accordion-icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-color);
+    transition: transform 0.3s ease;
+}
+
+.accordion-content {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.accordion-content p {
+    margin-top: 0;
+}
+
+.accordion-item.active .accordion-header {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.accordion-item.active .accordion-content {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    max-height: 1000px; /* Set high enough to accommodate any content */
+}
+
+.accordion-content ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+}
+
+.accordion-content ul li {
+    margin-bottom: 0.5rem;
+}
+
+.accordion-content a {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.accordion-content a:hover {
+    color: var(--primary-color);
+}
+
+/* Contact CTA Section */
+.contact-cta {
+    background-color: var(--light-gray);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.contact-cta h2 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.contact-cta p {
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .faq-categories {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+        justify-content: flex-start;
+    }
+    
+    .category-btn {
+        flex: 0 0 auto;
+        padding: 0.6rem 1.2rem;
+    }
+    
+    .accordion-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .page-header {
+        padding: 5rem 1rem 3rem;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    
+    .page-header p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .accordion-header {
+        padding: 1.2rem;
+    }
+    
+    .accordion-header h3 {
+        font-size: 1rem;
+        width: 85%;
+    }
+    
+    .accordion-item.active .accordion-content {
+        padding: 0 1.2rem 1.2rem 1.2rem;
+    }
+} 

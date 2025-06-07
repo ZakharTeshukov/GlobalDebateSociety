@@ -1,0 +1,140 @@
+/* 
+ * Mobile-specific styles for Global Debate Society
+ *
+ * Table of Contents:
+ * 1. Navbar & Logo
+ * 2. Mobile Navigation Menu (Slide-over)
+ * 3. Homepage Layout Adjustments
+ * 4. "Why Choose GDS?" Section Styling
+ * 5. "Featured Events" Section Styling
+ * 6. Footer Adjustments
+ * 7. Newsletter Form Adjustments
+ */
+
+/* Default state for mobile-only elements */
+.mobile-logo {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    /* 1. Navbar & Logo: Show GDS logo on mobile */
+    .desktop-logo {
+        display: none;
+    }
+
+    .mobile-logo {
+        display: block;
+        font-weight: 700;
+        font-size: 1.5rem; /* Match desktop logo size */
+        color: #000000; /* Change color to black */
+    }
+
+    .footer .desktop-logo {
+        display: flex; /* Ensure full logo is visible in footer */
+    }
+
+    /* 2. Mobile Navigation Menu (Slide-over) */
+    .navbar-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 80px 20px 20px;
+        transition: right 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        box-shadow: -4px 0 15px rgba(0,0,0,0.15);
+        z-index: 1000;
+        list-style: none;
+    }
+
+    .navbar-nav.active {
+        right: 0;
+    }
+
+    .navbar-nav li {
+        width: 100%;
+        margin: 8px 0;
+    }
+
+    .navbar-nav a {
+        width: 100%;
+        padding: 12px 15px;
+        color: #333;
+        font-size: 18px;
+        font-weight: 500;
+        border-radius: 6px;
+        display: block;
+    }
+    
+    .navbar-nav a:hover, .navbar-nav a.active-page {
+        background-color: #f0f4ff;
+        color: #3a86ff;
+    }
+
+    .mobile-menu-btn {
+        display: flex; /* This will be styled in navbar.css, but ensure it's visible */
+        z-index: 1001; /* Above the slide-over menu */
+    }
+
+    /* 3. Homepage Layout Adjustments: Remove about snippet */
+    #about-snippet-section {
+        display: none;
+    }
+    
+    .features {
+        padding-top: 20px;
+    }
+
+    /* 4. "Why Choose GDS?" Section Styling */
+    .features .feature-card {
+        border-radius: 16px;
+        padding: 25px;
+        margin-bottom: 20px; /* Ensures spacing between cards if they stack */
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    /* 5. "Featured Events" Section Styling */
+    .upcoming-events .event-card {
+        border-radius: 16px;
+        overflow: hidden; /* Important for border-radius to affect children */
+        margin-bottom: 20px;
+    }
+    
+    .upcoming-events .event-card .event-content {
+        padding-bottom: 20px;
+    }
+
+    /* 6. Footer Adjustments */
+    .footer .footer-top {
+        padding-top: 40px;
+    }
+
+    /* 7. Newsletter Form Adjustments */
+    .footer-subscribe-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .email-input-container {
+        margin-bottom: 0;
+    }
+
+    .footer-subscribe-container input[type="email"] {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom: none;
+        margin-bottom: -1px; /* Overlap the border */
+    }
+
+    .subscribe-button-container button {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        width: 100%;
+    }
+} 
