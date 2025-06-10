@@ -343,4 +343,21 @@
     font-weight: var(--font-weight-bold);
     font-size: 1.2rem;
     color: var(--text-color-dark);
+}
+
+/* Mobile Navbar Overlay Adjustments: Ensure join Us button appears below other nav items */
+@media (max-width: 919px) {
+    .navbar-nav.active {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar-nav.active li {
+        width: 100%;
+        text-align: center;
+        margin: 0.5rem 0;
+    }
+    .navbar-nav.active li a.join-btn {
+        margin-top: 1.5rem;
+    }
 } 
