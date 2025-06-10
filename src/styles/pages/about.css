@@ -474,4 +474,11 @@ main {
      }
 }
 
+/* Gray backgrounds for Values, Impact, and Team cards */
+.value-card,
+.stat-card,
+.team-member {
+    background-color: var(--bg-light-gray);
+}
+
 /* General page styling below, hero section styling removed */ 

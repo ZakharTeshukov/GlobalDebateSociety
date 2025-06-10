@@ -166,3 +166,9 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* Section separators for visual distinction between page sections */
+section:not(:first-of-type) {
+    border-top: 1px solid var(--bg-light-gray);
+    padding-top: var(--spacing-lg);
+}

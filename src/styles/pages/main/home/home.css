@@ -198,7 +198,7 @@
 }
 
 .event-card {
-    background-color: var(--bg-light);
+    background-color: var(--bg-light-gray);
     border-radius: var(--border-radius-md);
     box-shadow: var(--card-shadow);
     overflow: hidden;
@@ -226,7 +226,7 @@
     flex-direction: column;
     gap: 0.5rem;
     margin-bottom: var(--spacing-sm);
-    color: var(--text-color-medium);
+    color: var(--text-color-dark);
     font-size: 0.9rem;
 }
 
@@ -242,7 +242,7 @@
 
 .event-description {
     margin-bottom: var(--spacing-md);
-    color: var(--text-color-medium);
+    color: var(--text-color-dark);
     font-size: 0.95rem;
     line-height: 1.5;
 }
@@ -474,6 +474,10 @@
     }
     
     .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    /* Adjust features grid to 2 columns on medium screens */
+    .features .grid.grid-3 {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -736,5 +740,11 @@ img {
 
 .about-snippet-actions .btn {
     min-width: 200px; /* Ensure buttons have a decent width */
+}
+
+/* Enhanced contrast for Featured Events text */
+.event-card .event-meta,
+.event-card .event-description {
+    color: var(--text-color-dark);
 }
 
