@@ -24,49 +24,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Calendar Initialization
-    const calendar = document.getElementById('calendar');
-    if (calendar) {
-        // Sample events data
-        const events = [
-            {
-                title: 'Annual Championship',
-                start: '2024-05-15',
-                end: '2024-05-17',
-                type: 'competition'
-            },
-            {
-                title: 'Public Speaking Workshop',
-                start: '2024-04-20',
-                type: 'workshop'
-            },
-            {
-                title: 'Mock Debate',
-                start: '2024-05-05',
-                type: 'competition'
-            },
-            {
-                title: 'Debate Clinic',
-                start: '2024-05-12',
-                type: 'seminar'
-            }
-        ];
-
-        // Initialize FullCalendar
-        new FullCalendar.Calendar(calendar, {
+    const calendarEl = document.getElementById('calendar');
+    if (calendarEl) {
+        const calendar = new FullCalendar.Calendar(calendarEl, {
             initialView: 'dayGridMonth',
             headerToolbar: {
                 left: 'prev,next today',
                 center: 'title',
                 right: 'dayGridMonth,listMonth'
             },
-            events: events,
+            eventSources: [
+                {
+                    url: 'https://calendar.google.com/calendar/embed?src=c6291aceb5ef7e85faa2d3709b757c3f54ef683b7da7ca1d77a3046b40391568%40group.calendar.google.com&ctz=Asia%2FHo_Chi_Minh',
+                    format: 'ics'
+                },
+                {
+                    url: 'https://calendar.google.com/calendar/embed?src=c6291aceb5ef7e85faa2d3709b757c3f54ef683b7da7ca1d77a3046b40391568%40group.calendar.google.com&ctz=Asia%2FHo_Chi_Minh',
+                    format: 'ics'
+                }
+            ],
             eventClassNames: function(arg) {
-                return [`event-${arg.event.extendedProps.type}`];
+                const categories = arg.event.extendedProps.categories;
+                if (categories) {
+                    return categories.map(cat => `event-${cat.toLowerCase()}`);
+                }
+                return [];
             },
             eventClick: function(info) {
                 showEventDetails(info.event);
             }
-        }).render();
+        });
+        calendar.render();
     }
 
     // Event Details Modal

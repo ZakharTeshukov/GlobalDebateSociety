@@ -35,6 +35,10 @@
     <link rel="preload" href="../../js/mobile-nav.js" as="script">
     <link rel="preload" href="../../js/navbar.js" as="script">
     <link rel="preload" href="../../js/hero-scroll.js" as="script">
+    <!-- FullCalendar CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.8/main.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.8/main.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/list@6.1.8/main.min.css">
 </head>
 <body>
     <header>
@@ -137,6 +141,17 @@
                         <p class="event-details"><i class="fas fa-calendar-alt"></i> May 20, 2024 <span class="meta-separator">|</span> <i class="fas fa-map-marker-alt"></i> Online Event</p>
                     </div>
                 </div>
+            </div>
+        </section>
+        <section class="event-calendar">
+            <h2>Event Calendar</h2>
+            <div class="calendar-wrapper">
+                <div id="calendar"></div>
+            </div>
+            <div class="calendar-legend">
+                <div class="legend-item"><div class="dot competition"></div> Competition</div>
+                <div class="legend-item"><div class="dot workshop"></div> Workshop</div>
+                <div class="legend-item"><div class="dot seminar"></div> Seminar</div>
             </div>
         </section>
     </main>
@@ -244,6 +259,12 @@
     <script src="../../js/main.js"></script>
     <script src="../../js/mobile-nav.js"></script>
     <script src="../../js/navbar.js"></script>
-    <script src="../../js/hero-scroll.js"></script> 
+    <script src="../../js/hero-scroll.js"></script>
+    <!-- FullCalendar JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.8/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.8/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/list@6.1.8/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/icalendar@6.1.8/index.global.min.js"></script>
+    <script src="../../js/events.js"></script>
 </body>
 </html> 
