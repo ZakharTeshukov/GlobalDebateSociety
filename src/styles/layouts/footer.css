@@ -444,7 +444,7 @@
 
 @media (max-width: 480px) {
     .footer {
-        padding: 0;
+        padding: var(--spacing-lg) 0;
     }
     
     .footer-widget {
