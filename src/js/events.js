@@ -28,21 +28,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (calendarEl) {
         const calendar = new FullCalendar.Calendar(calendarEl, {
             initialView: 'dayGridMonth',
+            googleCalendarApiKey: 'AIzaSyB0KhMJx1WNE4HhReQoxdc3rl-pXSLTGNk',
             headerToolbar: {
                 left: 'prev,next today',
                 center: 'title',
                 right: 'dayGridMonth,listMonth'
             },
-            eventSources: [
-                {
-                    url: 'https://calendar.google.com/calendar/embed?src=c6291aceb5ef7e85faa2d3709b757c3f54ef683b7da7ca1d77a3046b40391568%40group.calendar.google.com&ctz=Asia%2FHo_Chi_Minh',
-                    format: 'ics'
-                },
-                {
-                    url: 'https://calendar.google.com/calendar/embed?src=c6291aceb5ef7e85faa2d3709b757c3f54ef683b7da7ca1d77a3046b40391568%40group.calendar.google.com&ctz=Asia%2FHo_Chi_Minh',
-                    format: 'ics'
-                }
-            ],
+            events: {
+                googleCalendarId: 'c6291aceb5ef7e85faa2d3709b757c3f54ef683b7da7ca1d77a3046b40391568@group.calendar.google.com'
+            },
             eventClassNames: function(arg) {
                 const categories = arg.event.extendedProps.categories;
                 if (categories) {
