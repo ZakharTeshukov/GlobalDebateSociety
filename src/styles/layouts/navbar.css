@@ -47,11 +47,6 @@
     color: var(--secondary-color);
 }
 
-/* Remove logo active animation */
-.navbar-logo:active .logo-flip-animation {
-    /* Remove transform */
-}
-
 /* Remove underline animation effect */
 .navbar-logo::after {
     display: none;

@@ -263,30 +263,13 @@
     margin: 0 auto;
 }
 
-.calendar-legend {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    margin-top: 2rem;
-}
-
-.legend-item {
-    display: flex;
+/* Uniform calendar toolbar button height */
+.calendar-wrapper .fc .fc-button {
+    height: 2.5rem;
+    display: inline-flex;
     align-items: center;
-    gap: 0.8rem;
-    font-size: 1.1rem;
-    color: #555;
+    justify-content: center;
 }
-
-.dot {
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-}
-
-.dot.competition { background: var(--primary-color); }
-.dot.workshop { background: var(--secondary-color); }
-.dot.seminar { background: var(--accent-color); }
 
 /* Event CTA Section */
 .event-cta {
@@ -355,6 +338,22 @@
     
     .btn-primary {
         padding: 1rem 2.5rem;
+    }
+    
+    .calendar-wrapper .fc-header-toolbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .calendar-wrapper .fc-header-toolbar .fc-toolbar-chunk {
+        width: auto;
+        display: flex;
+        align-items: center;
+    }
+    /* Hide only the (now-empty) center chunk */
+    .calendar-wrapper .fc-header-toolbar .fc-toolbar-chunk:nth-child(2) {
+        display: none;
     }
 }
 

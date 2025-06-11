@@ -27,15 +27,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const calendarEl = document.getElementById('calendar');
     if (calendarEl) {
         const calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth',
+            initialView: window.innerWidth < 768 ? 'listMonth' : 'dayGridMonth',
             googleCalendarApiKey: 'AIzaSyB0KhMJx1WNE4HhReQoxdc3rl-pXSLTGNk',
-            headerToolbar: {
-                left: 'prev,next today',
-                center: 'title',
-                right: 'dayGridMonth,listMonth'
-            },
+            headerToolbar: window.innerWidth < 768
+                ? { left: 'prev,next', center: '', right: 'today' }
+                : { left: 'prev,next', center: 'title', right: 'today,dayGridMonth,listMonth' },
             events: {
                 googleCalendarId: 'c6291aceb5ef7e85faa2d3709b757c3f54ef683b7da7ca1d77a3046b40391568@group.calendar.google.com'
+            },
+            height: 'auto',
+            windowResize: function() {
+                if (window.innerWidth < 768) {
+                    calendar.changeView('listMonth');
+                } else {
+                    calendar.changeView('dayGridMonth');
+                }
             },
             eventClassNames: function(arg) {
                 const categories = arg.event.extendedProps.categories;
