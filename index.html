@@ -3,9 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Global Debate Society | Empowering Voices in Southeast Asia</title>
+    <title>Global Debate Society | Debate & Public Speaking in Southeast Asia</title>
+    <link rel="canonical" href="https://www.globaldebatesociety.com/index.html" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Join the Global Debate Society, a vibrant community for debaters, speakers, and critical thinkers across Southeast Asia. Enhance your skills with expert coaching and connect with a global network.">
+    <meta name="keywords" content="debate, public speaking, critical thinking, Southeast Asia, debate competitions, debate coaching, GDS">
+
+    <!-- Open Graph Meta Tags (for social sharing) -->
+    <meta property="og:title" content="Global Debate Society | Debate & Public Speaking in Southeast Asia" />
+    <meta property="og:description" content="Join a vibrant community for debaters, speakers, and critical thinkers across Southeast Asia. Enhance your skills with expert coaching and connect with a global network." />
+    <meta property="og:image" content="https://www.globaldebatesociety.com/src/assets/images/logos/mainLogos/GDSLogo.png" />
+    <meta property="og:url" content="https://www.globaldebatesociety.com/index.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Global Debate Society" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Global Debate Society | Debate & Public Speaking in Southeast Asia">
+    <meta name="twitter:description" content="Join a vibrant community for debaters, speakers, and critical thinkers across Southeast Asia. Enhance your skills with expert coaching and connect with a global network.">
+    <meta name="twitter:image" content="https://www.globaldebatesociety.com/src/assets/images/logos/mainLogos/GDSLogo.png">
+
     <link rel="icon" type="image/png" href="src/assets/images/logos/mainLogos/GDSLogo.png">
-    <link rel="stylesheet" href="dist/style.bundle.css">
+    <link rel="stylesheet" href="src/styles/index.css">
+    <link rel="stylesheet" href="src/styles/base.css">
+    <link rel="stylesheet" href="src/styles/pages/home.css">
+    <link rel="stylesheet" href="src/styles/layouts/navbar.css">
+    <link rel="stylesheet" href="src/styles/layouts/footer.css">
+    <link rel="stylesheet" href="src/styles/layouts/mobile-nav.css">
+    <link rel="stylesheet" href="src/styles/components/calendar.css">
+    <link rel="stylesheet" href="src/styles/components/cards.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
@@ -19,7 +46,6 @@
     
     <!-- Performance optimization meta tags -->
     <meta http-equiv="Cache-Control" content="max-age=86400, must-revalidate">
-    <meta name="description" content="Join the Global Debate Society, a thriving community for debaters, speakers, and critical thinkers across Southeast Asia. Enhance your skills, connect with peers, and participate in prestigious events.">
     <meta name="theme-color" content="#3a86ff">
     
     <!-- Preconnect to external font and icon services for faster loading -->
@@ -28,7 +54,12 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
     <!-- Preload critical assets -->
-    <link rel="preload" href="dist/style.bundle.css" as="style">
+    <link rel="preload" href="src/styles/index.css" as="style">
+    <link rel="preload" href="src/styles/base.css" as="style">
+    <link rel="preload" href="src/styles/pages/home.css" as="style">
+    <link rel="preload" href="src/styles/layouts/navbar.css" as="style">
+    <link rel="preload" href="src/styles/layouts/footer.css" as="style">
+    <link rel="preload" href="src/styles/layouts/mobile-nav.css" as="style">
     <link rel="preload" href="src/js/main.js" as="script">
     <link rel="preload" href="src/js/mobile-nav.js" as="script">
     <link rel="preload" href="src/assets/images/hero-backgrounds/debate-hero-bg.svg" as="image">
@@ -36,14 +67,15 @@
     <!-- Service worker registration script -->
     
     <!-- Load lazy loading script -->
-
+    
+    <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Global Debate Society",
       "url": "https://www.globaldebatesociety.com",
-      "logo": "https://www.globaldebatesociety.com/src/assets/images/webp/logos/mainLogos/GDSLogo.webp",
+      "logo": "https://www.globaldebatesociety.com/src/assets/images/logos/mainLogos/GDSLogo.png",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+84-90-184-4197",
@@ -55,27 +87,7 @@
         "https://www.instagram.com",
         "https://www.linkedin.com",
         "https://www.youtube.com"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "78 Nguyễn Đức Cảnh, Tân Phong, Quận 7",
-        "addressLocality": "Hồ Chí Minh",
-        "postalCode": "700000",
-        "addressCountry": "VN"
-      }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Global Debate Society",
-      "url": "https://www.globaldebatesociety.com",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://www.globaldebatesociety.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
+      ]
     }
     </script>
     
@@ -153,8 +165,8 @@
                 <h1 class="hero-title">Welcome to Global Debate Society</h1>
                 <p class="hero-subtitle">Empowering voices and fostering critical thinking across Southeast Asia</p>
                 <div class="hero-buttons">
-                    <a href="src/pages/join/index.html" class="btn btn-primary btn-lg btn-join">Join</a>
-                    <a href="src/pages/events/index.html" class="btn btn-outline btn-lg">Upcoming Events</a>
+                    <a href="src/pages/navbar-pages/join/" class="btn btn-primary btn-lg btn-join">Join</a>
+                    <a href="src/pages/navbar-pages/events/" class="btn btn-outline btn-lg">Upcoming Events</a>
                 </div>
             </div>
         </section>
@@ -202,8 +214,8 @@
                     Fostering a vibrant community of critical thinkers, eloquent speakers, and future leaders across Southeast Asia. We provide a platform for engaging in meaningful discourse, developing essential life skills, and connecting with peers who share a passion for debate.
                 </p>
                 <div class="about-snippet-actions animate-on-scroll">
-                    <a href="src/pages/about/index.html" class="btn btn-primary">Learn More About Us</a>
-                    <a href="src/pages/join/index.html" class="btn btn-outline">Get Involved</a>
+                    <a href="src/pages/navbar-pages/about/" class="btn btn-primary">Learn More About Us</a>
+                    <a href="src/pages/navbar-pages/join/" class="btn btn-outline">Get Involved</a>
                 </div>
             </div>
         </section>
@@ -220,7 +232,7 @@
                 <div class="cta-content">
                     <h2 class="cta-title">Ready to Join Our Community?</h2>
                     <p class="cta-text">Start your journey with Global Debate Society today!</p>
-                    <a href="src/pages/join/index.html" class="cta-button">Join</a>
+                    <a href="src/pages/navbar-pages/join/" class="cta-button">Join</a>
                 </div>
             </div>
         </section>
@@ -274,19 +286,19 @@
                     <h3 class="footer-widget-title">Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="src/pages/about/index.html">About</a></li>
-                        <li><a href="src/pages/events/index.html">Events</a></li>
-                        <li><a href="src/pages/resources/index.html">Resources</a></li>
-                        <li><a href="src/pages/join/index.html">Join</a></li>
+                        <li><a href="src/pages/navbar-pages/about/">About</a></li>
+                        <li><a href="src/pages/navbar-pages/events/">Events</a></li>
+                        <li><a href="src/pages/navbar-pages/resources/">Resources</a></li>
+                        <li><a href="src/pages/navbar-pages/join/">Join</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Resources</h3>
                     <ul class="footer-links">
-                        <li><a href="src/pages/resources/index.html#guides">Debate Resources</a></li>
-                        <li><a href="src/pages/resources/index.html#materials">Training Materials</a></li>
-                        <li><a href="src/pages/resources/index.html#videos">Video Library</a></li>
+                        <li><a href="src/pages/navbar-pages/resources/#guides">Debate Resources</a></li>
+                        <li><a href="src/pages/navbar-pages/resources/#materials">Training Materials</a></li>
+                        <li><a href="src/pages/navbar-pages/resources/#videos">Video Library</a></li>
                         <li><a href="src/pages/footer-pages/faq.html">FAQs</a></li>
                     </ul>
                 </div>
@@ -294,10 +306,10 @@
                 <div class="footer-widget">
                     <h3 class="footer-widget-title">Join Us</h3>
                     <ul class="footer-links">
-                        <li><a href="src/pages/join/index.html#debater">As Debater</a></li>
-                        <li><a href="src/pages/join/index.html#coach">As Coach</a></li>
-                        <li><a href="src/pages/join/index.html#leader">As Leader</a></li>
-                        <li><a href="src/pages/join/index.html#chapter">As Chapter</a></li>
+                        <li><a href="src/pages/navbar-pages/join-as-debater.html">As Debater</a></li>
+                        <li><a href="src/pages/navbar-pages/join-as-coach.html">As Coach</a></li>
+                        <li><a href="src/pages/navbar-pages/join-as-leader.html">As Leader</a></li>
+                        <li><a href="src/pages/navbar-pages/join-as-chapter.html">As Chapter</a></li>
                     </ul>
                 </div>
                 
@@ -326,6 +338,18 @@
         </div>
     </footer>
 
-    <script src="dist/bundle.js" defer></script>
+    <script src="src/js/main.js"></script>
+    <script src="src/js/mobile-nav.js"></script>
+    <script src="src/js/navbar.js"></script>
+    <script src="src/js/hero-scroll.js"></script>
+    <!-- FullCalendar JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.8/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.8/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/list@6.1.8/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/icalendar@6.1.8/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/google-calendar@6.1.8/index.global.min.js"></script>
+    <script src="src/js/events.js"></script>
+    <script src="src/js/animations.js"></script>
+    <script src="src/js/footer-animations.js"></script>
 </body>
 </html>

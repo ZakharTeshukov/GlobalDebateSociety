@@ -3,10 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Events | Global Debate Society</title>
-    
+    <title>Debate Tournaments & Events | Global Debate Society</title>
+    <link rel="canonical" href="https://www.globaldebatesociety.com/src/pages/events/index.html" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore upcoming debate tournaments, workshops, and events from the Global Debate Society. Join our events to enhance your debating skills and connect with a global community.">
+    <meta name="keywords" content="debate events, debate tournaments, public speaking workshops, GDS events, debate calendar">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Debate Tournaments & Events | Global Debate Society" />
+    <meta property="og:description" content="Explore upcoming debate tournaments, workshops, and events from the Global Debate Society." />
+    <meta property="og:image" content="https://www.globaldebatesociety.com/src/assets/images/logos/mainLogos/GDSLogo.png" />
+    <meta property="og:url" content="https://www.globaldebatesociety.com/src/pages/events/index.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Debate Tournaments & Events | Global Debate Society">
+    <meta name="twitter:description" content="Explore upcoming debate tournaments, workshops, and events from the Global Debate Society.">
+    <meta name="twitter:image" content="https://www.globaldebatesociety.com/src/assets/images/logos/mainLogos/GDSLogo.png">
+
     <link rel="icon" type="image/png" href="../../assets/images/logos/mainLogos/GDSLogo.png">
-    <link rel="stylesheet" href="../../dist/style.bundle.css">
+    <link rel="stylesheet" href="../../styles/index.css"> <!-- Common styles -->
+    <link rel="stylesheet" href="../../styles/base.css"> <!-- Base styles -->
+    <link rel="stylesheet" href="../../styles/components/calendar.css"> <!-- Page-specific styles -->
+    <link rel="stylesheet" href="../../styles/layouts/navbar.css"> <!-- Navbar styles -->
+    <link rel="stylesheet" href="../../styles/layouts/footer.css"> <!-- Footer styles -->
+    <link rel="stylesheet" href="../../styles/layouts/mobile-nav.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
@@ -16,11 +39,15 @@
     
     <!-- Performance optimization meta tags -->
     <meta http-equiv="Cache-Control" content="max-age=86400, must-revalidate">
-    <meta name="description" content="Join us at our upcoming events and be part of the global debate community. Explore our diverse range of workshops, tournaments, and forums designed to enhance your debating skills and connect you with like-minded individuals."> <!-- Page-specific description -->
     <meta name="theme-color" content="#3a86ff">
     
     <!-- Preload critical assets -->
-    <link rel="preload" href="../../dist/style.bundle.css" as="style">
+    <link rel="preload" href="../../styles/index.css" as="style">
+    <link rel="preload" href="../../styles/base.css" as="style">
+    <link rel="preload" href="../../styles/components/calendar.css" as="style">
+    <link rel="preload" href="../../styles/layouts/navbar.css" as="style">
+    <link rel="preload" href="../../styles/layouts/footer.css" as="style">
+    <link rel="preload" href="../../styles/layouts/mobile-nav.css" as="style">
     <link rel="preload" href="../../js/main.js" as="script">
     <link rel="preload" href="../../js/mobile-nav.js" as="script">
     <link rel="preload" href="../../js/navbar.js" as="script">
@@ -30,22 +57,68 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.8/main.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/list@6.1.8/main.min.css">
 
+    <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Event",
-      "name": "Global Debate Society Events",
-      "description": "Workshops, tournaments, and forums for debaters in Southeast Asia.",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "VirtualLocation"
+      "@type": "WebPage",
+      "name": "Debate Tournaments & Events | Global Debate Society",
+      "description": "Explore upcoming debate tournaments, workshops, and events from the Global Debate Society. Join our events to enhance your debating skills and connect with a global community.",
+      "url": "https://www.globaldebatesociety.com/src/pages/events/index.html",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.globaldebatesociety.com/index.html"
+        },{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Events",
+          "item": "https://www.globaldebatesociety.com/src/pages/events/index.html"
+        }]
       },
-      "organizer": {
-        "@type": "Organization",
-        "name": "Global Debate Society",
-        "url": "https://www.globaldebatesociety.com"
-      },
-      "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode"
+      "mainEntity": [
+        {
+          "@type": "Event",
+          "name": "GDS Summer Open Tournament",
+          "startDate": "2024-07-15T09:00:00+07:00",
+          "endDate": "2024-07-17T17:00:00+07:00",
+          "eventAttendanceMode": "https://schema.org/OnlineEvent",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "location": {
+            "@type": "VirtualLocation",
+            "url": "https://www.globaldebatesociety.com/src/pages/events/index.html"
+          },
+          "image": "https://www.globaldebatesociety.com/src/assets/images/logos/mainLogos/GDSLogo.png",
+          "description": "Join debaters from across Southeast Asia for our annual summer tournament.",
+          "organizer": {
+            "@type": "Organization",
+            "name": "Global Debate Society",
+            "url": "https://www.globaldebatesociety.com"
+          }
+        },
+        {
+          "@type": "Event",
+          "name": "Critical Thinking Workshop",
+          "startDate": "2024-08-05T14:00:00+07:00",
+          "endDate": "2024-08-05T16:00:00+07:00",
+          "eventAttendanceMode": "https://schema.org/OnlineEvent",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "location": {
+            "@type": "VirtualLocation",
+            "url": "https://www.globaldebatesociety.com/src/pages/events/index.html"
+          },
+          "image": "https://www.globaldebatesociety.com/src/assets/images/logos/mainLogos/GDSLogo.png",
+          "description": "A workshop focused on developing advanced critical thinking and argumentation skills.",
+          "organizer": {
+            "@type": "Organization",
+            "name": "Global Debate Society",
+            "url": "https://www.globaldebatesociety.com"
+          }
+        }
+      ]
     }
     </script>
 </head>
@@ -194,7 +267,7 @@
                         <li><a href="../resources/index.html#guides">Debate Resources</a></li>
                         <li><a href="../resources/index.html#materials">Training Materials</a></li>
                         <li><a href="../resources/index.html#videos">Video Library</a></li>
-                        <li><a href="../resources/faqs/index.html">FAQs</a></li>
+                        <li><a href="../footer-pages/faq.html">FAQs</a></li>
                     </ul>
                 </div>
                 
@@ -233,6 +306,17 @@
         </div>
     </footer>
 
-    <script src="../../dist/bundle.js" defer></script>
+    <script src="../../js/main.js"></script>
+    <script src="../../js/mobile-nav.js"></script>
+    <script src="../../js/navbar.js"></script>
+    <script src="../../js/hero-scroll.js"></script>
+    <!-- FullCalendar JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.8/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.8/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/list@6.1.8/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/icalendar@6.1.8/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/google-calendar@6.1.8/index.global.min.js"></script>
+    <script src="../../js/events.js"></script>
+    <script src="../../js/animations.js"></script>
 </body>
 </html> 

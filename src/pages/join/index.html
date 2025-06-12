@@ -3,10 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Join Us | Global Debate Society</title>
-    
+    <title>Join as a Debater, Coach, or Leader | Global Debate Society</title>
+    <link rel="canonical" href="https://www.globaldebatesociety.com/src/pages/join/index.html" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Apply to join the Global Debate Society as a debater, coach, or club leader. Become part of a vibrant non-profit network with free membership and opportunities for growth.">
+    <meta name="keywords" content="join debate society, become a debater, debate coach, start a debate club, debate membership, GDS join">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Join as a Debater, Coach, or Leader | Global Debate Society" />
+    <meta property="og:description" content="Apply to join the Global Debate Society as a debater, coach, or club leader. Become part of a vibrant non-profit network with free membership." />
+    <meta property="og:image" content="https://www.globaldebatesociety.com/src/assets/images/logos/mainLogos/GDSLogo.png" />
+    <meta property="og:url" content="https://www.globaldebatesociety.com/src/pages/join/index.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Join as a Debater, Coach, or Leader | Global Debate Society">
+    <meta name="twitter:description" content="Apply to join the Global Debate Society as a debater, coach, or club leader. Become part of a vibrant non-profit network with free membership.">
+    <meta name="twitter:image" content="https://www.globaldebatesociety.com/src/assets/images/logos/mainLogos/GDSLogo.png">
+
     <link rel="icon" type="image/png" href="../../assets/images/logos/mainLogos/GDSLogo.png">
-    <link rel="stylesheet" href="../../dist/style.bundle.css">
+    <link rel="stylesheet" href="../../styles/index.css"> <!-- Common styles -->
+    <link rel="stylesheet" href="../../styles/base.css"> <!-- Base styles -->
+    <link rel="stylesheet" href="../../styles/pages/join.css"> <!-- Page-specific styles -->
+    <link rel="stylesheet" href="../../styles/layouts/navbar.css"> <!-- Navbar styles -->
+    <link rel="stylesheet" href="../../styles/layouts/footer.css"> <!-- Footer styles -->
+    <link rel="stylesheet" href="../../styles/layouts/mobile-nav.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
@@ -16,53 +39,40 @@
     
     <!-- Performance optimization meta tags -->
     <meta http-equiv="Cache-Control" content="max-age=86400, must-revalidate">
-    <meta name="description" content="Become part of a network of passionate debaters, coaches, and club leaders. Our non-profit organization offers free membership with numerous opportunities for growth and engagement."> <!-- Page-specific description -->
     <meta name="theme-color" content="#3a86ff">
     
     <!-- Preload critical assets -->
-    <link rel="preload" href="../../dist/style.bundle.css" as="style">
+    <link rel="preload" href="../../styles/index.css" as="style">
+    <link rel="preload" href="../../styles/base.css" as="style">
+    <link rel="preload" href="../../styles/pages/join.css" as="style">
+    <link rel="preload" href="../../styles/layouts/navbar.css" as="style">
+    <link rel="preload" href="../../styles/layouts/footer.css" as="style">
+    <link rel="preload" href="../../styles/layouts/mobile-nav.css" as="style">
     <link rel="preload" href="../../js/main.js" as="script">
     <link rel="preload" href="../../js/navbar.js" as="script">
     <link rel="preload" href="../../js/mobile-nav.js" as="script">
+
+    <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "name": "Join the Global Debate Society",
-      "description": "Become a member of the Global Debate Society as a debater, coach, or club leader.",
+      "name": "Join as a Debater, Coach, or Leader | Global Debate Society",
+      "description": "Apply to join the Global Debate Society as a debater, coach, or club leader. Become part of a vibrant non-profit network with free membership and opportunities for growth.",
       "url": "https://www.globaldebatesociety.com/src/pages/join/index.html",
-      "mainEntity": {
-        "@type": "ItemList",
-        "name": "Membership Options",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "item": {
-              "@type": "Offer",
-              "name": "Debater Membership",
-              "description": "Participate in competitions, access learning resources, and connect with peer debaters."
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "item": {
-              "@type": "Offer",
-              "name": "Coach Membership",
-              "description": "All debater benefits, plus judge in competitions, access advanced materials, and mentor students."
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "item": {
-              "@type": "Offer",
-              "name": "Club Leader Membership",
-              "description": "All coach benefits, plus start a GDS branch, organize local events, and receive leadership training."
-            }
-          }
-        ]
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.globaldebatesociety.com/index.html"
+        },{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Join Us",
+          "item": "https://www.globaldebatesociety.com/src/pages/join/index.html"
+        }]
       }
     }
     </script>
@@ -150,10 +160,7 @@
                 <div class="options-grid">
                     <div class="option-card">
                         <div class="option-header">
-                            <picture>
-                                <source srcset="../../assets/images/webp/placeholders/debater-placeholder.webp" type="image/webp">
-                                <img src="../../assets/images/placeholders/debater-placeholder.svg" alt="Debater" class="option-image">
-                            </picture>
+                            <img src="../../assets/images/placeholders/debater-placeholder.svg" alt="Debater" class="option-image">
                             <h3>Debater</h3>
                         </div>
                         <div class="option-features">
@@ -173,10 +180,7 @@
                     <div class="option-card featured">
                         <div class="option-badge">Most Popular</div>
                         <div class="option-header">
-                            <picture>
-                                <source srcset="../../assets/images/webp/placeholders/coach-placeholder.webp" type="image/webp">
-                                <img src="../../assets/images/placeholders/coach-placeholder.svg" alt="Coach" class="option-image">
-                            </picture>
+                            <img src="../../assets/images/placeholders/coach-placeholder.svg" alt="Coach" class="option-image">
                             <h3>Coach</h3>
                         </div>
                         <div class="option-features">
@@ -596,7 +600,7 @@
                         <li><a href="../resources/index.html#guides">Debate Resources</a></li>
                         <li><a href="../resources/index.html#materials">Training Materials</a></li>
                         <li><a href="../resources/index.html#videos">Video Library</a></li>
-                        <li><a href="../resources/faqs/index.html">FAQs</a></li>
+                        <li><a href="../footer-pages/faq.html">FAQs</a></li>
                     </ul>
                 </div>
                 
@@ -639,6 +643,9 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script src="../../dist/bundle.js" defer></script>
+    <script src="../../js/main.js"></script>
+    <script src="../../js/navbar.js"></script>
+    <script src="../../js/mobile-nav.js"></script>
+    <script src="../../js/join-form.js"></script>
 </body>
 </html> 

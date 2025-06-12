@@ -14,10 +14,12 @@ BASE STYLES - Applied to every page
 /* Layout Styles */
 @import './layouts/navbar.css';
 @import './layouts/footer.css';
+@import './layouts/main.css';
 
 /* Component Styles */
 @import './components/buttons.css';
 @import './components/cards.css';
+@import './components/hero.css';
 @import './components/animations.css';
 
 /* 

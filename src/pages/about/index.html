@@ -3,10 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>About Us | Global Debate Society</title>
-    
+    <title>About Our Mission & Team | Global Debate Society</title>
+    <link rel="canonical" href="https://www.globaldebatesociety.com/src/pages/about/index.html" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Learn about the Global Debate Society's mission, values, and the dedicated team empowering students through debate and critical thinking across Southeast Asia.">
+    <meta name="keywords" content="about us, debate society, our mission, our team, debate education, critical thinking, Southeast Asia">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="About Our Mission & Team | Global Debate Society" />
+    <meta property="og:description" content="Learn about the Global Debate Society's mission, values, and the dedicated team empowering students through debate and critical thinking across Southeast Asia." />
+    <meta property="og:image" content="https://www.globaldebatesociety.com/src/assets/images/logos/mainLogos/GDSLogo.png" />
+    <meta property="og:url" content="https://www.globaldebatesociety.com/src/pages/about/index.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Our Mission & Team | Global Debate Society">
+    <meta name="twitter:description" content="Learn about the Global Debate Society's mission, values, and the dedicated team empowering students through debate and critical thinking across Southeast Asia.">
+    <meta name="twitter:image" content="https://www.globaldebatesociety.com/src/assets/images/logos/mainLogos/GDSLogo.png">
+
     <link rel="icon" type="image/png" href="../../assets/images/logos/mainLogos/GDSLogo.png">
-    <link rel="stylesheet" href="../../dist/style.bundle.css">
+    <link rel="stylesheet" href="../../styles/index.css">
+    <link rel="stylesheet" href="../../styles/base.css">
+    <link rel="stylesheet" href="../../styles/pages/about.css">
+    <link rel="stylesheet" href="../../styles/layouts/navbar.css">
+    <link rel="stylesheet" href="../../styles/layouts/footer.css">
+    <link rel="stylesheet" href="../../styles/layouts/mobile-nav.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
@@ -16,46 +39,42 @@
     
     <!-- Performance optimization meta tags -->
     <meta http-equiv="Cache-Control" content="max-age=86400, must-revalidate">
-    <meta name="description" content="Empowering students through the art of debate and critical thinking. Discover our mission, values, and the dedicated team working to foster a global community of critical thinkers."> <!-- Page-specific description -->
     <meta name="theme-color" content="#3a86ff">
     
     <!-- Preload critical assets -->
-    <link rel="preload" href="../../dist/style.bundle.css" as="style">
+    <link rel="preload" href="../../styles/index.css" as="style">
+    <link rel="preload" href="../../styles/base.css" as="style">
+    <link rel="preload" href="../../styles/pages/about.css" as="style">
+    <link rel="preload" href="../../styles/layouts/navbar.css" as="style">
+    <link rel="preload" href="../../styles/layouts/footer.css" as="style">
+    <link rel="preload" href="../../styles/layouts/mobile-nav.css" as="style">
     <link rel="preload" href="../../js/main.js" as="script">
     <link rel="preload" href="../../js/mobile-nav.js" as="script">
     <link rel="preload" href="../../js/navbar.js" as="script">
     <link rel="preload" href="../../js/hero-scroll.js" as="script">
 
+    <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ItemList",
-      "itemListElement": [
-        {
-          "@type": "Person",
-          "name": "Mei Lin",
-          "jobTitle": "Founder & President",
-          "description": "Former international debate champion with a passion for education."
-        },
-        {
-          "@type": "Person",
-          "name": "Rajiv Patel",
-          "jobTitle": "Education Director",
-          "description": "Experienced debate coach specializing in training novice debaters."
-        },
-        {
-          "@type": "Person",
-          "name": "Sarah Nguyen",
-          "jobTitle": "Outreach Coordinator",
-          "description": "Communications expert focused on expanding our global partnerships."
-        },
-        {
-          "@type": "Person",
-          "name": "Ahmad Rahman",
-          "jobTitle": "Program Manager",
-          "description": "Event organizer with experience in national and regional competitions."
-        }
-      ]
+      "@type": "WebPage",
+      "name": "About Our Mission & Team | Global Debate Society",
+      "description": "Learn about the Global Debate Society's mission, values, and the dedicated team empowering students through debate and critical thinking across Southeast Asia.",
+      "url": "https://www.globaldebatesociety.com/src/pages/about/index.html",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.globaldebatesociety.com/index.html"
+        },{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About Us",
+          "item": "https://www.globaldebatesociety.com/src/pages/about/index.html"
+        }]
+      }
     }
     </script>
 </head>
@@ -128,7 +147,7 @@
     <main>
         <section class="hero-section about-hero">
             <div class="hero-content">
-                <h1 class="hero-title">About the Global Debate Society</h1>
+                <h1 class="hero-title">Welcome to Global Debate Society</h1>
                 <p class="hero-subtitle">Empowering voices and fostering critical thinking across Southeast Asia</p>
                 <div class="hero-buttons">
                     <a href="../join/index.html" class="btn btn-primary btn-lg btn-join" style="background-color: orange; border-color: orange;">Join</a>
@@ -203,73 +222,49 @@
                 <p class="team-intro">Meet the dedicated individuals who drive our mission forward</p>
                 <div class="team-grid">
                     <div class="team-member">
-                        <picture>
-                            <source srcset="../../assets/images/webp/placeholders/profile-placeholder.webp" type="image/webp">
-                            <img src="../../assets/images/placeholders/profile-placeholder.svg" alt="Mei Lin">
-                        </picture>
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23f0f0f0'/%3E%3Ctext x='100' y='110' font-family='Arial' font-size='40' fill='%23999' text-anchor='middle'%3EML%3C/text%3E%3C/svg%3E" alt="Mei Lin">
                         <h3>Mei Lin</h3>
                         <p class="member-role">Founder & President</p>
                         <p>Former international debate champion with a passion for education.</p>
                     </div>
                     <div class="team-member">
-                        <picture>
-                            <source srcset="../../assets/images/webp/placeholders/profile-placeholder.webp" type="image/webp">
-                            <img src="../../assets/images/placeholders/profile-placeholder.svg" alt="Rajiv Patel">
-                        </picture>
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23f0f0f0'/%3E%3Ctext x='100' y='110' font-family='Arial' font-size='40' fill='%23999' text-anchor='middle'%3ERP%3C/text%3E%3C/svg%3E" alt="Rajiv Patel">
                         <h3>Rajiv Patel</h3>
                         <p class="member-role">Education Director</p>
                         <p>Experienced debate coach specializing in training novice debaters.</p>
                     </div>
                     <div class="team-member">
-                        <picture>
-                            <source srcset="../../assets/images/webp/placeholders/profile-placeholder.webp" type="image/webp">
-                            <img src="../../assets/images/placeholders/profile-placeholder.svg" alt="Sarah Nguyen">
-                        </picture>
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23f0f0f0'/%3E%3Ctext x='100' y='110' font-family='Arial' font-size='40' fill='%23999' text-anchor='middle'%3ESN%3C/text%3E%3C/svg%3E" alt="Sarah Nguyen">
                         <h3>Sarah Nguyen</h3>
                         <p class="member-role">Outreach Coordinator</p>
                         <p>Communications expert focused on expanding our global partnerships.</p>
                     </div>
                     <div class="team-member">
-                        <picture>
-                            <source srcset="../../assets/images/webp/placeholders/profile-placeholder.webp" type="image/webp">
-                            <img src="../../assets/images/placeholders/profile-placeholder.svg" alt="Ahmad Rahman">
-                        </picture>
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23f0f0f0'/%3E%3Ctext x='100' y='110' font-family='Arial' font-size='40' fill='%23999' text-anchor='middle'%3EAR%3C/text%3E%3C/svg%3E" alt="Ahmad Rahman">
                         <h3>Ahmad Rahman</h3>
                         <p class="member-role">Program Manager</p>
                         <p>Event organizer with experience in national and regional competitions.</p>
                     </div>
                     <div class="team-member">
-                        <picture>
-                            <source srcset="../../assets/images/webp/placeholders/profile-placeholder.webp" type="image/webp">
-                            <img src="../../assets/images/placeholders/profile-placeholder.svg" alt="Placeholder 1">
-                        </picture>
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23f0f0f0'/%3E%3Ctext x='100' y='110' font-family='Arial' font-size='40' fill='%23999' text-anchor='middle'%3EP1%3C/text%3E%3C/svg%3E" alt="Placeholder 1">
                         <h3>Placeholder One</h3>
                         <p class="member-role">Volunteer Coordinator</p>
                         <p>Passionate about community engagement and support.</p>
                     </div>
                     <div class="team-member">
-                        <picture>
-                            <source srcset="../../assets/images/webp/placeholders/profile-placeholder.webp" type="image/webp">
-                            <img src="../../assets/images/placeholders/profile-placeholder.svg" alt="Placeholder 2">
-                        </picture>
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23f0f0f0'/%3E%3Ctext x='100' y='110' font-family='Arial' font-size='40' fill='%23999' text-anchor='middle'%3EP2%3C/text%3E%3C/svg%3E" alt="Placeholder 2">
                         <h3>Placeholder Two</h3>
                         <p class="member-role">Workshop Facilitator</p>
                         <p>Dedicated to creating engaging learning experiences.</p>
                     </div>
                     <div class="team-member">
-                        <picture>
-                            <source srcset="../../assets/images/webp/placeholders/profile-placeholder.webp" type="image/webp">
-                            <img src="../../assets/images/placeholders/profile-placeholder.svg" alt="Placeholder 3">
-                        </picture>
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23f0f0f0'/%3E%3Ctext x='100' y='110' font-family='Arial' font-size='40' fill='%23999' text-anchor='middle'%3EP3%3C/text%3E%3C/svg%3E" alt="Placeholder 3">
                         <h3>Placeholder Three</h3>
                         <p class="member-role">Content Creator</p>
                         <p>Expert in developing educational materials and resources.</p>
                     </div>
                     <div class="team-member">
-                        <picture>
-                            <source srcset="../../assets/images/webp/placeholders/profile-placeholder.webp" type="image/webp">
-                            <img src="../../assets/images/placeholders/profile-placeholder.svg" alt="Placeholder 4">
-                        </picture>
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23f0f0f0'/%3E%3Ctext x='100' y='110' font-family='Arial' font-size='40' fill='%23999' text-anchor='middle'%3EP4%3C/text%3E%3C/svg%3E" alt="Placeholder 4">
                         <h3>Placeholder Four</h3>
                         <p class="member-role">Tech Support</p>
                         <p>Ensuring our digital platforms run smoothly for all members.</p>
@@ -280,10 +275,10 @@
             <div class="about-section">
                 <h2>Join Our Community</h2>
                 <p>Whether you're a student looking to improve your debate skills, a teacher seeking resources for your debate club, or an organization interested in partnering with us, we welcome you to join our community.</p>
-                <section class="cta-buttons">
+                <div class="cta-buttons">
                     <a href="../join/" class="button primary-btn">Become a Member</a>
-                    <a href="../contact/" class="button secondary-btn">Contact Us</a>
-                </section>
+                    <a href="../footer-pages/contact/" class="button secondary-btn">Contact Us</a>
+                </div>
             </div>
         </div>
     </main>
@@ -392,6 +387,12 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script src="../../dist/bundle.js" defer></script>
+    <script src="../../js/main.js"></script>
+    <script src="../../js/mobile-nav.js"></script>
+    <script src="../../js/navbar.js"></script>
+    <script src="../../js/hero-scroll.js"></script>
+    <script src="../../js/event-listeners.js"></script>
+    <script src="../../js/animations.js"></script>
+    <script src="../../js/footer-animations.js"></script>
 </body>
 </html> 
