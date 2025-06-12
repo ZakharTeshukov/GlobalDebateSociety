@@ -29,9 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const calendar = new FullCalendar.Calendar(calendarEl, {
             initialView: window.innerWidth < 768 ? 'listMonth' : 'dayGridMonth',
             googleCalendarApiKey: 'AIzaSyB0KhMJx1WNE4HhReQoxdc3rl-pXSLTGNk',
-            headerToolbar: window.innerWidth < 768
-                ? { left: 'prev,next', center: '', right: 'today' }
-                : { left: 'prev,next', center: 'title', right: 'today,dayGridMonth,listMonth' },
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,listMonth'
+            },
             events: {
                 googleCalendarId: 'c6291aceb5ef7e85faa2d3709b757c3f54ef683b7da7ca1d77a3046b40391568@group.calendar.google.com'
             },
@@ -39,8 +41,18 @@ document.addEventListener('DOMContentLoaded', () => {
             windowResize: function() {
                 if (window.innerWidth < 768) {
                     calendar.changeView('listMonth');
+                    calendar.setOption('headerToolbar', {
+                        left: 'prev,next',
+                        center: 'title',
+                        right: 'today'
+                    });
                 } else {
                     calendar.changeView('dayGridMonth');
+                    calendar.setOption('headerToolbar', {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'dayGridMonth,listMonth'
+                    });
                 }
             },
             eventClassNames: function(arg) {

@@ -182,10 +182,12 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    text-align: left;
 }
 
 .footer-links li {
     margin-bottom: var(--spacing-xs);
+    text-align: left;
 }
 
 /* Footer Contact Info */
@@ -377,6 +379,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
     }
 
     /* Center all widget content */
@@ -390,6 +393,7 @@
 
     .footer-links li {
         margin-bottom: var(--spacing-sm);
+        text-align: center;
     }
     
     /* Center contact info */

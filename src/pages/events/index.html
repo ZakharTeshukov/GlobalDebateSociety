@@ -6,12 +6,7 @@
     <title>Events | Global Debate Society</title>
     
     <link rel="icon" type="image/png" href="../../assets/images/logos/mainLogos/GDSLogo.png">
-    <link rel="stylesheet" href="../../styles/index.css"> <!-- Common styles -->
-    <link rel="stylesheet" href="../../styles/base.css"> <!-- Base styles -->
-    <link rel="stylesheet" href="../../styles/pages/events.css"> <!-- Page-specific styles -->
-    <link rel="stylesheet" href="../../styles/layouts/navbar.css"> <!-- Navbar styles -->
-    <link rel="stylesheet" href="../../styles/layouts/footer.css"> <!-- Footer styles -->
-    <link rel="stylesheet" href="../../styles/layouts/mobile-nav.css">
+    <link rel="stylesheet" href="../../dist/style.bundle.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
@@ -25,12 +20,7 @@
     <meta name="theme-color" content="#3a86ff">
     
     <!-- Preload critical assets -->
-    <link rel="preload" href="../../styles/index.css" as="style">
-    <link rel="preload" href="../../styles/base.css" as="style">
-    <link rel="preload" href="../../styles/pages/events.css" as="style">
-    <link rel="preload" href="../../styles/layouts/navbar.css" as="style">
-    <link rel="preload" href="../../styles/layouts/footer.css" as="style">
-    <link rel="preload" href="../../styles/layouts/mobile-nav.css" as="style">
+    <link rel="preload" href="../../dist/style.bundle.css" as="style">
     <link rel="preload" href="../../js/main.js" as="script">
     <link rel="preload" href="../../js/mobile-nav.js" as="script">
     <link rel="preload" href="../../js/navbar.js" as="script">
@@ -39,6 +29,25 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.8/main.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.8/main.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/list@6.1.8/main.min.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Global Debate Society Events",
+      "description": "Workshops, tournaments, and forums for debaters in Southeast Asia.",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": {
+        "@type": "VirtualLocation"
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "Global Debate Society",
+        "url": "https://www.globaldebatesociety.com"
+      },
+      "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode"
+    }
+    </script>
 </head>
 <body>
     <header>
@@ -185,7 +194,7 @@
                         <li><a href="../resources/index.html#guides">Debate Resources</a></li>
                         <li><a href="../resources/index.html#materials">Training Materials</a></li>
                         <li><a href="../resources/index.html#videos">Video Library</a></li>
-                        <li><a href="../footer-pages/faq.html">FAQs</a></li>
+                        <li><a href="../resources/faqs/index.html">FAQs</a></li>
                     </ul>
                 </div>
                 

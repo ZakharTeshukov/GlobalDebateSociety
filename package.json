@@ -7,7 +7,8 @@
     "convert-images": "node src/js/convert-images.js",
     "update-templates": "node src/js/update-templates.js",
     "update-seo": "node src/js/update-seo.js",
-    "build": "npm run convert-images && npm run update-templates && npm run update-seo",
+    "build:css": "cleancss -o dist/style.bundle.css src/styles/index.css",
+    "build": "npm run build:css && npm run convert-images && npm run update-templates && npm run update-seo",
     "start": "live-server"
   },
   "keywords": [
@@ -25,6 +26,7 @@
     "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "live-server": "^1.2.2"
+    "live-server": "^1.2.2",
+    "clean-css-cli": "^5.6.3"
   }
 } 

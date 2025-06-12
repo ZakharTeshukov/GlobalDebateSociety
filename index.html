@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Global Debate Society</title>
+    <title>Global Debate Society | Empowering Voices in Southeast Asia</title>
     <link rel="icon" type="image/png" href="src/assets/images/logos/mainLogos/GDSLogo.png">
-    <link rel="stylesheet" href="src/styles/index.css">
-    <link rel="stylesheet" href="src/styles/base.css">
-    <link rel="stylesheet" href="src/styles/pages/home.css">
-    <link rel="stylesheet" href="src/styles/layouts/navbar.css">
-    <link rel="stylesheet" href="src/styles/layouts/footer.css">
-    <link rel="stylesheet" href="src/styles/layouts/mobile-nav.css">
+    <link rel="stylesheet" href="dist/style.bundle.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
+    <!-- FullCalendar CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.8/main.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.8/main.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fullcalendar/list@6.1.8/main.min.css">
+
     <!-- Web App Manifest -->
     <link rel="manifest" href="manifest.json">
     
     <!-- Performance optimization meta tags -->
     <meta http-equiv="Cache-Control" content="max-age=86400, must-revalidate">
-    <meta name="description" content="Global Debate Society - A community for debaters, speakers, and critical thinkers across Southeast Asia.">
+    <meta name="description" content="Join the Global Debate Society, a thriving community for debaters, speakers, and critical thinkers across Southeast Asia. Enhance your skills, connect with peers, and participate in prestigious events.">
     <meta name="theme-color" content="#3a86ff">
     
     <!-- Preconnect to external font and icon services for faster loading -->
@@ -28,12 +28,7 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
     <!-- Preload critical assets -->
-    <link rel="preload" href="src/styles/index.css" as="style">
-    <link rel="preload" href="src/styles/base.css" as="style">
-    <link rel="preload" href="src/styles/pages/home.css" as="style">
-    <link rel="preload" href="src/styles/layouts/navbar.css" as="style">
-    <link rel="preload" href="src/styles/layouts/footer.css" as="style">
-    <link rel="preload" href="src/styles/layouts/mobile-nav.css" as="style">
+    <link rel="preload" href="dist/style.bundle.css" as="style">
     <link rel="preload" href="src/js/main.js" as="script">
     <link rel="preload" href="src/js/mobile-nav.js" as="script">
     <link rel="preload" href="src/assets/images/hero-backgrounds/debate-hero-bg.svg" as="image">
@@ -41,6 +36,48 @@
     <!-- Service worker registration script -->
     
     <!-- Load lazy loading script -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Global Debate Society",
+      "url": "https://www.globaldebatesociety.com",
+      "logo": "https://www.globaldebatesociety.com/src/assets/images/logos/mainLogos/GDSLogo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+84-90-184-4197",
+        "contactType": "customer service"
+      },
+      "sameAs": [
+        "https://www.facebook.com",
+        "https://www.twitter.com",
+        "https://www.instagram.com",
+        "https://www.linkedin.com",
+        "https://www.youtube.com"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "78 Nguyễn Đức Cảnh, Tân Phong, Quận 7",
+        "addressLocality": "Hồ Chí Minh",
+        "postalCode": "700000",
+        "addressCountry": "VN"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Global Debate Society",
+      "url": "https://www.globaldebatesociety.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.globaldebatesociety.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
     
 </head>
 <body>
@@ -116,8 +153,8 @@
                 <h1 class="hero-title">Welcome to Global Debate Society</h1>
                 <p class="hero-subtitle">Empowering voices and fostering critical thinking across Southeast Asia</p>
                 <div class="hero-buttons">
-                    <a href="src/pages/navbar-pages/join/" class="btn btn-primary btn-lg btn-join">Join</a>
-                    <a href="src/pages/navbar-pages/events/" class="btn btn-outline btn-lg">Upcoming Events</a>
+                    <a href="src/pages/join/index.html" class="btn btn-primary btn-lg btn-join">Join</a>
+                    <a href="src/pages/events/index.html" class="btn btn-outline btn-lg">Upcoming Events</a>
                 </div>
             </div>
         </section>
@@ -125,13 +162,20 @@
         <section id="features-section" class="features">
             <div class="container">
                 <h2 class="section-title" style="padding-top: 20px; padding-bottom: 20px;">Why Choose Global Debate Society?</h2>
-                <div class="grid grid-3">
+                <div class="grid grid-4">
                     <div class="feature-card">
                         <div class="feature-icon">
                             <i class="fas fa-users"></i>
                         </div>
-                        <h3 class="feature-title">Community</h3>
-                        <p class="feature-text">Join a vibrant community of debaters, speakers, and critical thinkers from across Southeast Asia.</p>
+                        <h3 class="feature-title">Vibrant Community</h3>
+                        <p class="feature-text">Join a thriving network of debaters and thinkers across our six chapters in Southeast Asia.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3 class="feature-title">Expert Coaching</h3>
+                        <p class="feature-text">Benefit from over 50+ years of combined experience from TOC-bid winning coaches.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">
@@ -158,100 +202,16 @@
                     Fostering a vibrant community of critical thinkers, eloquent speakers, and future leaders across Southeast Asia. We provide a platform for engaging in meaningful discourse, developing essential life skills, and connecting with peers who share a passion for debate.
                 </p>
                 <div class="about-snippet-actions animate-on-scroll">
-                    <a href="src/pages/navbar-pages/about/" class="btn btn-primary">Learn More About Us</a>
-                    <a href="src/pages/navbar-pages/join/" class="btn btn-outline">Get Involved</a>
+                    <a href="src/pages/about/index.html" class="btn btn-primary">Learn More About Us</a>
+                    <a href="src/pages/join/index.html" class="btn btn-outline">Get Involved</a>
                 </div>
             </div>
         </section>
 
-        <section class="upcoming-events">
-            <div class="container">
-                <h2 class="section-title">Featured Events</h2>
-                <div class="events-grid">
-                    <div class="event-card">
-                        <div class="event-date">
-                            April 15, 2025
-                        </div>
-                        <div class="event-content">
-                            <h3 class="event-title">Southeast Asian Debate Championship</h3>
-                            <div class="event-meta">
-                                <div>
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span>Ho Chi Minh City, Vietnam</span>
-                                </div>
-                                <div>
-                                    <i class="fas fa-clock"></i>
-                                    <span>9:00 AM - 6:00 PM</span>
-                                </div>
-                            </div>
-                            <p class="event-description">Join the premier debate competition in Southeast Asia with teams from across the region. Compete for regional recognition and valuable prizes.</p>
-                            <a href="src/pages/navbar-pages/events/#championship" class="btn btn-primary">Reserve Spot</a>
-                        </div>
-                    </div>
-                    
-                    <div class="event-card">
-                        <div class="event-date">
-                            April 22, 2025
-                        </div>
-                        <div class="event-content">
-                            <h3 class="event-title">Public Speaking Masterclass</h3>
-                            <div class="event-meta">
-                                <div>
-                                    <i class="fas fa-video"></i>
-                                    <span>Online Event</span>
-                                </div>
-                                <div>
-                                    <i class="fas fa-clock"></i>
-                                    <span>7:00 PM - 9:00 PM</span>
-                                </div>
-                            </div>
-                            <p class="event-description">Master the art of public speaking with expert guidance from award-winning speakers and debate champions. Perfect for both beginners and experienced speakers.</p>
-                            <a href="src/pages/navbar-pages/events/#masterclass" class="btn btn-primary">Reserve Spot</a>
-                        </div>
-                    </div>
-
-                    <div class="event-card">
-                        <div class="event-date">
-                            May 5, 2025
-                        </div>
-                        <div class="event-content">
-                            <h3 class="event-title">International Policy Debate Workshop</h3>
-                            <div class="event-meta">
-                                <div>
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span>Bangkok, Thailand</span>
-                                </div>
-                                <div>
-                                    <i class="fas fa-clock"></i>
-                                    <span>10:00 AM - 4:00 PM</span>
-                                </div>
-                            </div>
-                            <p class="event-description">Dive deep into international policy debate formats with expert coaches. Learn advanced research techniques and policy analysis frameworks.</p>
-                            <a href="src/pages/navbar-pages/events/#workshop" class="btn btn-primary">Reserve Spot</a>
-                        </div>
-                    </div>
-
-                    <div class="event-card">
-                        <div class="event-date">
-                            May 12, 2025
-                        </div>
-                        <div class="event-content">
-                            <h3 class="event-title">Youth Debate Bootcamp</h3>
-                            <div class="event-meta">
-                                <div>
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span>Singapore</span>
-                                </div>
-                                <div>
-                                    <i class="fas fa-clock"></i>
-                                    <span>9:00 AM - 5:00 PM</span>
-                                </div>
-                            </div>
-                            <p class="event-description">An intensive one-day bootcamp designed for young debaters aged 14-18. Focus on fundamental debate skills and confidence building.</p>
-                            <a href="src/pages/navbar-pages/events/#bootcamp" class="btn btn-primary">Reserve Spot</a>
-                        </div>
-                    </div>
-                </div>
+        <section class="event-calendar">
+            <h2>Event Calendar</h2>
+            <div class="calendar-wrapper">
+                <div id="calendar"></div>
             </div>
         </section>
 
@@ -260,7 +220,7 @@
                 <div class="cta-content">
                     <h2 class="cta-title">Ready to Join Our Community?</h2>
                     <p class="cta-text">Start your journey with Global Debate Society today!</p>
-                    <a href="src/pages/navbar-pages/join/" class="cta-button">Join</a>
+                    <a href="src/pages/join/index.html" class="cta-button">Join</a>
                 </div>
             </div>
         </section>
@@ -314,10 +274,10 @@
                     <h3 class="footer-widget-title">Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="src/pages/navbar-pages/about/">About</a></li>
-                        <li><a href="src/pages/navbar-pages/events/">Events</a></li>
-                        <li><a href="src/pages/navbar-pages/resources/">Resources</a></li>
-                        <li><a href="src/pages/navbar-pages/join/">Join</a></li>
+                        <li><a href="src/pages/about/index.html">About</a></li>
+                        <li><a href="src/pages/events/index.html">Events</a></li>
+                        <li><a href="src/pages/resources/index.html">Resources</a></li>
+                        <li><a href="src/pages/join/index.html">Join</a></li>
                     </ul>
                 </div>
                 
@@ -370,7 +330,13 @@
     <script src="src/js/mobile-nav.js"></script>
     <script src="src/js/navbar.js"></script>
     <script src="src/js/hero-scroll.js"></script>
-    <script src="src/js/event-listeners.js"></script>
+    <!-- FullCalendar JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.8/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.8/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/list@6.1.8/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/icalendar@6.1.8/index.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/google-calendar@6.1.8/index.global.min.js"></script>
+    <script src="src/js/events.js"></script>
     <script src="src/js/animations.js"></script>
     <script src="src/js/footer-animations.js"></script>
 </body>

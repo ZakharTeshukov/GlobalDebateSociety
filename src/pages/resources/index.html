@@ -6,12 +6,7 @@
     <title>Resources | Global Debate Society</title>
     
     <link rel="icon" type="image/png" href="../../assets/images/logos/mainLogos/GDSLogo.png">
-    <link rel="stylesheet" href="../../styles/index.css"> <!-- Common styles -->
-    <link rel="stylesheet" href="../../styles/base.css"> <!-- Base styles -->
-    <link rel="stylesheet" href="../../styles/pages/resources.css"> <!-- Page-specific styles -->
-    <link rel="stylesheet" href="../../styles/layouts/navbar.css"> <!-- Navbar styles -->
-    <link rel="stylesheet" href="../../styles/layouts/footer.css"> <!-- Footer styles -->
-    <link rel="stylesheet" href="../../styles/layouts/mobile-nav.css">
+    <link rel="stylesheet" href="../../dist/style.bundle.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
@@ -25,15 +20,61 @@
     <meta name="theme-color" content="#3a86ff">
     
     <!-- Preload critical assets -->
-    <link rel="preload" href="../../styles/index.css" as="style">
-    <link rel="preload" href="../../styles/base.css" as="style">
-    <link rel="preload" href="../../styles/pages/resources.css" as="style">
-    <link rel="preload" href="../../styles/layouts/navbar.css" as="style">
-    <link rel="preload" href="../../styles/layouts/footer.css" as="style">
-    <link rel="preload" href="../../styles/layouts/mobile-nav.css" as="style">
+    <link rel="preload" href="../../dist/style.bundle.css" as="style">
     <link rel="preload" href="../../js/main.js" as="script">
     <link rel="preload" href="../../js/navbar.js" as="script">
     <link rel="preload" href="../../js/mobile-nav.js" as="script">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Debate Resources",
+      "description": "A comprehensive library of resources for debaters, including guides, training materials, and videos.",
+      "url": "https://www.globaldebatesociety.com/src/pages/resources/index.html",
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "Resource Categories",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Debate Resources",
+            "url": "https://www.globaldebatesociety.com/src/pages/resources/debate-resources/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Training Materials",
+            "url": "https://www.globaldebatesociety.com/src/pages/resources/training-materials/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Video Library",
+            "url": "https://www.globaldebatesociety.com/src/pages/resources/video-library/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Research Repository",
+            "url": "https://www.globaldebatesociety.com/src/pages/resources/research-repository/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "Request Evidence",
+            "url": "https://www.globaldebatesociety.com/src/pages/resources/request-evidence/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "name": "FAQs",
+            "url": "https://www.globaldebatesociety.com/src/pages/resources/faqs/"
+          }
+        ]
+      }
+    }
+    </script>
 </head>
 <body>
     <header>
@@ -155,7 +196,7 @@
                 <div class="request-content">
                     <h2>Can't Find What You Need?</h2>
                     <p>If you're looking for specific resources that aren't available in our library, let us know. Our team is continuously developing new materials to support debaters.</p>
-                    <a href="../footer-pages/contact/" class="btn btn-primary">Request Resources</a>
+                    <a href="../contact/" class="btn btn-primary">Request Resources</a>
                 </div>
             </div>
         </section>
@@ -222,7 +263,7 @@
                         <li><a href="../resources/index.html#guides">Debate Resources</a></li>
                         <li><a href="../resources/index.html#materials">Training Materials</a></li>
                         <li><a href="../resources/index.html#videos">Video Library</a></li>
-                        <li><a href="../footer-pages/faq.html">FAQs</a></li>
+                        <li><a href="./faqs/">FAQs</a></li>
                     </ul>
                 </div>
                 

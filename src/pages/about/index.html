@@ -6,12 +6,7 @@
     <title>About Us | Global Debate Society</title>
     
     <link rel="icon" type="image/png" href="../../assets/images/logos/mainLogos/GDSLogo.png">
-    <link rel="stylesheet" href="../../styles/index.css">
-    <link rel="stylesheet" href="../../styles/base.css">
-    <link rel="stylesheet" href="../../styles/pages/about.css">
-    <link rel="stylesheet" href="../../styles/layouts/navbar.css">
-    <link rel="stylesheet" href="../../styles/layouts/footer.css">
-    <link rel="stylesheet" href="../../styles/layouts/mobile-nav.css">
+    <link rel="stylesheet" href="../../dist/style.bundle.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
@@ -25,16 +20,44 @@
     <meta name="theme-color" content="#3a86ff">
     
     <!-- Preload critical assets -->
-    <link rel="preload" href="../../styles/index.css" as="style">
-    <link rel="preload" href="../../styles/base.css" as="style">
-    <link rel="preload" href="../../styles/pages/about.css" as="style">
-    <link rel="preload" href="../../styles/layouts/navbar.css" as="style">
-    <link rel="preload" href="../../styles/layouts/footer.css" as="style">
-    <link rel="preload" href="../../styles/layouts/mobile-nav.css" as="style">
+    <link rel="preload" href="../../dist/style.bundle.css" as="style">
     <link rel="preload" href="../../js/main.js" as="script">
     <link rel="preload" href="../../js/mobile-nav.js" as="script">
     <link rel="preload" href="../../js/navbar.js" as="script">
     <link rel="preload" href="../../js/hero-scroll.js" as="script">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "Person",
+          "name": "Mei Lin",
+          "jobTitle": "Founder & President",
+          "description": "Former international debate champion with a passion for education."
+        },
+        {
+          "@type": "Person",
+          "name": "Rajiv Patel",
+          "jobTitle": "Education Director",
+          "description": "Experienced debate coach specializing in training novice debaters."
+        },
+        {
+          "@type": "Person",
+          "name": "Sarah Nguyen",
+          "jobTitle": "Outreach Coordinator",
+          "description": "Communications expert focused on expanding our global partnerships."
+        },
+        {
+          "@type": "Person",
+          "name": "Ahmad Rahman",
+          "jobTitle": "Program Manager",
+          "description": "Event organizer with experience in national and regional competitions."
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <header> 
@@ -105,7 +128,7 @@
     <main>
         <section class="hero-section about-hero">
             <div class="hero-content">
-                <h1 class="hero-title">Welcome to Global Debate Society</h1>
+                <h1 class="hero-title">About the Global Debate Society</h1>
                 <p class="hero-subtitle">Empowering voices and fostering critical thinking across Southeast Asia</p>
                 <div class="hero-buttons">
                     <a href="../join/index.html" class="btn btn-primary btn-lg btn-join" style="background-color: orange; border-color: orange;">Join</a>
@@ -235,7 +258,7 @@
                 <p>Whether you're a student looking to improve your debate skills, a teacher seeking resources for your debate club, or an organization interested in partnering with us, we welcome you to join our community.</p>
                 <div class="cta-buttons">
                     <a href="../join/" class="button primary-btn">Become a Member</a>
-                    <a href="../footer-pages/contact/" class="button secondary-btn">Contact Us</a>
+                    <a href="../contact/" class="button secondary-btn">Contact Us</a>
                 </div>
             </div>
         </div>

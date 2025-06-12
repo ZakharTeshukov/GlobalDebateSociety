@@ -65,7 +65,7 @@
 
 /* Card styles */
 .card {
-    background-color: var(--bg-light);
+    background-color: var(--bg-light-gray);
     border-radius: var(--border-radius-md);
     box-shadow: var(--card-shadow);
     overflow: hidden;
