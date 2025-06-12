@@ -33,6 +33,9 @@ This document tracks the tasks completed and planned for improving the website's
 - [x] **Image Optimization:**
   - [x] Converted all PNG and JPG images to WebP format.
   - [x] Updated HTML to use WebP images with PNG/SVG fallbacks.
+- [x] **JavaScript Optimization:**
+    - [x] Minified and bundled JavaScript files.
+    - [x] Deferred loading of non-critical scripts.
 
 ## In Progress Tasks
 
@@ -54,7 +57,7 @@ This document tracks the tasks completed and planned for improving the website's
 
 ## Implementation Plan
 
-The next immediate steps will focus on optimizing the remaining assets (JavaScript) to further improve page load times. After that, the focus will shift to content-related SEO factors like freshness and authority.
+The next immediate steps will focus on content-related SEO factors like freshness and authority.
 
 ### Relevant Files
 
@@ -66,6 +69,7 @@ The next immediate steps will focus on optimizing the remaining assets (JavaScri
 - `src/pages/contact/index.html`
 - `package.json`
 - `dist/style.bundle.css`
+- `dist/bundle.js`
 - `src/styles/index.css`
 - `src/js/convert-images.js`
 - `src/assets/images/webp/` 
