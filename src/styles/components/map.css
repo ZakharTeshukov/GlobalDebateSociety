@@ -1,0 +1,260 @@
+/*
+    ========================================
+    Map Container Styles
+    ========================================
+*/
+
+#map-section {
+    padding: 4rem 0;
+    background-color: #f9f9f9; /* Match with event calendar section */
+    width: 100%;
+    overflow: hidden;
+}
+
+#map-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#map-section h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2.8rem;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+#map-section .section-subtitle {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+#world-map-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #f9f9f9; /* Match with section background */
+    border: 1px solid #000; /* Add thin black bevel */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* SVG Map Styles */
+#world-map-container svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 70vh;
+}
+
+/*
+    ========================================
+    Country Styles
+    ========================================
+*/
+.country {
+    transition: fill 0.3s ease;
+    cursor: pointer;
+    outline: none;
+    stroke: #333; /* Darker border color */
+    stroke-width: 0.2; /* Slightly thicker border */
+}
+
+.country:hover {
+    filter: brightness(0.75); /* Darken by 25% on hover */
+}
+
+/* Country status colors */
+.country[data-status="ratified"] {
+    fill: #3498db; /* Blue for GDS chapters */
+}
+
+.country[data-status="unratified"] {
+    fill: #f5b5b5; /* Pink */
+}
+
+.country[data-status="none"] {
+    fill: #e9ecef; /* Lighter neutral gray to blend with background */
+}
+
+/*
+    ========================================
+    Button Styles
+    ========================================
+*/
+#map-button-container {
+    min-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 10px;
+    background-color: transparent;
+}
+
+.map-context-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+.map-context-button:hover {
+    transform: translateY(-2px);
+}
+
+.map-context-button:focus-visible {
+    outline: 3px solid #0056b3;
+    outline-offset: 2px;
+}
+
+/* Button colors based on country status */
+.map-context-button[data-status="ratified"] {
+    background-color: #3498db;
+}
+
+.map-context-button[data-status="unratified"] {
+    background-color: #f0ad4e;
+}
+
+.map-context-button[data-status="none"] {
+    background-color: #5cb85c; /* Green for "Create" action */
+}
+
+.map-tooltip {
+    position: absolute;
+    background-color: rgba(44, 62, 80, 0.9);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    pointer-events: none;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translate(-50%, -120%);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Chapter marker styles */
+.chapter-marker {
+    fill: #3498db;
+    stroke: #fff;
+    stroke-width: 2;
+    transition: all 0.3s ease;
+}
+
+.chapter-marker:hover {
+    fill: #2980b9;
+    transform: scale(1.2);
+}
+
+.chapter-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    fill: #2c3e50;
+    text-anchor: middle;
+    pointer-events: none;
+}
+
+/* Zoom Controls */
+.map-zoom-controls {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 10;
+}
+
+.zoom-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.zoom-btn:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-2px);
+}
+
+.zoom-btn:active {
+    transform: translateY(0);
+}
+
+.zoom-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #333;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.zoom-indicator.active {
+    opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #world-map-container {
+        max-height: 60vh;
+    }
+    
+    .map-context-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    #map-section h2 {
+        font-size: 2.2rem;
+    }
+
+    #map-section .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    .map-zoom-controls {
+        bottom: 10px;
+        right: 10px;
+    }
+    
+    .zoom-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+} 

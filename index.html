@@ -11,8 +11,8 @@
     <meta name="keywords" content="debate, public speaking, critical thinking, Southeast Asia, debate competitions, debate coaching, GDS">
 
     <!-- Open Graph Meta Tags (for social sharing) -->
-    <meta property="og:title" content="Global Debate Society | Debate & Public Speaking in Southeast Asia" />
-    <meta property="og:description" content="Join a vibrant community for debaters, speakers, and critical thinkers across Southeast Asia. Enhance your skills with expert coaching and connect with a global network." />
+    <meta property="og:title" content="Global Debate Society" />
+    <meta property="og:description" content="Public Forum coaching, resources, tournaments, and a supportive community." />
     <meta property="og:image" content="https://www.globaldebatesociety.com/src/assets/images/logos/mainLogos/GDSLogo.png" />
     <meta property="og:url" content="https://www.globaldebatesociety.com/index.html" />
     <meta property="og:type" content="website" />
@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="src/styles/layouts/mobile-nav.css">
     <link rel="stylesheet" href="src/styles/components/calendar.css">
     <link rel="stylesheet" href="src/styles/components/cards.css">
+    <link rel="stylesheet" href="src/styles/components/map.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
@@ -227,6 +228,15 @@
             </div>
         </section>
 
+        <section id="map-section">
+            <div class="container">
+                <h2 class="section-title">GDS Chapters</h2>
+                <p class="section-subtitle">Explore our growing network of debate chapters around the world</p>
+                <div id="world-map-container"></div>
+                <div id="map-button-container"></div>
+            </div>
+        </section>
+
         <section class="cta-section">
             <div class="container">
                 <div class="cta-content">
@@ -351,5 +361,483 @@
     <script src="src/js/events.js"></script>
     <script src="src/js/animations.js"></script>
     <script src="src/js/footer-animations.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+/*
+    ========================================
+    CONSTANTS & DATA STRUCTURES (Requirement 7)
+    ========================================
+*/
+
+// 9. SVG Loading & Initialization: URL to the SVG map file.
+const SVG_URL = 'src/assets/maps/not-calibrated/world_with_states.svg';
+
+/**
+    * CENTRALIZED COUNTRY DATABASE
+    * This is the single source of truth for country data containing:
+    * - code: Country ID that matches SVG path IDs in the world_with_states.svg file
+    * - name: Full country name for display purposes
+    * - status: "ratified", "unratified", or "none" (default)
+    * - color: Fill color based on status
+    * - href: Link target when clicked (defaults to globaldebatesociety.com)
+    */
+const COUNTRIES_DB = [
+    // Ratified Countries (Red)
+    { code: 'China', name: 'China', status: 'ratified', color: '#e03131', href: 'https://globaldebatesociety.com' },
+    { code: 'Vietnam', name: 'Vietnam', status: 'ratified', color: '#e03131', href: 'https://globaldebatesociety.com' },
+    { code: 'Thailand', name: 'Thailand', status: 'ratified', color: '#e03131', href: 'https://globaldebatesociety.com' },
+    { code: 'Laos', name: 'Laos', status: 'ratified', color: '#e03131', href: 'https://globaldebatesociety.com' },
+    
+    // Unratified Countries (Pink)
+    { code: 'Indonesia', name: 'Indonesia', status: 'unratified', color: '#f5b5b5', href: 'https://globaldebatesociety.com' },
+    { code: 'CA', name: 'California', status: 'unratified', color: '#f5b5b5', href: 'https://globaldebatesociety.com' }, // California state code in the SVG
+    
+    // Commonly referenced countries (Default - Gray)
+    { code: 'United States', name: 'United States', status: 'none', color: '#d9d9d9', href: 'https://globaldebatesociety.com' },
+    { code: 'Mexico', name: 'Mexico', status: 'none', color: '#d9d9d9', href: 'https://globaldebatesociety.com' },
+    { code: 'Brazil', name: 'Brazil', status: 'none', color: '#d9d9d9', href: 'https://globaldebatesociety.com' },
+    { code: 'Australia', name: 'Australia', status: 'none', color: '#d9d9d9', href: 'https://globaldebatesociety.com' },
+    { code: 'United Kingdom', name: 'United Kingdom', status: 'none', color: '#d9d9d9', href: 'https://globaldebatesociety.com' },
+    { code: 'France', name: 'France', status: 'none', color: '#d9d9d9', href: 'https://globaldebatesociety.com' },
+    { code: 'Germany', name: 'Germany', status: 'none', color: '#d9d9d9', href: 'https://globaldebatesociety.com' },
+    { code: 'India', name: 'India', status: 'none', color: '#d9d9d9', href: 'https://globaldebatesociety.com' },
+    { code: 'Russia', name: 'Russia', status: 'none', color: '#d9d9d9', href: 'https://globaldebatesociety.com' },
+    { code: 'Japan', name: 'Japan', status: 'none', color: '#d9d9d9', href: 'https://globaldebatesociety.com' },
+    { code: 'South Africa', name: 'South Africa', status: 'none', color: '#d9d9d9', href: 'https://globaldebatesociety.com' },
+    { code: 'Nigeria', name: 'Nigeria', status: 'none', color: '#d9d9d9', href: 'https://globaldebatesociety.com' },
+    { code: 'Egypt', name: 'Egypt', status: 'none', color: '#d9d9d9', href: 'https://globaldebatesociety.com' }
+    // Additional countries can be added here as needed with default status 'none'
+];
+
+// Create lookup maps for faster access
+const countryByCode = COUNTRIES_DB.reduce((map, country) => {
+    map[country.code] = country;
+    return map;
+}, {});
+
+/*
+    ========================================
+    STATE VARIABLES
+    ========================================
+*/
+
+// 10. Zoom/Pan Logic: State object to hold the current transform values
+let panZoomState = {
+    scale: 1,
+    translateX: 0,
+    translateY: 0,
+    isPanning: false,
+    startX: 0,
+    startY: 0,
+    mouseDownX: 0,
+    mouseDownY: 0,
+    mouseDownTime: 0,
+    wasClick: false
+};
+
+// DOM element references
+const mapContainer = document.getElementById('world-map-container');
+const buttonContainer = document.getElementById('map-button-container');
+let svgRoot = null;
+let panZoomGroup = null;
+
+
+/*
+    ========================================
+    INITIALIZATION
+    ========================================
+*/
+
+/**
+    * Main function to kick off the map loading and setup process.
+    * 9. SVG Loading & Initialization
+    * This function fetches the SVG file and injects it into the DOM.
+    */
+async function initializeMap() {
+    if (!mapContainer) {
+        console.error("Map container not found!");
+        return;
+    }
+    
+    // Show loading indicator
+    mapContainer.innerHTML = '<div style="text-align: center; padding: 20px;">Loading map...</div>';
+    
+    try {
+        // 9a. Fetch SVG content from the specified URL.
+        const response = await fetch(SVG_URL);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const svgText = await response.text();
+        
+        // 9b. Inject the SVG content directly into the map container.
+        mapContainer.innerHTML = svgText;
+        
+        // 9c. After injection, select the SVG and its main group for manipulation.
+        svgRoot = mapContainer.querySelector('svg');
+        panZoomGroup = svgRoot.querySelector('g'); // Assumes 'g' is the pan/zoom target
+
+        // Apply initial styling to the SVG
+        if (svgRoot) {
+            svgRoot.style.width = '100%';
+            svgRoot.style.height = 'auto';
+            svgRoot.style.maxHeight = '70vh';
+        }
+
+        // Find all country paths and apply appropriate data attributes and colors
+        const countryPaths = svgRoot.querySelectorAll('path');
+        countryPaths.forEach(path => {
+            path.classList.add('country');
+            const countryId = path.id;
+            const countryData = countryByCode[countryId];
+            
+            if (countryData) {
+                // Set data attribute for status
+                path.setAttribute('data-status', countryData.status);
+                
+                // Apply fill color based on status
+                path.style.fill = countryData.color;
+            } else {
+                // Default styling for countries without specific data
+                path.setAttribute('data-status', 'none');
+                path.style.fill = '#d9d9d9'; // Default gray
+            }
+        });
+
+        // 9d. If the SVG is properly loaded, set up its interactive features.
+        if (svgRoot && panZoomGroup) {
+            setupMapInteraction();
+            setupTooltip();
+            console.log("Map successfully initialized");
+        } else {
+            console.error("SVG root or pan/zoom group not found.");
+            mapContainer.innerHTML = '<p>Error: Could not initialize map components.</p>';
+        }
+    } catch (error) {
+        console.error("Failed to load or initialize map:", error);
+        mapContainer.innerHTML = '<p>Error loading map. Please try again later.</p>';
+    }
+}
+
+/*
+    ========================================
+    EVENT HANDLERS & INTERACTIVITY (Requirement 3, 4, 5, 6, 8, 10)
+    ========================================
+*/
+
+/**
+    * Sets up all event listeners for the map.
+    */
+function setupMapInteraction() {
+    // Set initial cursor style for panning
+    if (svgRoot) {
+        svgRoot.style.cursor = 'grab';
+    }
+
+    // 3a. Attach a single 'mouseover' listener to the SVG container.
+    // This uses event delegation to handle hovers over any country path.
+    svgRoot.addEventListener('mouseover', handleCountryMouseOver);
+
+    // 3b. Attach a 'mouseout' listener to reset country styles when the mouse leaves.
+    svgRoot.addEventListener('mouseout', handleCountryMouseOut);
+    
+    // 10a. Mouse down for panning
+    svgRoot.addEventListener('mousedown', startPan);
+    
+    // 10b. Mouse move for panning
+    svgRoot.addEventListener('mousemove', pan);
+
+    // 10c. Mouse up for panning
+    svgRoot.addEventListener('mouseup', endPan);
+    
+    // 10d. Mouse leave to cancel panning if the cursor exits the container
+    svgRoot.addEventListener('mouseleave', endPan);
+    
+    // 10e. Wheel event for zooming
+    svgRoot.addEventListener('wheel', handleZoom);
+    
+    // 6a. Add a click listener to the SVG root for handling country clicks.
+    // This will check if the interaction was a click or a pan.
+    svgRoot.addEventListener('click', handleCountryClick, true); // Use capture phase
+}
+
+/**
+    * Handles the 'mouseover' event on a country path.
+    * @param {MouseEvent} event - The mouseover event object.
+    */
+function handleCountryMouseOver(event) {
+    // 3c. Delegate the event: check if the target is a country path.
+    const countryPath = event.target.closest('.country');
+    
+    if (countryPath) {
+        // Add a highlight effect
+        countryPath.style.filter = 'brightness(1.2)';
+        countryPath.style.stroke = '#fff';
+        countryPath.style.strokeWidth = '0.5';
+        
+        // 3d. Get country data from the centralized database.
+        const countryId = countryPath.id;
+        const countryData = countryByCode[countryId];
+        
+        // 4a. Update the button based on the hovered country's status.
+        updateContextButton(countryData);
+        
+        // Show tooltip
+        showTooltip(event, countryData ? countryData.name : countryId);
+    }
+}
+
+/**
+    * Handles the 'mouseout' event to clear dynamic states.
+    */
+function handleCountryMouseOut(event) {
+    const countryPath = event.target.closest('.country');
+    if (countryPath) {
+        // Remove highlight effect
+        countryPath.style.filter = '';
+        countryPath.style.strokeWidth = '0.1';
+    }
+    
+    // 4b. Clear the context button when the mouse leaves a country.
+    clearContextButton();
+    
+    // Hide tooltip
+    hideTooltip();
+}
+
+/**
+    * Handles a click on a country.
+    * This function is called in the capture phase to determine if it was a genuine click.
+    * @param {MouseEvent} event - The click event object.
+    */
+function handleCountryClick(event) {
+    // 6b. Check if the interaction was a click (not a drag/pan)
+    if (panZoomState.wasClick) {
+        const countryPath = event.target.closest('.country');
+        if (countryPath) {
+            // 6c. If it's a valid country, get its data.
+            const countryId = countryPath.id;
+            const countryData = countryByCode[countryId];
+
+            if (countryData && countryData.href) {
+                // 6d. Stop the event from propagating further to prevent conflicts.
+                event.stopPropagation();
+                event.preventDefault();
+
+                // 6e. Navigate to the country-specific URL.
+                window.location.href = countryData.href;
+            }
+        }
+    }
+}
+
+/**
+    * Initiates the panning action.
+    * @param {MouseEvent} event - The mousedown event.
+    */
+function startPan(event) {
+    // 10f. Start panning only on primary mouse button click.
+    if (event.buttons !== 1) return;
+
+    panZoomState.isPanning = true;
+    panZoomState.startX = event.clientX - panZoomState.translateX;
+    panZoomState.startY = event.clientY - panZoomState.translateY;
+    panZoomState.mouseDownX = event.clientX;
+    panZoomState.mouseDownY = event.clientY;
+    panZoomState.mouseDownTime = Date.now();
+    panZoomState.wasClick = true; // Assume it's a click until moved
+    svgRoot.style.cursor = 'grabbing';
+}
+
+/**
+    * Handles the panning movement.
+    * @param {MouseEvent} event - The mousemove event.
+    */
+function pan(event) {
+    if (!panZoomState.isPanning) return;
+    
+    // 10g. Calculate the distance moved from the start of the pan.
+    const dx = event.clientX - panZoomState.mouseDownX;
+    const dy = event.clientY - panZoomState.mouseDownY;
+
+    // If the mouse has moved more than a few pixels, it's a pan, not a click.
+    if (Math.abs(dx) > 3 || Math.abs(dy) > 3) {
+        panZoomState.wasClick = false;
+    }
+
+    panZoomState.translateX = event.clientX - panZoomState.startX;
+    panZoomState.translateY = event.clientY - panZoomState.startY;
+
+    // 10h. Apply the transformation to the pan/zoom group.
+    applyTransform();
+}
+
+/**
+    * Ends the panning action.
+    */
+function endPan(event) {
+    if (!panZoomState.isPanning) return;
+
+    panZoomState.isPanning = false;
+    svgRoot.style.cursor = 'grab';
+
+    // Check if it was a click
+    const timeDiff = Date.now() - panZoomState.mouseDownTime;
+    const dx = event.clientX - panZoomState.mouseDownX;
+    const dy = event.clientY - panZoomState.mouseDownY;
+    if (timeDiff < 200 && Math.sqrt(dx*dx + dy*dy) < 5) {
+        panZoomState.wasClick = true;
+    } else {
+        panZoomState.wasClick = false;
+    }
+}
+
+/**
+    * Handles zooming with the mouse wheel.
+    * @param {WheelEvent} event - The wheel event.
+    */
+function handleZoom(event) {
+    // 10i. Prevent default browser scroll/zoom behavior.
+    event.preventDefault();
+
+    const scaleAmount = 1.1;
+    const { clientX, clientY } = event;
+    const rect = svgRoot.getBoundingClientRect();
+
+    // Coordinates of the mouse pointer relative to the SVG container
+    const mouseX = clientX - rect.left;
+    const mouseY = clientY - rect.top;
+
+    const newScale = event.deltaY > 0 ? panZoomState.scale / scaleAmount : panZoomState.scale * scaleAmount;
+    
+    // 10j. Clamp the scale to prevent zooming too far in or out.
+    const clampedScale = Math.max(0.5, Math.min(newScale, 10));
+
+    // Calculate new translation to keep the point under the cursor stationary
+    panZoomState.translateX = mouseX - (mouseX - panZoomState.translateX) * (clampedScale / panZoomState.scale);
+    panZoomState.translateY = mouseY - (mouseY - panZoomState.translateY) * (clampedScale / panZoomState.scale);
+    panZoomState.scale = clampedScale;
+
+    // 10k. Apply the new transform.
+    applyTransform();
+}
+
+/**
+    * Applies the current pan and zoom transformation to the SVG group.
+    */
+function applyTransform() {
+    if (panZoomGroup) {
+        panZoomGroup.setAttribute('transform', `translate(${panZoomState.translateX},${panZoomState.translateY}) scale(${panZoomState.scale})`);
+    }
+}
+
+/*
+    ========================================
+    UI & BUTTON LOGIC (Requirement 4 & 8)
+    ========================================
+*/
+
+/**
+    * Creates and displays a context-sensitive button based on country data.
+    * @param {object|null} countryData - The data for the hovered country.
+    */
+function updateContextButton(countryData) {
+    // 8a. Clear any existing button.
+    clearContextButton();
+    
+    // 8b. If no country data, do nothing.
+    if (!countryData) return;
+
+    // 8c. Create a new button element.
+    const button = document.createElement('button');
+    button.classList.add('map-context-button');
+    button.dataset.status = countryData.status;
+
+    // 8d. Set button text and action based on country status.
+    switch (countryData.status) {
+        case 'ratified':
+            button.textContent = `View ${countryData.name} Chapter`;
+            break;
+        case 'unratified':
+            button.textContent = `Learn about starting a chapter in ${countryData.name}`;
+            break;
+        case 'none':
+            button.textContent = `Create a chapter in ${countryData.name}`;
+            break;
+    }
+
+    // 8e. Add a click listener to navigate to the specified href.
+    button.addEventListener('click', () => {
+        if (countryData.href) {
+            window.location.href = countryData.href;
+        }
+    });
+    
+    // 8f. Append the button to its container.
+    if (buttonContainer) {
+        buttonContainer.appendChild(button);
+    }
+}
+
+/**
+    * Removes the context-sensitive button from the DOM.
+    */
+function clearContextButton() {
+    // 8g. Empty the button container.
+    if (buttonContainer) {
+        buttonContainer.innerHTML = '';
+    }
+}
+
+/*
+    ========================================
+    TOOLTIP LOGIC
+    ========================================
+*/
+
+let tooltip;
+
+function setupTooltip() {
+    tooltip = document.createElement('div');
+    tooltip.classList.add('map-tooltip');
+    document.body.appendChild(tooltip);
+
+    // Make sure tooltip is initially hidden
+    tooltip.style.opacity = '0';
+    tooltip.style.position = 'absolute';
+    tooltip.style.pointerEvents = 'none';
+
+    // Add mousemove event to update tooltip position
+    if (svgRoot) {
+        svgRoot.addEventListener('mousemove', (event) => {
+            if (tooltip) {
+                tooltip.style.left = `${event.pageX}px`;
+                tooltip.style.top = `${event.pageY}px`;
+            }
+        });
+    }
+}
+
+function showTooltip(event, text) {
+    if (!tooltip) return;
+    tooltip.textContent = text;
+    tooltip.style.opacity = '1';
+    tooltip.style.transform = 'translate(-50%, -120%)';
+    tooltip.style.left = `${event.pageX}px`;
+    tooltip.style.top = `${event.pageY}px`;
+}
+
+function hideTooltip() {
+    if (!tooltip) return;
+    tooltip.style.opacity = '0';
+}
+
+
+// 9e. Call the main initialization function to start the process.
+initializeMap();
+
+});
+</script>
 </body>
 </html>
