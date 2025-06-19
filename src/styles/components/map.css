@@ -1,12 +1,19 @@
-/*
-    ========================================
-    Map Container Styles
-    ========================================
-*/
+/**
+ * Interactive World Map Component Styles
+ * 
+ * DEBUGGING GUIDE:
+ * 1. Map container issues: Check #world-map-container styles
+ * 2. Country coloring issues: Check .country and [data-status] rules
+ * 3. Tooltip not showing: Check .map-tooltip opacity and z-index
+ * 4. Marker visibility: Check .chapter-marker styles
+ * 5. Zoom controls not working: Check .map-zoom-controls and .zoom-btn
+ * 6. Mobile display issues: See responsive media queries at bottom
+ */
 
+/* MAP SECTION CONTAINER */
 #map-section {
     padding: 4rem 0;
-    background-color: #f9f9f9; /* Match with event calendar section */
+    background-color: #ebebeb;
     width: 100%;
     overflow: hidden;
 }
@@ -17,6 +24,7 @@
     padding: 0 20px;
 }
 
+/* Section title and description */
 #map-section h2 {
     text-align: center;
     margin-bottom: 1rem;
@@ -36,18 +44,23 @@
     line-height: 1.6;
 }
 
+/* Main map container */
 #world-map-container {
     position: relative;
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
     overflow: hidden;
-    background-color: #f9f9f9; /* Match with section background */
-    border: 1px solid #000; /* Add thin black bevel */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    background-color: #f9f9f9;
+    border: 1px solid #000;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    cursor: grab; /* Indicates the map is draggable */
 }
 
-/* SVG Map Styles */
+#world-map-container:active {
+    cursor: grabbing; /* Indicates active panning */
+}
+
 #world-map-container svg {
     width: 100%;
     height: auto;
@@ -55,41 +68,22 @@
     max-height: 70vh;
 }
 
-/*
-    ========================================
-    Country Styles
-    ========================================
-*/
+/* COUNTRY STYLES */
 .country {
-    transition: fill 0.3s ease;
+    transition: fill 0.3s ease, filter 0.3s ease;
     cursor: pointer;
     outline: none;
-    stroke: #333; /* Darker border color */
-    stroke-width: 0.2; /* Slightly thicker border */
+    stroke: #333;
+    stroke-width: 0.2;
 }
 
-.country:hover {
-    filter: brightness(0.75); /* Darken by 25% on hover */
-}
 
-/* Country status colors */
-.country[data-status="ratified"] {
-    fill: #3498db; /* Blue for GDS chapters */
-}
+/* Status-based country colors - also set via JavaScript */
+.country[data-status="ratified"] { fill: #3498db; } /* Active chapters */
+.country[data-status="unratified"] { fill: #f5b5b5; } /* Upcoming chapters */
+.country[data-status="none"] { fill: #e9ecef; } /* Non-chapter countries */
 
-.country[data-status="unratified"] {
-    fill: #f5b5b5; /* Pink */
-}
-
-.country[data-status="none"] {
-    fill: #e9ecef; /* Lighter neutral gray to blend with background */
-}
-
-/*
-    ========================================
-    Button Styles
-    ========================================
-*/
+/* CONTEXT BUTTON - appears below map */
 #map-button-container {
     min-height: 60px;
     display: flex;
@@ -114,6 +108,7 @@
 
 .map-context-button:hover {
     transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
 }
 
 .map-context-button:focus-visible {
@@ -121,19 +116,12 @@
     outline-offset: 2px;
 }
 
-/* Button colors based on country status */
-.map-context-button[data-status="ratified"] {
-    background-color: #3498db;
-}
+/* Button color variations */
+.map-context-button[data-status="ratified"] { background-color: #3498db; }
+.map-context-button[data-status="unratified"] { background-color: #f0ad4e; }
+.map-context-button[data-status="none"] { background-color: #5cb85c; }
 
-.map-context-button[data-status="unratified"] {
-    background-color: #f0ad4e;
-}
-
-.map-context-button[data-status="none"] {
-    background-color: #5cb85c; /* Green for "Create" action */
-}
-
+/* TOOLTIP */
 .map-tooltip {
     position: absolute;
     background-color: rgba(44, 62, 80, 0.9);
@@ -151,19 +139,22 @@
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-/* Chapter marker styles */
+/* CHAPTER LOCATION MARKERS */
 .chapter-marker {
-    fill: #3498db;
+    fill: #3498db; /* Blue markers */
     stroke: #fff;
-    stroke-width: 2;
+    stroke-width: 2px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .chapter-marker:hover {
-    fill: #2980b9;
+    fill: #2980b9; /* Darker blue on hover */
     transform: scale(1.2);
+    transform-origin: center;
 }
 
+/* Optional text labels for chapters */
 .chapter-label {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
@@ -173,7 +164,7 @@
     pointer-events: none;
 }
 
-/* Zoom Controls */
+/* ZOOM CONTROLS */
 .map-zoom-controls {
     position: absolute;
     bottom: 20px;
@@ -195,6 +186,7 @@
     align-items: center;
     justify-content: center;
     font-size: 18px;
+    font-weight: bold;
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -206,8 +198,10 @@
 
 .zoom-btn:active {
     transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
+/* ZOOM INDICATOR */
 .zoom-indicator {
     position: absolute;
     bottom: 20px;
@@ -228,25 +222,29 @@
     opacity: 1;
 }
 
-/* Responsive adjustments */
+/* RESPONSIVE ADJUSTMENTS */
 @media (max-width: 768px) {
+    /* Container adjustments */
     #world-map-container {
         max-height: 60vh;
     }
     
+    /* Text adjustments */
+    #map-section h2 {
+        font-size: 2.2rem;
+    }
+    
+    #map-section .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* Button adjustments */
     .map-context-button {
         padding: 10px 20px;
         font-size: 0.9rem;
     }
     
-    #map-section h2 {
-        font-size: 2.2rem;
-    }
-
-    #map-section .section-subtitle {
-        font-size: 1rem;
-    }
-    
+    /* Control adjustments */
     .map-zoom-controls {
         bottom: 10px;
         right: 10px;
@@ -256,5 +254,10 @@
         width: 36px;
         height: 36px;
         font-size: 16px;
+    }
+    
+    .zoom-indicator {
+        bottom: 10px;
+        left: 10px;
     }
 } 
