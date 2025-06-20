@@ -2,6 +2,8 @@
  * Global Debate Society - Main JavaScript
  */
 
+import { initMobileNav } from './components/mobileNav.js';
+
 document.addEventListener('DOMContentLoaded', function () {
   // Set current active link in navigation
   setActiveNavLink();
@@ -34,6 +36,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Initialize scroll animations
   initScrollAnimations();
+
+  // Initialize Mobile Navigation
+  initMobileNav();
 });
 
 /**

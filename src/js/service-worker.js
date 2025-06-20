@@ -22,8 +22,6 @@ const CACHE_ASSETS = [
   '/src/src/styles/index.css',
   '/src/js/main.js',
   '/src/js/lazy-loading.js',
-  '/src/js/navbar.js',
-  '/src/js/mobile-menu.js',
   '/src/js/faq.js',
   '/src/js/contact.js',
   '/src/js/events.js',
