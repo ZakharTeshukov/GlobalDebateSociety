@@ -180,7 +180,7 @@ Steps:
 3. Refactor page code to import and call this new module, deleting the old two scripts.  
 4. Update HTML templates to load **one** bundle (after we have a build pipeline in Prompt #3).  
 5. Verify that:
-   • Hamburger button toggles correctly.  
+   • Hamburger button toggles correctly and are centered verticaly correctely.  
    • Overlay works.  
    • Escape key and link-click close behave as before.  
 

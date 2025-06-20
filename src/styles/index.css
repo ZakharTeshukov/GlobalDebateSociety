@@ -17,7 +17,6 @@ BASE STYLES - Applied to every page
 @import url('./layouts/main.css');
 
 /* Component Styles */
-@import url('./components/buttons.css');
 @import url('./components/cards.css');
 @import url('./components/hero.css');
 @import url('./components/animations.css');
