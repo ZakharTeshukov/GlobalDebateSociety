@@ -1,4 +1,5 @@
 /* Central Card Styles */
+
 /* Apply about page value-card styling to homepage feature-card */
 
 .feature-card,
@@ -7,17 +8,19 @@
 .benefit-card,
 .testimonial-card,
 .option-card {
-    background-color: var(--white);
-    padding: 3rem 2rem;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    min-height: 300px;
+  background-color: var(--white);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 10%);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: 300px;
 }
 
 .feature-card:hover,
@@ -26,8 +29,8 @@
 .benefit-card:hover,
 .testimonial-card:hover,
 .option-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgb(0 0 0 / 15%);
 }
 
 /* You can extend this file to include other card types like .value-card, .stat-card, etc. */

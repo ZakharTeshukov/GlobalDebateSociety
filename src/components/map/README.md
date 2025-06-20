@@ -82,17 +82,18 @@ To add a new chapter to the map:
 3. Set URLs for both country and chapter marker as needed
 
 Example:
+
 ```javascript
 // Add to COUNTRIES_DB
 { code: 'Philippines', name: 'Philippines', status: 'unratified', href: 'https://globaldebatesociety.com' }
 
 // Add to CHAPTER_LOCATIONS
-{ 
-    name: "Manila Chapter", 
-    country: "Philippines", 
-    city: "Manila", 
-    coordinates: { x: 79.5, y: 49.8 }, 
-    href: "https://globaldebatesociety.com/chapters/manila" 
+{
+    name: "Manila Chapter",
+    country: "Philippines",
+    city: "Manila",
+    coordinates: { x: 79.5, y: 49.8 },
+    href: "https://globaldebatesociety.com/chapters/manila"
 }
 ```
 
@@ -110,4 +111,4 @@ To customize the map's appearance:
 
 1. Edit color variables in `map.js` (for country fill colors)
 2. Modify CSS styles in `src/styles/components/map.css` for tooltips, markers, etc.
-3. Adjust responsive breakpoints in the media queries as needed 
+3. Adjust responsive breakpoints in the media queries as needed
